@@ -6,7 +6,7 @@
     <option value="fr">Französich</option>
   </select></p>
   
-  <p>{{ t("hello") }}</p>
+  <p>{{ t("HelloI18n.hello") }}</p>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default defineComponent({
   setup() {
     const { t, locale } = useI18n({
       inheritLocale: true,
-      useScope: "local",
+      useScope: "global",
     });
 
     // Something todo ..
@@ -28,6 +28,7 @@ export default defineComponent({
 });
 </script>
 
+<!--
 <i18n>
 {
   "en": {
@@ -43,3 +44,5 @@ export default defineComponent({
 </i18n>
 //Change locales
 //https://kazupon.github.io/vue-i18n/guide/locale.html
+
+-->
