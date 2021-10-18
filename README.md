@@ -99,6 +99,21 @@ npm run build
 npm run lint
 ```
 
+# Fixes for common issues
+The following list contains frequent issues and their fixes and will be updated during development. 
+## Error: "PostCSS Plugin tailwindcss required PostCSS 8."
+Run the following commands to fix the issue:
+```
+npm uninstall tailwindcss postcss autoprefixer
+npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+```
+
+## Error: "npm ERR! Error: EACCES: permission denied, access '/path'"
+This error usually occurs with MacOS. To solve this problem, use the "sudo" statement before each command.
+E.g.:
+```
+sudo npm install ...
+```
 <!-- GETTING STARTED -->
 <!--
 ## Getting Started
