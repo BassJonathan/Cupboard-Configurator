@@ -1,13 +1,11 @@
 <template>
-  <p>
-    Wähle eine Sprache:
+  <p>Wähle eine Sprache: 
     <select v-model="locale">
-      <option value="en">Englisch</option>
-      <option value="de">Deutsch</option>
-      <option value="fr">Französich</option>
-    </select>
-  </p>
-
+    <option value="en">Englisch</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Französich</option>
+  </select></p>
+  
   <p>{{ t("HelloI18n.hello") }}</p>
 </template>
 
