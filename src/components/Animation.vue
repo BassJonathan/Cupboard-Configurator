@@ -47,7 +47,6 @@ export default {
       interactivityMode: {
         type: String,
         default: "scroll",
-        required: true,
         validator(value) {
           return ["scroll", "cursor"].includes(value)
         }
@@ -55,21 +54,35 @@ export default {
       interactivityContainer: {
         type: String,
       },
-      interactivityActions: {
+      interactivityVisibility: {
         type: Array,
-        default: () => [{visibility: [0,1], type: "seek", frames: [0,100]}],
-        required: true
+        //default: () => [{visibility: [0,1], type: "seek", frames: [0,100]}],
+        default: () => [0,1],
+      },
+      interactivityType: {
+        type: String,
+        //default: () => [{visibility: [0,1], type: "seek", frames: [0,100]}],
+        default: "seek",
+      },
+      interactivityFrames: {
+        type: Array,
+        //default: () => [{visibility: [0,1], type: "seek", frames: [0,100]}],
+        default: () => [0,100],
       }
     },
     mounted() {
-    console.log(this.interactivityActions)
     var self = this; //As seen here: https://stackoverflow.com/questions/47549346/communicating-with-data-or-methods-in-vue-and-addeventlistener
     this.$refs.myRef.addEventListener("load", function () {
       create({
         mode: self.interactivityMode,
         player: "#" + self.playerID,
         container: self.interactivityContainer,
-        actions: self.interactivityActions,
+        actions: [{
+          visibility: self.interactivityVisibility,
+          type: self.interactivityType,
+          frames: self.interactivityFrames
+        }]
+        //actions: self.interactivityActions,
       });
     });
   },

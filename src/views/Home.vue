@@ -5,11 +5,16 @@
     <Animation
       playerID="lottie1"
       playerScr="https://assets10.lottiefiles.com/packages/lf20_yzsagzwo.json"
+      :interactivityVisibility=[0,0.85]
+      :interactivityFrames=[0,100]
     />
     <div style="height: 500px"></div>
     <HelloI18n />
     <div style="height: 500px"></div>
     <TailwindTest />
+    <div style="height: 500px"></div>
+    <Axios />
+    <div style="height: 500px"></div>
   </div>
 </template>
 
@@ -19,6 +24,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Animation from "@/components/Animation.vue";
 import HelloI18n from "@/components/HelloI18n.vue";
 import TailwindTest from "@/components/TailwindTest.vue";
+import Axios from "@/components/Axios.vue";
 
 export default {
   name: "Home",
@@ -27,6 +33,7 @@ export default {
     Animation,
     HelloI18n,
     TailwindTest,
+    Axios,
   },
 };
 </script>

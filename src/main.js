@@ -4,12 +4,14 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import i18n from "./i18n";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 import LoadScript from "vue-plugin-load-script";
 
 import "@/assets/css/tailwind.css";
 
-createApp(App).use(i18n).use(store).use(router).use(LoadScript).mount("#app");
+createApp(App).use(i18n).use(store).use(router).use(LoadScript).use(VueAxios, axios).mount("#app");
 
 LoadScript(
   "https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"
