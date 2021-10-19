@@ -2,11 +2,10 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" id="logo" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Animation
+    <InterAnim
       playerID="lottie1"
-      playerScr="https://assets10.lottiefiles.com/packages/lf20_yzsagzwo.json"
-      :interactivityVisibility=[0,0.85]
-      :interactivityFrames=[0,100]
+      playerSrc="https://assets10.lottiefiles.com/packages/lf20_yzsagzwo.json"
+      :interactivityActions="[{visibility:[0,0.85],type:'seek',frames:[0,100]}]"
     />
     <div style="height: 500px"></div>
     <HelloI18n />
@@ -21,7 +20,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import Animation from "@/components/Animation.vue";
+import InterAnim from "@/components/InterAnim.vue";
 import HelloI18n from "@/components/HelloI18n.vue";
 import TailwindTest from "@/components/TailwindTest.vue";
 import Axios from "@/components/Axios.vue";
@@ -30,7 +29,7 @@ export default {
   name: "Home",
   components: {
     HelloWorld,
-    Animation,
+    InterAnim,
     HelloI18n,
     TailwindTest,
     Axios,

@@ -28,11 +28,30 @@ function loadLocaleMessages() {
   return messages;
 }
 
+const numberFormats = {
+  'en': {
+    currency: {
+      style: 'currency', currency: 'USD'
+    }
+  },
+  'de': {
+    currency: {
+      style: 'currency', currency: 'EUR'
+    }
+  },
+  'fr': {
+    currency: {
+      style: 'currency', currency: 'EUR'
+    }
+  }
+}
+
 export default createI18n({
   legacy: false,
   locale: process.env.VUE_APP_I18N_LOCALE || "en",
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   messages: loadLocaleMessages(),
+  numberFormats
 });
 
 //Important docs for i18n: https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-vue-app-with-vue-i18n

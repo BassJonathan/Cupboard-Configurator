@@ -16,6 +16,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/anim",
+    name: "Animation",
+    component: () =>
+      import("../views/TestAnimation.vue"),
+  },
+  {
+    path: "/i18n",
+    name: "i18n Internationalisierung",
+    component: () =>
+      import("../views/TestI18n.vue"),
+  },
+  {
+    path: "/tailwind",
+    name: "TailwindCSS",
+    component: () =>
+      import("../views/TestTailwind.vue"),
+  },
 ];
 
 const router = createRouter({
