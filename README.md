@@ -80,6 +80,7 @@ Install the packages shown below into the project via the following commands:
 npm install --save vue-plugin-load-script@">=2.0.0"
 npm install --save @lottiefiles/lottie-player
 npm install --save @lottiefiles/lottie-interactivity
+npm install --save bootstrap propper.js jquery
 ```
 
 # Runing the project
