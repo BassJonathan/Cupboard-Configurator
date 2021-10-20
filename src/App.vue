@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/anim">Animation</router-link> |
-    <router-link to="/i18n">i18n</router-link> |
+    <router-link to="/i18n">Internationalisierung</router-link> |
     <router-link to="/tailwind">TailwindCSS</router-link> |
     <router-link to="/bootstrap">Bootstrap</router-link>
   </div>

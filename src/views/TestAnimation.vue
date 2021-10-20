@@ -4,13 +4,12 @@
     <p>Dieser Test ist ein Proof-Of-Concept oder kurz POC!</p>
     <p>Die auf dieser Seite dargestellten Features dienen der Demonstration von Features und stellen eine korrekte Entwicklung sicher.</p>
     <hr>
-    <h3>Looping Animations</h3>
     <Anim
         playerSrc="https://assets9.lottiefiles.com/private_files/lf30_zipzttsv.json"
         :playerAutoplay=true
         playerClass="small"
     />
-    <div style="height: 200px"></div>
+    <div style="height: 100vh"></div>
     <InterAnim
         playerID="anim10"
         playerSrc="01_Choose_Size.json"
@@ -18,7 +17,8 @@
         playerSpeed=0.5
         :interactivityActions="[{visibility:[0.3,0.7],type:'seek',frames:[0,280]}]"
     />
-    <div style="height: 200px"></div>
+    <div style="height: 150vh"></div>
+    <!--
     <InterAnim
         playerID="anim11"
         playerSrc="02_Choose_Fittings.json"
@@ -40,6 +40,7 @@
         :interactivityActions="[{visibility:[0.3,0.7],type:'seek',frames:[0,280]}]"
     />
     <div style="height: 200px"></div>
+    -->
 </div>  
 </template>
 

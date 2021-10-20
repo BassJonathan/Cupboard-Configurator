@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>Test für TailwindCSS</h1>
-    <div class="test shadow-2xl bg-red-600">Hallo</div>
+    <div class="test tw-shadow-2xl tw-bg-red-600">Hallo</div>
 </div>  
 </template>
 

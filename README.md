@@ -101,7 +101,13 @@ npm run lint
 ```
 
 # Fixes for common issues
-The following list contains frequent issues and their fixes and will be updated during development. 
+The following list contains frequent issues and their fixes and will be updated during development.
+## Error: Plugin(s) are missing
+Run the following command to install all plugins specified in the config:
+```
+npm install
+```
+
 ## Error: "PostCSS Plugin tailwindcss required PostCSS 8."
 Run the following commands to fix the issue:
 ```

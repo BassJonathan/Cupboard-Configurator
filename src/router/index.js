@@ -23,7 +23,7 @@ const routes = [{
     },
     {
         path: "/i18n",
-        name: "i18n Internationalisierung",
+        name: "Internationalisierung",
         component: () =>
             import ("../views/TestI18n.vue"),
     },
