@@ -29,19 +29,24 @@ function loadLocaleMessages() {
 }
 
 const numberFormats = {
-  'en': {
-    currency: {
-      style: 'currency', currency: 'USD'
-    }
-  },
   'de': {
     currency: {
       style: 'currency', currency: 'EUR'
     }
   },
+  'en': {
+    currency: {
+      style: 'currency', currency: 'GPB', currencySymbol: '£'
+    }
+  },
   'fr': {
     currency: {
       style: 'currency', currency: 'EUR'
+    }
+  },
+  'en-US': {
+    currency: {
+      style: 'currency', currency: 'USD'
     }
   }
 }
