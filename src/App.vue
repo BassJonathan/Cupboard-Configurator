@@ -5,6 +5,7 @@
     <router-link to="/anim">Animation</router-link> |
     <router-link to="/i18n">i18n</router-link> |
     <router-link to="/tailwind">TailwindCSS</router-link> |
+    <router-link to="/bootstrap">Bootstrap</router-link>
   </div>
   <router-view />
 </template>
@@ -30,4 +31,6 @@
     }
   }
 }
+
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
