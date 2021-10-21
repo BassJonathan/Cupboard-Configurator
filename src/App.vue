@@ -1,7 +1,11 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/anim">Animation</router-link> |
+    <router-link to="/i18n">Internationalisierung</router-link> |
+    <router-link to="/tailwind">TailwindCSS</router-link> |
+    <router-link to="/bootstrap">Bootstrap</router-link>
   </div>
   <router-view />
 </template>
@@ -27,4 +31,6 @@
     }
   }
 }
+
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
