@@ -11,6 +11,7 @@ import 'bootstrap'
 import LoadScript from "vue-plugin-load-script";
 
 import "@/assets/css/tailwind.css";
+import "@/assets/css/main.css";
 
 createApp(App).use(i18n).use(store).use(router).use(LoadScript).use(VueAxios, axios).mount("#app");
 
