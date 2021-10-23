@@ -14,6 +14,8 @@
     <div style="height: 500px"></div>
     <Axios />
     <div style="height: 500px"></div>
+    <ProductInformation />
+    <div style="height: 500px"></div>
   </div>
 </template>
 
@@ -24,6 +26,7 @@ import InterAnim from "@/components/InterAnim.vue";
 import HelloI18n from "@/components/HelloI18n.vue";
 import TailwindTest from "@/components/TailwindTest.vue";
 import Axios from "@/components/Axios.vue";
+import ProductInformation from "@/components/ProductInformation.vue";
 
 export default {
   name: "Home",
@@ -33,6 +36,7 @@ export default {
     HelloI18n,
     TailwindTest,
     Axios,
+    ProductInformation,
   },
 };
 </script>
