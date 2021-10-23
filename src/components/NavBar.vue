@@ -7,12 +7,18 @@
         <div class="nav_links tw-text-white">
             <nav>
                 <ul>
-                    <li> <router-link to="/">Home</router-link> </li>
-                    <li> <router-link to="/about">About</router-link> </li>
-                    <li> <router-link to="/anim">Animation</router-link> </li>
-                    <li> <router-link to="/i18n">Internationalisierung</router-link> </li>
-                    <li> <router-link to="/tailwind">TailwindCSS</router-link> </li>
-                    <li> <router-link to="/bootstrap">Bootstrap</router-link> </li>
+                    <li> <router-link class="nav_link" to="/">Home</router-link> </li>
+                    <li> <router-link class="nav_link" to="/about">About</router-link> </li>
+                    <li> <router-link class="nav_link" to="/anim">Animation</router-link> </li>
+                    <li> <router-link class="nav_link" to="/i18n">Internationalisierung</router-link> </li>
+                    <li> <router-link class="nav_link" to="/tailwind">TailwindCSS</router-link> </li>
+                    <li> <router-link class="nav_link" to="/bootstrap">Bootstrap</router-link> </li>
+                    <li class="nav_link"> | </li>
+                    <li>
+                        <router-link to="/checkout" class="btn btn-primary">
+                            <img src="/img/icons/shopping-cart.png" alt="Einkaufswagen" id="shopping_cart_icon">
+                        </router-link>
+                    </li>
                     <li>
                         <div class="dropdown">
                             <button 
@@ -21,12 +27,13 @@
                                 id="dropdownMenuButtonLamguage" 
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="false">
-                                Sprache
+                                <img src="/img/icons/translate.png" alt="Sprache" id="translation_icon">
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguage">
-                                <li><a class="dropdown-item" @click="locale = 'de'">Deutsch</a></li>
-                                <li><a class="dropdown-item" @click="locale = 'en'">English</a></li>
-                                <li><a class="dropdown-item" @click="locale = 'fr'">Français</a></li>
+                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButtonLanguage">
+                                <li><a class="dropdown-item" :class="{highlight:locale == 'de'}" @click="locale = 'de'">Deutsch</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:locale == 'en'}" @click="locale = 'en'">English</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:locale == 'fr'}" @click="locale = 'fr'">Français</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:locale == 'it'}" @click="locale = 'fr'">Italiano</a></li>
                             </ul>
                         </div>
                     </li>
@@ -38,12 +45,12 @@
                                 id="dropdownMenuButtonCurrency" 
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="false">
-                                Währung
+                                <img src="/img/icons/exchange.png" alt="Währung" id="exchange_icon">
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCurrency">
-                                <li><a class="dropdown-item" @click="currency = 'de'">€</a></li>
-                                <li><a class="dropdown-item" @click="currency = 'ch'">CHFR</a></li>
-                                <li><a class="dropdown-item" @click="currency = 'en'">$</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCurrency" style="width: 20px !important">
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'de'}" @click="currency = 'de'">€ &nbsp;| Euro</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'ch'}" @click="currency = 'ch'">Fr. | Franken</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'en'}" @click="currency = 'en'">$ &nbsp;| Dollar</a></li>
                             </ul>
                         </div>
                     </li>
@@ -63,7 +70,7 @@ export default{
       inheritLocale: true,
       useScope: "global",
     });
-    return { t, locale };
+    return { t, locale};
     },
     mounted() {
         //Scroll behavior
@@ -96,12 +103,35 @@ export default{
     margin: 15px 20px 15px 30px;
     display: inline-block;
 }
+.highlight::before {
+    position: absolute;
+    left: .4rem;
+    content: '✓';
+    font-weight: 600;
+}
+#shopping_cart_icon {
+    height: 25px;
+    width: 25px;
+    margin: 0 10px;
+}
+#translation_icon {
+    height: 25px;
+    width: 25px;
+    display: inline;
+    margin: 0 5px;
+}
+#exchange_icon {
+    height: 25px;
+    width: 25px;
+    display: inline;
+    margin: 0 5px;
+}
 #company_name {
     font-size: 20pt;
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
-    font-family: mainFont;
+    font-family: logoFont;
 }
 .nav_links {
     display: inline-block;
@@ -110,6 +140,12 @@ export default{
 }
 li {
     display: inline-block;
-    padding: 0 20px;    
+    font-family: navFont;
+    padding: 0 10px;
 }
+.dropdown-item {
+    display: inline-block !important;
+}
+
+
 </style>

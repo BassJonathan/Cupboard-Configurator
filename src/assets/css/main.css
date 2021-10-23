@@ -4,8 +4,13 @@
 
 /*Font Faces*/
 @font-face {
-    font-family: mainFont;
-    src: url(brandon_grotesque_bold-webfont.woff2);
+    font-family: logoFont;
+    src: url(brandon_grotesque/brandon_grotesque_bold-webfont.woff2);
+}
+
+@font-face {
+    font-family: navFont;
+    src: url(roboto/Roboto-Medium-webfont.woff);
 }
 
 /*Color scheme background*/
