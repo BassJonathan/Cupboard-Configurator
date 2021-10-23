@@ -14,20 +14,37 @@
                     <li> <router-link to="/tailwind">TailwindCSS</router-link> </li>
                     <li> <router-link to="/bootstrap">Bootstrap</router-link> </li>
                     <li>
-                        <div class="v-model-select">
-                            <select v-model="locale" class="test tw-bg-transparent tw-text-white">
-                                <option value="en">Englisch</option>
-                                <option value="de">Deutsch</option>
-                                <option value="fr">Französich</option>
-                            </select>
+                        <div class="dropdown">
+                            <button 
+                                class="btn btn-secondary dropdown-toggle" 
+                                type="button" 
+                                id="dropdownMenuButtonLamguage" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
+                                Sprache
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLanguage">
+                                <li><a class="dropdown-item" @click="locale = 'de'">Deutsch</a></li>
+                                <li><a class="dropdown-item" @click="locale = 'en'">English</a></li>
+                                <li><a class="dropdown-item" @click="locale = 'fr'">Français</a></li>
+                            </ul>
                         </div>
                     </li>
                     <li>
-                        <div class="v-model-select">
-                            <select v-model="s" class="test tw-bg-transparent tw-text-white">
-                                <option value="de">€</option>
-                                <option value="ch">SFr</option>
-                            </select>
+                        <div class="dropdown">
+                            <button 
+                                class="btn btn-secondary dropdown-toggle" 
+                                type="button" 
+                                id="dropdownMenuButtonCurrency" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
+                                Währung
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCurrency">
+                                <li><a class="dropdown-item" @click="currency = 'de'">€</a></li>
+                                <li><a class="dropdown-item" @click="currency = 'ch'">CHFR</a></li>
+                                <li><a class="dropdown-item" @click="currency = 'en'">$</a></li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
