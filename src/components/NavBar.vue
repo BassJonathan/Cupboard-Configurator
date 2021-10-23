@@ -48,9 +48,9 @@
                                 <img src="/img/icons/exchange.png" alt="Währung" id="exchange_icon">
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCurrency" style="width: 20px !important">
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'de'}" @click="currency = 'de'">€ &nbsp;| Euro</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'ch'}" @click="currency = 'ch'">Fr. | Franken</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'en'}" @click="currency = 'en'">$ &nbsp;| Dollar</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'de'}" @click="changeC('de')">€ &nbsp;| Euro</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'ch'}" @click="changeC('ch')">Fr. | Franken</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:currency == 'en'}" @click="changeC('en')">$ &nbsp;| Dollar</a></li>
                             </ul>
                         </div>
                     </li>
@@ -71,6 +71,16 @@ export default{
       useScope: "global",
     });
     return { t, locale};
+    },
+    computed: {
+        currency() {
+            return this.$store.state.currency
+        }
+    },
+    methods: {
+        changeC(newC) {
+            this.$store.commit('setCurrency', newC)
+        }
     },
     mounted() {
         //Scroll behavior

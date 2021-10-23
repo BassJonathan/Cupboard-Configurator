@@ -23,7 +23,7 @@
         <option value="en-US">$</option>
         <option value="en-GB">£</option>
     </select></p>
-    <p>{{ n(10000, 'currency', setCurrency) }}</p>
+    <p>{{ n(10000, 'currency', currency) }}</p>
     
 
 </div>  
@@ -42,11 +42,11 @@ export default defineComponent({
     });
     return { t, n, locale };
     },
-    data: function () {
-        return {
-            setCurrency: "de"
+    computed: {
+        currency() {
+            return this.$store.state.currency
         }
-    }
+    },
 });
 </script>
 
