@@ -16,7 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 #content_wrapper {
-  margin: 80px 0 0 0;
+  /*margin: 80px 0 0 0;*/
+  
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

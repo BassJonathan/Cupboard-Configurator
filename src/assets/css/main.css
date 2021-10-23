@@ -13,6 +13,29 @@
     src: url(roboto/Roboto-Medium-webfont.woff);
 }
 
+@font-face {
+    font-family: textFont;
+    src: url(roboto/Roboto-Regular-webfont.woff);
+}
+
+@font-face {
+    font-family: headingFont;
+    src: url(roboto/Roboto-Bold-webfont.woff);
+}
+
+/*Fonts*/
+.logo_font {
+    font-family: logoFont;
+}
+
+.text_font {
+    font-family: textFont;
+}
+
+.heading_font {
+    font-family: headingFont;
+}
+
 /*Color scheme background*/
 .bg_main {
     background-color: #012840;

@@ -8,11 +8,11 @@
             <nav>
                 <ul>
                     <li> <router-link class="nav_link" to="/">Home</router-link> </li>
-                    <li> <router-link class="nav_link" to="/about">About</router-link> </li>
-                    <li> <router-link class="nav_link" to="/anim">Animation</router-link> </li>
-                    <li> <router-link class="nav_link" to="/i18n">Internationalisierung</router-link> </li>
-                    <li> <router-link class="nav_link" to="/tailwind">TailwindCSS</router-link> </li>
-                    <li> <router-link class="nav_link" to="/bootstrap">Bootstrap</router-link> </li>
+                    <li> <router-link class="nav_link" to="/about">{{ t("NavBar.products") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/anim">{{ t("NavBar.configurator") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/i18n">{{ t("NavBar.goal") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/tailwind">{{ t("NavBar.about_us") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/bootstrap">{{ t("NavBar.imprint") }}</router-link> </li>
                     <li class="nav_link"> | </li>
                     <li>
                         <router-link to="/checkout" class="btn btn-primary">
@@ -33,7 +33,7 @@
                                 <li><a class="dropdown-item" :class="{highlight:locale == 'de'}" @click="locale = 'de'">Deutsch</a></li>
                                 <li><a class="dropdown-item" :class="{highlight:locale == 'en'}" @click="locale = 'en'">English</a></li>
                                 <li><a class="dropdown-item" :class="{highlight:locale == 'fr'}" @click="locale = 'fr'">Français</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:locale == 'it'}" @click="locale = 'fr'">Italiano</a></li>
+                                <li><a class="dropdown-item" :class="{highlight:locale == 'it'}" @click="locale = 'it'">Italiano</a></li>
                             </ul>
                         </div>
                     </li>

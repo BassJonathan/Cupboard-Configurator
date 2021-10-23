@@ -19,25 +19,25 @@ const routes = [{
         path: "/anim",
         name: "Animation",
         component: () =>
-            import ("../views/TestAnimation.vue"),
+            import ("../views/POC/TestAnimation.vue"),
     },
     {
         path: "/i18n",
         name: "Internationalisierung",
         component: () =>
-            import ("../views/TestI18n.vue"),
+            import ("../views/POC/TestI18n.vue"),
     },
     {
         path: "/tailwind",
         name: "TailwindCSS",
         component: () =>
-            import ("../views/TestTailwind.vue"),
+            import ("../views/POC/TestTailwind.vue"),
     },
     {
         path: "/bootstrap",
         name: "Bootstrap",
         component: () =>
-            import ("../views/TestBootstrap.vue"),
+            import ("../views/POC/TestBootstrap.vue"),
     }
 ];
 

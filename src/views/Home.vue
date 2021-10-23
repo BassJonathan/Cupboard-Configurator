@@ -1,45 +1,54 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" id="logo" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <InterAnim
-      playerID="lottie1"
-      playerSrc="https://assets10.lottiefiles.com/packages/lf20_yzsagzwo.json"
-      :interactivityActions="[{visibility:[0,0.85],type:'seek',frames:[0,100]}]"
-    />
-    <div style="height: 500px"></div>
-    <HelloI18n />
-    <div style="height: 500px"></div>
-    <TailwindTest />
-    <div style="height: 500px"></div>
-    <Axios />
-    <div style="height: 500px"></div>
+<div id="content_wrapper">
+  <div class="welcome_image_container">
+    <img src="/img/cupboard_welcome.jpg" alt="Cupboard Limited Showroom" class="tw-object-cover tw-w-full tw-h-screen tw-absolute">
   </div>
+  <div class="tw-absolute tw-w-5/12  tw-h-1/6 tw-right-0 tw-bottom-1/4 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
+    <img src="/img/cupboard_logo.png" alt="Cupboard Limited Logo" class="tw-h-full tw-p-3 tw-inline-block">
+    <p class="logo_font tw-align-middle tw-text-6xl tw-inline-block tw-text-white tw-pl-6">Cupboard Limited</p>
+  </div>
+  <div class="tw-w-full tw-h-1/6 tw-absolute tw-bottom-0">
+    <div class="tw-w-full tw-h-2 tw-bg-gradient-to-t tw-from-white"></div>
+    <div class="tw-w-full tw-h-full tw-bg-white"></div>
+    <div class="tw-absolute tw-top-2">
+      <p class="heading_font tw-text-5xl tw-pl-10 tw-pt-5 tw-text-primary">{{ t("Home.welcome") }}</p>
+      <p class="text_font tw-text-2xl tw-pl-20 tw-pt-6 tw-text-primary-gradient1">{{ t("Home.offer") }}</p>
+    </div>
+  </div>
+  <div style="height: 1000px"></div>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-import InterAnim from "@/components/InterAnim.vue";
-import HelloI18n from "@/components/HelloI18n.vue";
-import TailwindTest from "@/components/TailwindTest.vue";
-import Axios from "@/components/Axios.vue";
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
-    InterAnim,
-    HelloI18n,
-    TailwindTest,
-    Axios,
+
   },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale};
+    },
 };
 </script>
 
 <style scoped>
-#logo {
-  display: block;
-  margin: 0 auto 0 auto;
+#content_wrapper {
+  width: 100%;
+  height: auto;
 }
+.welcome_image_container {
+  width: 100%;
+  height: 100vh;
+}
+.logo_font {
+  font-family: logoFont;
+}
+
 </style>
