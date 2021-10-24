@@ -39,16 +39,9 @@ const numberFormats = {
       style: 'currency', currency: 'GPB', currencySymbol: '£'
     }
   },
-  /*
-  'fr': {
+  'ch': {
     currency: {
-      style: 'currency', currency: 'EUR'
-    }
-  },
-  */
-  'fr': {
-    currency: {
-      style: 'currency', currency: 'USD'
+      style: 'currency', currency: 'CHF'
     }
   },
   'en-US': {

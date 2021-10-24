@@ -16,15 +16,15 @@
     <p>Die Währung ändert sich "passend" zu der eingestellten Sprache</p>
     <p class=" tw-font-bold tw-m-6 tw-text-red-500">{{ n(10000, 'currency') }}</p>
     <br>
-    <!--
+    
      <p>Wähle eine Währung: 
     <select v-model="setCurrency">
         <option value="de">€</option>
         <option value="en-US">$</option>
         <option value="en-GB">£</option>
     </select></p>
-    <p>{{ n(10000, 'currency', setCurrency) }}</p>
-    -->
+    <p>{{ n(10000, 'currency', currency) }}</p>
+    
 
 </div>  
 </template>
@@ -42,11 +42,11 @@ export default defineComponent({
     });
     return { t, n, locale };
     },
-    data: function () {
-        return {
-            setCurrency: "de"
+    computed: {
+        currency() {
+            return this.$store.state.currency
         }
-    }
+    },
 });
 </script>
 

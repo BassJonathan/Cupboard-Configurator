@@ -1,16 +1,24 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/anim">Animation</router-link> |
-    <router-link to="/i18n">Internationalisierung</router-link> |
-    <router-link to="/tailwind">TailwindCSS</router-link> |
-    <router-link to="/bootstrap">Bootstrap</router-link>
+  <NavBar />
+  <div id="content_wrapper">
+    <router-view />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
+<script>
+import NavBar from "@/components/NavBar.vue";
+export default {
+  components: {
+    NavBar,
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+#content_wrapper {
+  /*margin: 80px 0 0 0;*/
+  
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
