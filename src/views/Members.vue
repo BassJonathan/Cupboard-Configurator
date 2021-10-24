@@ -1,33 +1,5 @@
 <template>
-    <h1>Nachhaltigkeitselement</h1>
 
-	<div class="tw-border-t tw-border-b tw-pt-16 tw-grid tw-grid-cols-2 tw-gap-8 bg-sustainability">
-		<div class="tw-flex tw-flex-col tw-justify-start">
-			<div class="tw-flex tw-flex-col tw-w-full tw-object-cover tw-h-4/6 tw-justify-items-start tw-border tw-rounded-lg tw-overflow-hidden"
-				style="min-heigth:320px">
-				<img src=/img/nachhaltigkeit-schwerpunkt-bild.jpg alt='Error' >
-            </div>
-		</div>
-        <div class="tw-flex tw-flex-col">
-            <div class="tw-flex tw-flex-col tw-gap-4">
-                <p class="tw-text-2xl tw-font-extrabold tw-logo_font">Nachhaltigkeit und Umweltschutz liegen uns am Herzen</p>
-                <h2 class="tw-text-3xl tw-logo_font">deswegen setzen wir zu 100% auf nachhaltige Rohstoffe und faire Arbeitsbedingungen</h2>
-                <p class="tw-text-lg tw-text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus voluptatum nisi maxime obcaecati impedit? Ratione error eum qui quidem? Veniam
-                    accusamus ea repudiandae itaque, explicabo quidem perspiciatis. Culpa, asperiores deserunt.</p>
-                <div class="tw-flex tw-items-center tw-gap-4 tw-my-6 tw-cursor-pointer ">
-                    <div class="tw-bg-green-600 tw-px-5 tw-py-3 tw-text-white tw-rounded-lg tw-w-2/4 tw-text-center">Erfahre mehr</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-400" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-	</div>
-    <div>
 
 
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
@@ -235,39 +207,6 @@
     </div>
 </section>
 
-    <h1>TailwindCSS Footer</h1>
-    <div class="tw-bg-linear-pink-invert pb-12">
-        <div class="mx-auto tw-container pt-20 lg:pt-72 tw-flex tw-flex-col tw-items-center tw-justify-center">
-            <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/cupboard_logo.png" alt="Error"> </div>
-
-            <div class="tw-text-black tw-flex tw-flex-col md:items-center f-f-l pt-3">
-                <p class="tw-text-2xl tw-font-black logo_font">Motto von Cupboard Inc.</p>
-                <div class="my-6 tw-text-base tw-text-color f-f-l">
-                    <ul class="md:flex tw-items-center">
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/">Home</router-link> </li>
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/about">Products</router-link> </li>
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/anim">Configurator</router-link></li>
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/anim">Our Goal</router-link></li>
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/i18n">About Us</router-link></li>
-                        <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/bootstrap">Imprint</router-link></li>
-                    </ul>
-                </div>
-                <div class="tw-text-sm tw-text-color mb-10 f-f-l">
-                    <p>© 2021 Cupboard Inc. All rights reserved</p>
-                </div>
-            </div>
-            <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
-            <div class="tw-flex tw-justify-between tw-items-center pt-12">
-                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/PEFC_Logo_ohne_Text.jpeg" alt="Error"> </div>
-                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Logo_Blauer-Engel-300x300.png" alt="Error"> </div>
-                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/FSC_Logo.jpeg" alt="Error"> </div>
-            </div>
-        </div>
-    </div>     
-</div>  
-
-
-
 
 </template>
 
@@ -320,12 +259,12 @@ h1 {
 .bg-hauptfarbe{
     background-color: #012840;
 }
-.bg-sustainability{
-    background-color: #a5d8a5;
-}
 .tx-yellow{
     color:  #8C8A0A
 }
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 
 </style>
+
+// https://tailwindcss.com/docs
+// https://bootstrap-vue.org/docs/components/button-group
