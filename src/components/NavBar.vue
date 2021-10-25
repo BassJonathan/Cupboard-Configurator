@@ -8,11 +8,11 @@
             <nav>
                 <ul>
                     <li> <router-link class="nav_link" to="/">Home</router-link> </li>
-                    <li> <router-link class="nav_link" to="/about">{{ t("NavBar.products") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/anim">{{ t("NavBar.configurator") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/i18n">{{ t("NavBar.goal") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/tailwind">{{ t("NavBar.about_us") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/bootstrap">{{ t("NavBar.imprint") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/products">{{ t("NavBar.products") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/configurator">{{ t("NavBar.configurator") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/goal">{{ t("NavBar.goal") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/about">{{ t("NavBar.about_us") }}</router-link> </li>
+                    <li> <router-link class="nav_link" to="/imprint">{{ t("NavBar.imprint") }}</router-link> </li>
                     <li class="nav_link"> | </li>
                     <li>
                         <router-link to="/checkout" class="btn btn-primary">

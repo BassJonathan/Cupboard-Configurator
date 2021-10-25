@@ -7,14 +7,48 @@ const routes = [{
         component: Home,
     },
     {
-        path: "/about",
-        name: "About",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        path: "/products",
+        name: "Products",
         component: () =>
-            import ( /* webpackChunkName: "about" */ "../views/About.vue"),
+            import ("../views/Product.vue"),
     },
+    {
+        path: "/configurator",
+        name: "Configurator",
+        component: () =>
+            import ("../views/Configurator.vue"),
+    },
+    {
+        path: "/goal",
+        name: "Our Goal",
+        component: () =>
+            import ("../views/Goal.vue"),
+    },
+    {
+        path: "/about",
+        name: "About Us",
+        component: () =>
+            import ("../views/About.vue"),
+    },
+    {
+        path: "/imprint",
+        name: "Imprint",
+        component: () =>
+            import ("../views/Imprint.vue"),
+    },
+    {
+        path: "/cart",
+        name: "ShoppingCart",
+        component: () =>
+            import ("../views/ShoppingCart.vue"),
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "Error 404",
+        component: () =>
+            import ("../views/404.vue"),
+    },
+    //POC -> Can be deleted before rollout
     {
         path: "/anim",
         name: "Animation",
@@ -39,18 +73,6 @@ const routes = [{
         component: () =>
             import ("../views/POC/TestBootstrap.vue"),
     },
-    {
-        path: "/products",
-        name: "Bootstrap",
-        component: () =>
-            import ("../views/Product.vue"),
-    },
-    {
-        path: "/checkout",
-        name: "ShoppingCart",
-        component: () =>
-            import ("../views/ShoppingCart.vue"),
-    }
 ];
 
 const router = createRouter({
