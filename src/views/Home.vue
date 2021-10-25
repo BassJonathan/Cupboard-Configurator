@@ -32,17 +32,17 @@
           playerClass="full"
           playerContainer="anim1"
           playerSpeed=0.5
-          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,280]},{visibilty:[0.6,1],type:'stop',frames:[280]}]"
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,113]},{visibilty:[0.6,1],type:'stop',frames:[113]}]"
         />
       </div>
       <div class="tw-order-3">
         <InterAnim
           playerID="anim_fittings"
-          playerSrc="data.json"
+          playerSrc="02_Choose_Fittings.json"
           playerClass="full"
           playerContainer="anim2"
           playerSpeed=0.5
-          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,320]},{visibilty:[0.6,1],type:'stop',frames:[320]}]"
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,113]},{visibilty:[0.6,1],type:'stop',frames:[113]}]"
         />
       </div>
       <div class="tw-order-4">
@@ -58,7 +58,7 @@
           playerClass="full"
           playerContainer="anim3"
           playerSpeed=0.5
-          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.8],type:'seek',frames:[0,200]},{visibilty:[0.8,1],type:'stop',frames:[200]}]"
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.8],type:'seek',frames:[0,6]},{visibilty:[0.8,1],type:'stop',frames:[6]}]"
         />
       </div>
     </div>
