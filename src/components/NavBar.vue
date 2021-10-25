@@ -15,7 +15,7 @@
                     <li> <router-link class="nav_link" to="/imprint">{{ t("NavBar.imprint") }}</router-link> </li>
                     <li class="nav_link"> | </li>
                     <li>
-                        <router-link to="/checkout" class="btn btn-primary">
+                        <router-link to="/cart" class="btn btn-primary">
                             <img src="/img/icons/shopping-cart.png" alt="Einkaufswagen" id="shopping_cart_icon">
                         </router-link>
                     </li>
