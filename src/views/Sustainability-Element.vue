@@ -1,7 +1,7 @@
 <template>
     <h1>Nachhaltigkeitselement</h1>
 
-	<div class="tw-border-t tw-border-b tw-pt-16 tw-grid tw-grid-cols-2 tw-gap-8 bg-sustainability">
+	<div class="tw-border-t tw-border-b tw-pt-16 tw-grid tw-grid-cols-2 tw-gap-8 tw-bg-green-dark">
 		<div class="tw-flex tw-flex-col tw-justify-start">
 			<div class="tw-flex tw-flex-col tw-w-full tw-object-cover tw-h-4/6 tw-justify-items-start tw-border tw-rounded-lg tw-overflow-hidden"
 				style="min-heigth:320px">
@@ -10,7 +10,7 @@
 		</div>
         <div class="tw-flex tw-flex-col">
             <div class="tw-flex tw-flex-col tw-gap-4">
-                <p class="tw-text-2xl tw-font-extrabold tw-logo_font">Nachhaltigkeit und Umweltschutz liegen uns am Herzen</p>
+                <p class="tw-text-2xl logo_font">Nachhaltigkeit und Umweltschutz liegen uns am Herzen</p>
                 <h2 class="tw-text-3xl tw-logo_font">deswegen setzen wir zu 100% auf nachhaltige Rohstoffe und faire Arbeitsbedingungen</h2>
                 <p class="tw-text-lg tw-text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Voluptatibus voluptatum nisi maxime obcaecati impedit? Ratione error eum qui quidem? Veniam

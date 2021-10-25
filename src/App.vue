@@ -3,22 +3,22 @@
   <div id="content_wrapper">
     <router-view />
   </div>
+  <Footer />
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   components: {
     NavBar,
+    Footer,
   }
 }
 </script>
 
 <style lang="scss" scoped>
-#content_wrapper {
-  /*margin: 80px 0 0 0;*/
-  
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
