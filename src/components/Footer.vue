@@ -1,5 +1,5 @@
 <template>
-<!--
+
 <div>
     <div class="tw-bg-linear-pink-invert pb-12">
         <div class="mx-auto tw-container pt-20 lg:pt-72 tw-flex tw-flex-col tw-items-center tw-justify-center">
@@ -30,7 +30,8 @@
         </div>
     </div>     
 </div>  
--->
+
+<!--
 <div class="tw-w-100 tw-bg-primary">
     <div class="tw-grid tw-grid-rows-2 tw-grid-cols-4 tw-gap-6 sm:tw-mx-3 md:tw-mx-3 lg:tw-mx-3 xl:tw-mx-3">
         <div class="tw-col-span-2 tw-w-full tw-overflow-hidden tw-bg-gray-500">
@@ -70,6 +71,7 @@
     </div>
     <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
 </div>
+-->
 </template>
 
 <script>

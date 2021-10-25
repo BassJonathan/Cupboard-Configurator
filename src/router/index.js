@@ -38,9 +38,15 @@ const routes = [{
     },
     {
         path: "/cart",
-        name: "ShoppingCart",
+        name: "Shopping Cart",
         component: () =>
             import ("../views/ShoppingCart.vue"),
+    },
+    {
+        path: "/checkout",
+        name: "Checkout",
+        component: () =>
+            import ("../views/Checkout.vue"),
     },
     {
         path: "/:pathMatch(.*)*",
