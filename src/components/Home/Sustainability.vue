@@ -1,22 +1,19 @@
 <template>
-    <div class="tw-w-full tw-bg-green-200 tw-shadow-inner">
-        <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
-            <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-                <div class="tw-w-full tw-py-16 tw-px-10">
-                    <img src="/img/Sustainability.jpg" alt="Sustainability" class="xl:tw-w-full tw-rounded-xl md:tw-w-1/2 tw-object-cover">
-                </div>
+    <div class="tw-border-t tw-border-b tw-py-8 tw-grid tw-grid-cols-2 tw-gap-8 tw-bg-green-dark tw-shadow-inner">
+		<div class="tw-flex tw-flex-col tw-justify-start">
+			<div class="tw-flex tw-flex-col tw-w-full tw-px-8 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+				<img src="/img/sustainability.jpg" alt='Nachhaltigkeit' class="tw-rounded-xl">
             </div>
-            <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-                <div class="xl:tw-w-full tw-py-16 tw-px-10">
-                    <p class="tw-text-3xl heading_font">Nachhaltigkeit und Umweltschutz liegen uns am Herzen</p>
-                    <p class="tw-text-2xl main_font">Deswegen setzen wir zu 100% auf nachhaltige Rohstoffe und faire Arbeitsbedingungen</p>
-                    <p class="tw-text-lg tw-text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus voluptatum nisi maxime obcaecati impedit? Ratione error eum qui quidem? Veniam
-                    accusamus ea repudiandae itaque, explicabo quidem perspiciatis. Culpa, asperiores deserunt.</p>
-                </div>
+		</div>
+        <div class="tw-flex tw-flex-col">
+            <div class="tw-flex tw-flex-col tw-gap-4">
+                <p class="tw-text-3xl tw-font-extrabold heading_font">Gemeinsam für mehr Nachhaltigkeit</p>
+                <p class="tw-text-xl text_font">Wir von der Cupboard Limited ermöglichen es Ihnen so einfach wie noch nie einen Beitrag für den Schutz unserer Umwelt zu leisten.</p>
+                <p class="tw-text-lg ">Mit dem Kauf unserer hochwertigen Produkte stehen Sie für nachhaltige, lokal  und mit erneuerbarer Energie 
+                    produzierte Schränke. <br> Das FSC®-Zertifiziert unseres Holzes garantiert eine kontinuierliche Wiederaufforstung der Wälder.</p>
             </div>
         </div>
-    </div>
+	</div>
 </template>
 
 <script>

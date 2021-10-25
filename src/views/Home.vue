@@ -15,50 +15,56 @@
       <p class="text_font tw-text-2xl tw-pl-20 tw-pt-6 tw-text-primary-gradient1">{{ t("Home.offer") }}</p>
     </div>
   </div>
+  <div class="tw-relative tw-h-10"></div>
   <Sustainability />
-  <div>
-    <p>Konfiguriere deinen Schrank in drei einfachen Schritten</p>
+  <div class="tw-w-full">
+    <p class="tw-text-3xl tw-p-8 heading_font">Konfiguriere deinen individuellen Schrank in drei einfachen Schritten:</p>
   </div>
-  <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
-    <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <Step />
+  <div class="tw-w-full">
+    <div class="tw-w-full tw-grid md:tw-grid-rows-3 md:tw-grid-cols-2 tw-gap-6 tw-grid-rows-6 tw-grid-cols-1">
+      <div class="md:tw-order-1 tw-order-2">
+        Step1
+      </div>
+      <div class="md:tw-order-2 tw-order-1">
+        <InterAnim
+          playerID="anim_size"
+          playerSrc="01_Choose_Size.json"
+          playerClass="full"
+          playerContainer="anim1"
+          playerSpeed=0.5
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,280]},{visibilty:[0.6,1],type:'stop',frames:[280]}]"
+        />
+      </div>
+      <div class="tw-order-3">
+        <InterAnim
+          playerID="anim_fittings"
+          playerSrc="data.json"
+          playerClass="full"
+          playerContainer="anim2"
+          playerSpeed=0.5
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,320]},{visibilty:[0.6,1],type:'stop',frames:[320]}]"
+        />
+      </div>
+      <div class="tw-order-4">
+        Step2
+        </div>
+      <div class="md:tw-order-5 tw-order-6">
+        Step3
+        </div>
+      <div class="md:tw-order-6 tw-order-5">
+        <InterAnim
+          playerID="anim_material"
+          playerSrc="03_Choose_Material.json"
+          playerClass="full"
+          playerContainer="anim3"
+          playerSpeed=0.5
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.8],type:'seek',frames:[0,200]},{visibilty:[0.8,1],type:'stop',frames:[200]}]"
+        />
+      </div>
     </div>
-    <div id="anim1" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <InterAnim
-        playerID="anim_size"
-        playerSrc="01_Choose_Size.json"
-        playerClass="full"
-        playerContainer="anim1"
-        playerSpeed=0.5
-        :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,280]},{visibilty:[0.6,1],type:'stop',frames:[280]}]"
-      />
-    </div>
-    <div id="amim2" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <InterAnim
-        playerID="anim_fittings"
-        playerSrc="02_Choose_Fittings.json"
-        playerClass="full"
-        playerContainer="anim2"
-        playerSpeed=0.5
-        :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,320]},{visibilty:[0.6,1],type:'stop',frames:[320]}]"
-      />
-    </div>
-    <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <Step />
-    </div>
-    <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <Step />
-    </div>
-    <div id="anim3" class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/2 xl:my-1 xl:px-1 xl:w-1/2">
-      <InterAnim
-        playerID="anim_material"
-        playerSrc="03_Choose_Material.json"
-        playerClass="full"
-        playerContainer="anim3"
-        playerSpeed=0.5
-        :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.8],type:'seek',frames:[0,200]},{visibilty:[0.8,1],type:'stop',frames:[200]}]"
-      />
-    </div>
+  </div>
+  <div class="tw-w-full">
+    <p class="tw-text-3xl tw-p-8 heading_font">Hier direkt zum Konfigurator: (BUTTON)</p>
   </div>
   <div style="height: 1000px"></div>
 </div>
@@ -69,14 +75,12 @@
 import { useI18n } from "vue-i18n";
 
 import Sustainability from '@/components/Home/Sustainability.vue'
-import Step from '@/components/Home/Step.vue'
 import InterAnim from '@/components/InterAnim.vue'
 
 export default {
   name: "Home",
   components: {
     Sustainability,
-    Step,
     InterAnim,
   },
   setup() {

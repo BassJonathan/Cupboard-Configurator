@@ -23,15 +23,15 @@
             </div>
             <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
             <div class="tw-flex tw-justify-between tw-items-center pt-12">
-                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Footer/PEFC_Logo_ohne_Text.jpeg" alt="Error"> </div>
-                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Footer/Logo_Blauer-Engel-300x300.png" alt="Error"> </div>
+                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Footer/PEFC_Logo.jpeg" alt="Error"> </div>
+                <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Footer/Logo_Blauer-Engel.png" alt="Error"> </div>
                 <div class="test tw-shadow-12x4 hauptfarbe tw-center tw-bottom" width="79" height="92" viewBox="0 0 79 92" fill="#012840"><img src="/img/Footer/FSC_Logo.jpeg" alt="Error"> </div>
             </div>
         </div>
     </div>     
 </div>  
 
-<!--
+
 <div class="tw-w-100 tw-bg-primary">
     <div class="tw-grid tw-grid-rows-2 tw-grid-cols-4 tw-gap-6 sm:tw-mx-3 md:tw-mx-3 lg:tw-mx-3 xl:tw-mx-3">
         <div class="tw-col-span-2 tw-w-full tw-overflow-hidden tw-bg-gray-500">
@@ -71,7 +71,6 @@
     </div>
     <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
 </div>
--->
 </template>
 
 <script>
