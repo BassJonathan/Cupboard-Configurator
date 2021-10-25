@@ -11,7 +11,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'primary':  {
+                'primary': {
                     'DEFAULT': '#012840',
                     'gradient1': '#003352',
                     'gradient2': '#002033'
@@ -22,7 +22,10 @@ module.exports = {
                     'DEFAULT': '#403F08',
                     'dark': '#8C8A0A'
                 }
-            }
+            },
+            minHeight: (theme) => ({
+                ...theme('spacing'),
+            }),
         },
     },
     variants: {

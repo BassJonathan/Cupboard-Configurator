@@ -40,6 +40,12 @@ const routes = [{
             import ("../views/POC/TestBootstrap.vue"),
     },
     {
+        path: "/products",
+        name: "Bootstrap",
+        component: () =>
+            import ("../views/Product.vue"),
+    },
+    {
         path: "/checkout",
         name: "ShoppingCart",
         component: () =>
