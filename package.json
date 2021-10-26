@@ -12,6 +12,7 @@
     "@lottiefiles/lottie-interactivity": "^1.1.0",
     "@lottiefiles/lottie-player": "^1.4.2",
     "@popperjs/core": "^2.10.2",
+    "@tailwindcss/line-clamp": "^0.2.2",
     "autoprefixer": "^9.8.8",
     "axios": "^0.23.0",
     "bootstrap": "^5.1.3",
