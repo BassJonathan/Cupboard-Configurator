@@ -69,25 +69,25 @@ Project for the lecture "Fallstudie" in the third semester at DHBW Stuttgart.
 * []()
 -->
 
-# Project setup - Frontend
-Install the packages shown below into the project via the following commands when you first start the project:
+# Project setup - Backend
 ```
-npm install --save vue-plugin-load-script@">=2.0.0"
-npm install --save @lottiefiles/lottie-player
-npm install --save @lottiefiles/lottie-interactivity
-npm install --save bootstrap propper.js jquery
+To be determined
 ```
-
-# Runing the project - Frontend
+# Runing the project - Backend
 ## Compiles and hot-reloads for development
 For development-purposes please use the following command. Open the localhost in your browser. I recommend Chrome.
 ```
 npm run serve
 ```
 
+## Starts the backend
+```
+npm run start
+```
+
 ## Compiles and minifies for production
 ```
-npm run build
+npm run bulid
 ```
 
 ## Lints and fixes files
@@ -95,27 +95,8 @@ npm run build
 npm run lint
 ```
 
-# Fixes for common issues - Frontend
-The following list contains frequent issues and their fixes and will be updated during development.
-## Error: Plugin(s) are missing
-Run the following command to install all plugins specified in the config:
-```
-npm install
-```
-
-## Error: "PostCSS Plugin tailwindcss required PostCSS 8."
-Run the following commands to fix the issue:
-```
-npm uninstall tailwindcss postcss autoprefixer
-npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
-```
-
-## Error: "npm ERR! Error: EACCES: permission denied, access '/path'"
-This error usually occurs with MacOS. To solve this problem, use the "sudo" statement before each command.
-E.g.:
-```
-sudo npm install ...
-```
+# Fixes for common issues
+No errors issues so far.
 <!-- GETTING STARTED -->
 <!--
 ## Getting Started
