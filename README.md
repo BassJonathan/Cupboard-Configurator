@@ -75,19 +75,17 @@ If this is not yet the case, you can find the instructions here:
 - Mac: https://bodo-schoenfeld.de/node-js-und-npm-unter-macos-installieren/
 - Windows: https://phoenixnap.com/kb/install-node-js-npm-on-windows (NOT TESTED!)
 
-Install the packages shown below into the project via the following commands:
-```
-npm install --save vue-plugin-load-script@">=2.0.0"
-npm install --save @lottiefiles/lottie-player
-npm install --save @lottiefiles/lottie-interactivity
-npm install --save bootstrap propper.js jquery
-```
-
 # Runing the project
+The project consists of a frontend and a backend, which communicate with each other via the localhost. The backend consumes the API and formats the data. The frontend provides functionalities such as the shopping cart and uses the data from the backend for this. It is therefore essential that both components are started.
 ## Compiles and hot-reloads for development
-For development-purposes please use the following command. Open the localhost in your browser. I recommend Chrome.
+To be able to use the full application you have to start the frontend and the backend separately. Use the following two commands to do this:
 ```
-npm run serve
+npm run frontend:serve
+npm run backend:serve
+```
+If you are not doing any development on the backend, you can also use the following command as an alternative:
+```
+npm run backend:start
 ```
 
 ## Compiles and minifies for production
