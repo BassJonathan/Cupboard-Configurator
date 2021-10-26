@@ -13,7 +13,8 @@
         </p>
     </div>
     <div class="tw-col-span-3 tw-h-52 lg:tw-h-full tw-p-10">
-        <h3 class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold">{{price}}</h3>
+        <h3 v-if='priceStarting' class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold">ab {{price}}</h3>
+        <h3 v-else class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold">{{price}}</h3>
         <div class="tw-h-full tw-w-full tw-relative">
           <button v-if="customizable" class="tw-bg-blue hover:tw-bg-primary tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-absolute tw-bottom-10 tw-right-1/2 tw-transform tw-translate-x-1/2 lg:tw-translate-x-0 lg:tw-right-0">Konfigurieren</button>
           <button v-else class="tw-bg-blue hover:tw-bg-primary tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-absolute tw-bottom-10 tw-right-1/2 tw-transform tw-translate-x-1/2 lg:tw-translate-x-0 lg:tw-right-0">Zum Warenkorb hinzufügen</button>
