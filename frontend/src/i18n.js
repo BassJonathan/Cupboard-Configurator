@@ -36,17 +36,12 @@ const numberFormats = {
   },
   'en': {
     currency: {
-      style: 'currency', currency: 'GPB', currencySymbol: '£'
+      style: 'currency', currency: 'USD', currencySymbol: '$'
     }
   },
   'ch': {
     currency: {
       style: 'currency', currency: 'CHF'
-    }
-  },
-  'en-US': {
-    currency: {
-      style: 'currency', currency: 'USD'
     }
   }
 }
