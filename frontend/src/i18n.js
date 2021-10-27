@@ -7,6 +7,7 @@ import { createI18n } from "vue-i18n";
  * See: https://github.com/intlify/vue-i18n-loader#rocket-i18n-resource-pre-compilation
  */
 /* eslint-disable */
+//Load translations
 function loadLocaleMessages() {
   const locales = require.context("./", true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const messages = {};
@@ -28,6 +29,24 @@ function loadLocaleMessages() {
   return messages;
 }
 
+//Get browser language
+function getBrowserLocale(options = {}) {
+  const defaultOptions = { countryCodeOnly: false }
+  const opt = { ...defaultOptions, ...options }
+  const navigatorLocale =
+    navigator.languages !== undefined
+      ? navigator.languages[0]
+      : navigator.language
+  if (!navigatorLocale) {
+    return undefined
+  }
+  const trimmedLocale = opt.countryCodeOnly
+    ? navigatorLocale.trim().split(/-|_/)[0]
+    : navigatorLocale.trim()
+  return trimmedLocale
+}
+
+//Number formats
 const numberFormats = {
   'de': {
     currency: {
@@ -48,7 +67,7 @@ const numberFormats = {
 
 export default createI18n({
   legacy: false,
-  locale: process.env.VUE_APP_I18N_LOCALE || "en",
+  locale: getBrowserLocale({ countryCodeOnly: true }), //process.env.VUE_APP_I18N_LOCALE || "en",
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   messages: loadLocaleMessages(),
   numberFormats

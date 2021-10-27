@@ -7,10 +7,7 @@
         <h3 class="tw-text-3xl tw-text-center lg:tw-text-left">{{categorieName}}</h3>
         <br>
         <p class="tw-text-lg tw-font-bold tw-text-center lg:tw-text-left">{{ t('ProductInformation.heading') }}</p>
-        <p class="tw-text-center lg:tw-text-left">Schönes {{categorieName}}<br>
-        aus nachahltigem Holz gefertigt<br>
-        mit hochwertigen Schubladen
-        </p>
+        <p class="tw-text-center lg:tw-text-left"> {{ t('ProductInformation.description', {pName: categorieName}) }} </p>
     </div>
     <div class="tw-col-span-3 tw-h-52 lg:tw-h-full tw-p-10">
         <h3 v-if='priceStarting' class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold">ab {{ n(price, 'currency', currency)}}</h3>
