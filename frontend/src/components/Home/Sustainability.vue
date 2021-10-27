@@ -11,6 +11,9 @@
                 <p class="tw-text-xl text_font">Wir von der Cupboard Limited ermöglichen es Ihnen so einfach wie noch nie einen Beitrag für den Schutz unserer Umwelt zu leisten.</p>
                 <p class="tw-text-lg ">Mit dem Kauf unserer hochwertigen Produkte stehen Sie für nachhaltige, lokal  und mit erneuerbarer Energie 
                     produzierte Schränke. <br> Das FSC®-Zertifiziert unseres Holzes garantiert eine kontinuierliche Wiederaufforstung der Wälder.</p>
+                <div class="tw-mt-8"></div>
+                <button type="button" class="btn btn-success tw-w-48 tw-h-12 tw-mx-auto tw-text-xl">Erfahre mehr</button>
+                     
             </div>
         </div>
 	</div>
