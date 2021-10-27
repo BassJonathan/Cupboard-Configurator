@@ -28,8 +28,8 @@
         </div>
         <div class="tw-relative">
           <dt>
-            <div class="tw-absolute tw-flex tw-items-center tw-justify-center tw-h-12 tw-w-12 tw-rounded-md tw-bg-green-dark tw-text-white">
-              <img src="/img/Environment.jpg" alt="Error">
+            <div class="tw-absolute tw-flex tw-items-center tw-justify-center tw-h-12 tw-w-12 tw-rounded-md tw-text-white">
+              <img src="/img/Icon_Nachhaltigkeit_01.jpg" alt="Error">
             </div>
             <p class="tw-ml-16 tw-text-lg tw-leading-6 tw-font-medium tw-text-gray-900">Die Umwelt liegt uns am Herzen</p>
           </dt>
