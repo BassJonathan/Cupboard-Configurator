@@ -1,6 +1,7 @@
 <template>
 
 <div>
+    <!--
     <div>
     <div class="tw-bg-linear-pink-invert pb-12">
         <div class="mx-auto tw-container tw-pt-4 tw-flex tw-flex-col tw-items-center tw-justify-center">
@@ -18,18 +19,17 @@
                         <li class="md:mr-6 cursor-pointer pt-4 lg:py-0"><router-link class="nav_link" to="/imprint">Imprint</router-link></li>
                     </ul>
                 </div>
-                <div class="tw-text-sm tw-text-color mb-10 f-f-l">
-                    <p>© 2021 Cupboard Inc. All rights reserved</p>
-                </div>
             </div>
-            <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
+            
         </div>
     </div>
 </div>
-<div class="tw-w-100 tw-bg-primary">
+-->
+<div class="tw-w-full tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-mb-10 tw-mt-14"></div>
+<div class="tw-w-100">
     <div class="tw-grid tw-grid-rows-2 tw-grid-cols-4 tw-gap-6 sm:tw-mx-3 md:tw-mx-3 lg:tw-mx-3 xl:tw-mx-3">
-        <div class="tw-col-span-2 tw-w-full tw-overflow-hidden tw-bg-gray-500">
-            <div class="t tw-m-6">
+        <div class="tw-col-span-2 tw-w-full tw-overflow-hidden">
+            <div class="tw-m-6 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
                 <img src="/img/cupboard_logo.png" alt="Logo" class="tw-inline-block tw-h-24 tw-w-24">
                 <p class="tw-text-white tw-inline-block logo_font tw-text-4xl tw-pl-5 tw-align-middle">Cupboard Limited</p>
             </div>
@@ -39,14 +39,14 @@
             <img src="/img/Footer/gia-siegel.png" alt="GIA" class="tw-h-28 tw-inline-block tw-pl-12">
         </div>
         <div>
-            <div class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded">
+            <div class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded tw-border-2">
                 <p class="heading_font"><router-link to="/about">Kontakt:</router-link></p>
                 <p><router-link to="/about">Michael Canadi</router-link></p>
                 <p><router-link to="/about">Jochen Herrmann</router-link></p>
             </div>
         </div>
         <div>
-             <div class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded">
+             <div class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded tw-border-2">
                 <p class="heading_font"><router-link to="/imprint">Weitere Informationen:</router-link></p>
                 <p><router-link to="/imprint">Impressum</router-link></p>
                 <p><router-link to="/imprint">Datenschutz</router-link></p>
@@ -59,7 +59,10 @@
             <img src="/img/Footer/FSC_Logo.jpeg" alt="FSC" class="tw-h-28 tw-inline-block tw-pl-4">
          </div>
     </div>
-    <div class="w-9/12 h-0.5 bg-gray-100 rounded-full"></div>
+    <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
+    <div class="tw-text-sm tw-text-color tw-mb-10 tw-w-full tw-text-center tw-pt-6">
+        <p>© 2021 Cupboard Inc. All rights reserved</p>
+    </div>
 </div>
 </div>
 

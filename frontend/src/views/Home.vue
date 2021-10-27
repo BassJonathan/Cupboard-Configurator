@@ -32,7 +32,7 @@
           playerClass="full"
           playerContainer="anim1"
           playerSpeed=0.5
-          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,113]},{visibilty:[0.6,1],type:'stop',frames:[113]}]"
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,111]},{visibilty:[0.6,1],type:'stop',frames:[112]}]"
         />
       </div>
       <div class="tw-order-3">
@@ -42,7 +42,7 @@
           playerClass="full"
           playerContainer="anim2"
           playerSpeed=0.5
-          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,113]},{visibilty:[0.6,1],type:'stop',frames:[113]}]"
+          :interactivityActions="[{visibility:[0,0.2],type:'stop',frames:[0]}, {visibility:[0.2,0.6],type:'seek',frames:[0,111]},{visibilty:[0.6,1],type:'stop',frames:[112]}]"
         />
       </div>
       <div class="tw-order-4">
