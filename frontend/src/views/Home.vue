@@ -3,9 +3,9 @@
   <div class="welcome_image_container">
     <img src="/img/cupboard_welcome.jpg" alt="Cupboard Limited Showroom" class="tw-object-cover tw-w-full tw-h-screen tw-absolute">
   </div>
-  <div class="tw-absolute tw-w-5/12  tw-h-1/6 tw-right-0 tw-bottom-1/4 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
+  <div class="tw-absolute tw-w-auto xl:tw-h-40 lg:tw-h-32 tw-right-0 tw-bottom-1/4 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
     <img src="/img/cupboard_logo.png" alt="Cupboard Limited Logo" class="tw-h-full tw-p-3 tw-inline-block">
-    <p class="logo_font tw-align-middle tw-text-6xl tw-inline-block tw-text-white tw-pl-6">Cupboard Limited</p>
+    <p class="logo_font tw-align-middle xl:tw-text-6xl lg:tw-text-4xl tw-inline-block tw-text-white tw-px-6">Cupboard Limited</p>
   </div>
   <div class="tw-w-full tw-h-1/6 tw-absolute tw-bottom-0">
     <div class="tw-w-full tw-h-2 tw-bg-gradient-to-t tw-from-white"></div>

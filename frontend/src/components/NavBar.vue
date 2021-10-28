@@ -1,25 +1,27 @@
 <template>
-    <div class="nav_container bg_main" id="navbar">
-        <a href="/">
-            <img src="/img/cupboard_logo.png" alt="Cupboard Ltd." id="logo">
-            <span id="company_name" class="tw-text-white">Cupboard Limited</span>
-        </a>
-        <div class="nav_links tw-text-white">
+    <div class="nav_container tw-w-full tw-h-20 tw-fixed tw-top-0 tw-bg-primary tw-flex tw-justify-between" id="navbar">
+        <div class="tw-inline-block lg:tw-h-12">
+            <a href="/">
+                <img src="/img/cupboard_logo.png" alt="Cupboard Ltd." class="tw-h-full tw-inline-block tw-my-4 tw-ml-8 tw-mr-5">
+                <span class="tw-text-white logo_font tw-inline-block tw-align-middle xl:tw-text-3xl lg:tw-text-2xl tw-mr-3">Cupboard Limited</span>
+            </a>
+        </div>
+        <div class="tw-text-white tw-inline-block tw-my-auto">
             <nav>
                 <ul>
-                    <li> <router-link class="nav_link" to="/">Home</router-link> </li>
-                    <li> <router-link class="nav_link" to="/products">{{ t("NavBar.products") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/configurator">{{ t("NavBar.configurator") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/goal">{{ t("NavBar.goal") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/about">{{ t("NavBar.about_us") }}</router-link> </li>
-                    <li> <router-link class="nav_link" to="/imprint">{{ t("NavBar.imprint") }}</router-link> </li>
-                    <li class="nav_link"> | </li>
-                    <li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> <router-link to="/">Home</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> <router-link to="/products">{{ t("NavBar.products") }}</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md">  <router-link to="/configurator">{{ t("NavBar.configurator") }}</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> <router-link to="/goal">{{ t("NavBar.goal") }}</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> <router-link to="/about">{{ t("NavBar.about_us") }}</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> <router-link to="/imprint">{{ t("NavBar.imprint") }}</router-link> </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md"> | </li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md">
                         <router-link to="/cart" class="btn btn-primary">
                             <img src="/img/icons/shopping-cart.png" alt="Einkaufswagen" id="shopping_cart_icon">
                         </router-link>
                     </li>
-                    <li>
+                    <li class="tw-inline-block nav_font tw-px-2 xl:tw-text-lg lg:tw-text-md">
                         <div class="dropdown">
                             <button 
                                 class="btn btn-secondary dropdown-toggle" 
@@ -30,14 +32,14 @@
                                 <img src="/img/icons/translate.png" alt="Sprache" id="translation_icon">
                             </button>
                             <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButtonLanguage">
-                                <li><a class="dropdown-item" :class="{highlight:locale == 'de'}" @click="locale = 'de'">Deutsch</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:locale == 'en'}" @click="locale = 'en'">English</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:locale == 'fr'}" @click="locale = 'fr'">Français</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:locale == 'it'}" @click="locale = 'it'">Italiano</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:locale == 'de'}" @click="locale = 'de'">Deutsch</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:locale == 'en'}" @click="locale = 'en'">English</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:locale == 'fr'}" @click="locale = 'fr'">Français</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:locale == 'it'}" @click="locale = 'it'">Italiano</a></li>
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li class="tw-inline-block nav_font tw-px-2 tw-pr-4 xl:tw-text-lg lg:tw-text-md">
                         <div class="dropdown">
                             <button 
                                 class="btn btn-secondary dropdown-toggle" 
@@ -48,9 +50,9 @@
                                 <img src="/img/icons/exchange.png" alt="Währung" id="exchange_icon">
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCurrency" style="width: 20px !important">
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'de'}" @click="changeC('de')">€ &nbsp;| Euro</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'ch'}" @click="changeC('ch')">Fr. | Franken</a></li>
-                                <li><a class="dropdown-item" :class="{highlight:currency == 'en'}" @click="changeC('en')">$ &nbsp;| Dollar</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:currency == 'de'}" @click="changeC('de')">€ &nbsp;| Euro</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:currency == 'ch'}" @click="changeC('ch')">Fr. | Franken</a></li>
+                                <li><a class="dropdown-item tw-pl-8" :class="{highlight:currency == 'en'}" @click="changeC('en')">$ &nbsp;| Dollar</a></li>
                             </ul>
                         </div>
                     </li>
@@ -100,18 +102,8 @@ export default{
 
 <style lang="scss" scoped>
 .nav_container {
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    top: 0;
     transition: top 0.8s;
     z-index: 999;
-}
-#logo {
-    height: 50px;
-    width: 50px;
-    margin: 15px 20px 15px 30px;
-    display: inline-block;
 }
 .highlight::before {
     position: absolute;
@@ -136,26 +128,7 @@ export default{
     display: inline;
     margin: 0 5px;
 }
-#company_name {
-    font-size: 20pt;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    font-family: logoFont;
-}
-.nav_links {
-    display: inline-block;
-    width: 80vw;
-    text-align: right;
-}
-li {
-    display: inline-block;
-    font-family: navFont;
-    padding: 0 10px;
-}
 .dropdown-item {
     display: inline-block !important;
 }
-
-
 </style>

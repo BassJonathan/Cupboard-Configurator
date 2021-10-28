@@ -28,6 +28,10 @@
     font-family: logoFont;
 }
 
+.nav_font {
+    font-family: navFont;
+}
+
 .text_font {
     font-family: textFont;
 }
