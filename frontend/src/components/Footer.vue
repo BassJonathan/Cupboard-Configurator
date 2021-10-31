@@ -29,7 +29,7 @@
 <div class="tw-w-100">
     <div class="tw-grid tw-grid-rows-2 tw-grid-cols-4 tw-gap-6 sm:tw-mx-3 md:tw-mx-3 lg:tw-mx-3 xl:tw-mx-3">
         <div class="tw-col-span-2 tw-w-full tw-overflow-hidden">
-            <div class="tw-m-6 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
+            <div class="tw-p-3 tw-my-3 tw-bg-gradient-to-br tw-from-primary tw-to-primary-gradient1">
                 <img src="/img/cupboard_logo.png" alt="Logo" class="tw-inline-block tw-h-24 tw-w-24">
                 <p class="tw-text-white tw-inline-block logo_font tw-text-4xl tw-pl-5 tw-align-middle">Cupboard Limited</p>
             </div>

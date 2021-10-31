@@ -14,6 +14,9 @@ export default {
   components: {
     NavBar,
     Footer,
+  },
+  mounted() {
+    this.$store.commit('updateCartFromLocalStorage')
   }
 }
 </script>
