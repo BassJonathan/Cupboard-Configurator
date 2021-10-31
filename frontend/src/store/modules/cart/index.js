@@ -24,6 +24,11 @@ const getters = {
     //Return total of cart
     cartTotal: state => {
         return state.cart.reduce((a, b) => a + (b.price * b.quantity), 0)
+    },
+
+    //Return number of items
+    cartNumberItems: state => {
+        return state.cart.reduce((a, b) => a + (b.quantity), 0)
     }
 }
 

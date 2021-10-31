@@ -3,13 +3,11 @@
         <div class="drawer_background tw-fixed tw-w-full tw-h-full tw-left-0 tw-top-0" :class="{show: active}" @click="$emit('close-product-drawer')"></div>
 
         <div :class="{show: active}" class="drawer tw-w-1/2 tw-mx-auto tw-bg-white tw-fixed tw-p-4 tw-left-1/4 tw-rounded-2xl">
-            <!--<div class="tw-cursor-pointer tw-text-xl tw-text-center tw-p-1 tw-w-14 tw-text-gray-500 tw-border-2 tw-border-solid tw-border-gray-500 tw-rounded-md tw-right-3 tw-float-right hover:tw-bg-gray-300" @click="$emit('close-product-drawer')">X</div>-->
-
             <div v-if="product" class="product-details">
                 <p class="tw-text-2xl tw-font-bold tw-text-center tw-pt-5"> {{ product.name }} wurde zu Ihrem Einkaufswagen hinzugefügt!</p>
                 <div class="tw-w-full tw-p-7">
                     <table class="tw-table-fixed tw-border-collapse tw-border-2 tw-border-gray-400 tw-text-left" v-if="product_total">
-                        <thead>
+                        <thead class="tw-bg-gray-200">
                             <tr>
                                 <th class="tw-w-1/2 tw-border-2 tw-border-gray-400 tw-pl-3">Artikel</th>
                                 <th class="tw-w-1/4 tw-border-2 tw-border-gray-400 tw-pl-3">Preis</th>
@@ -40,7 +38,7 @@
             </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
             <div class="tw-float-right tw-pt-5 tw-px-5">
-                <button type="button" class="btn btn-secondary" @click="$emit('close-product-drawer')">Schließen</button>
+                <button type="button" class="btn btn-secondary" @click="$emit('close-product-drawer')">Weiter einkaufen</button>
                 <router-link class="btn btn-primary tw-ml-4" to="/cart">Zum Einkaufswagen</router-link>
             </div>
         </div>
