@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 
-import cart from "./modules/cart"
+import cart from "./modules/cart";
 
 /*
 function updateLocalStorage(cart) {
@@ -10,7 +10,7 @@ function updateLocalStorage(cart) {
 
 export default createStore({
   state: {
-    currency: 'de', //TO-DO: Change start-state to i18n global loacal
+    currency: "de", //TO-DO: Change start-state to i18n global loacal
     //Cart
     //cart: []
   },
@@ -34,9 +34,10 @@ export default createStore({
     }
     */
   },
-  mutations: { //synchronous
+  mutations: {
+    //synchronous
     setCurrency(state, value) {
-      state.currency = value
+      state.currency = value;
     },
     //Cart
     /*
@@ -72,10 +73,11 @@ export default createStore({
     }
     */
   },
-  actions: { //async for api etc.
-
+  actions: {
+    //async for api etc.
   },
-  modules: { //child stores
+  modules: {
+    //child stores
     cart,
-  }, 
+  },
 });
