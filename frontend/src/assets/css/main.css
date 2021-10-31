@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------------*/
+/* This is the main-css file for global classes like colors or font faces */
+/*------------------------------------------------------------------------*/
+
+/*Font Faces*/
+@font-face {
+    font-family: logoFont;
+    src: url(brandon_grotesque/brandon_grotesque_bold-webfont.woff2);
+}
+
+@font-face {
+    font-family: navFont;
+    src: url(roboto/Roboto-Medium-webfont.woff);
+}
+
+@font-face {
+    font-family: textFont;
+    src: url(roboto/Roboto-Regular-webfont.woff);
+}
+
+@font-face {
+    font-family: headingFont;
+    src: url(roboto/Roboto-Bold-webfont.woff);
+}
+
+/*Fonts*/
+.logo_font {
+    font-family: logoFont;
+}
+
+.nav_font {
+    font-family: navFont;
+}
+
+.text_font {
+    font-family: textFont;
+}
+
+.heading_font {
+    font-family: headingFont;
+}
+
+/*Color scheme background*/
+.bg_main {
+    background-color: #012840;
+}
+
+.bg_blue {
+    background-color: #115D8C;
+}
+
+.bg_red {
+    background-color: #400808;
+}
+
+.bg_green_1 {
+    background-color: #403F08;
+}
+
+.bg_green_2 {
+    background-color: #8C8A0A;
+}
+
+/*Color scheme text*/
+.text_main {
+    background-color: #012840;
+}
+
+.text_blue {
+    background-color: #115D8C;
+}
+
+.text_red {
+    background-color: #400808;
+}
+
+.text_green_1 {
+    background-color: #403F08;
+}
+
+.text_green_2 {
+    background-color: #8C8A0A;
+}
