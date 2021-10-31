@@ -12,6 +12,6 @@ module.exports = {
   },
 
   pwa: {
-    name: 'Cupboard Ltd Configurator'
-  }
+    name: "Cupboard Ltd Configurator",
+  },
 };

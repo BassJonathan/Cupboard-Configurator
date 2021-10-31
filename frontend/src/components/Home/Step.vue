@@ -1,15 +1,9 @@
 <template>
-    <div class="tw-w-full tw-h-full tw-p-7 tw-bg-gray-200">
-        This is a step
-    </div>  
+  <div class="tw-w-full tw-h-full tw-p-7 tw-bg-gray-200">This is a step</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

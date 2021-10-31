@@ -14,8 +14,11 @@ export default {
   components: {
     NavBar,
     Footer,
-  }
-}
+  },
+  mounted() {
+    this.$store.commit("updateCartFromLocalStorage");
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -40,5 +43,5 @@ export default {
   }
 }
 
-@import'~bootstrap/dist/css/bootstrap.css'
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>
