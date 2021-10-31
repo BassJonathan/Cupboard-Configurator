@@ -1,33 +1,23 @@
 <template>
   <div class="tw-mt-20">
     <div class="tw-grid tw-grid-cols-1 tw-divide-y tw-divide-blue">
-      <ProductDrawer :product="product" :active="active.product_drawer" v-on:close-product-drawer="closeProductDrawer()" />
+      <ProductModal :product="product" :active="active.product_drawer" v-on:close-product-drawer="closeProductDrawer()" />
       <div v-for="product in products" :key="product.id">
         <ProductInformation :product="product" v-on:view-product="viewProduct($event)"/>
       </div>
-      <!-- //Objekt übergeben und nicht einzelne Variablen
-      <ProductInformation 
-       v-for="product in products" :key="product.id"
-      :categorieName='product.name'
-      :imageUrl='product.imageUrl'
-      :price='product.price'
-      :customizable='product.customizable'
-      :priceStarting='product.priceStarting'
-      />
-      -->
     </div>
   </div>
 </template>
 
 <script>
 import ProductInformation from "@/components/Products/ProductInformation.vue";
-import ProductDrawer from "@/components/Products/ProductDrawer.vue";
+import ProductModal from "@/components/Products/ProductModal.vue";
 
 export default {
     name: "Products",
     components: {
         ProductInformation,
-        ProductDrawer,
+        ProductModal,
     },
     data() {
       return {
