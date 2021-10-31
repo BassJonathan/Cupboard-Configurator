@@ -21,27 +21,39 @@
         </td>
         <td>
             <div class="tw-pl-10">
-                {{ item.price }}
+                {{ n(item.price, 'currency', currency)}}
             </div>
         </td>
         <td>
             <div class="tw-font-bold tw-pl-10">
-                {{ item_cost }}
+                {{ n(item_cost, 'currency', currency)}}
             </div>
         </td>
     </tr> 
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name:"CartItem",
     props: ['item'],
+    setup() {
+        const { t, n,  locale } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+        return { t, n, locale };
+    },
     computed: {
         item_cost() {
             return this.item.price * this.item.quantity
         },
         product_total() {
             return this.$store.getters.productQuantity(this.product)
+        },
+        currency() {
+            return this.$store.state.currency
         }
     },
     methods: {

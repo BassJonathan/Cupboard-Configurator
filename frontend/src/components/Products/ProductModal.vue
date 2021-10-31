@@ -17,7 +17,7 @@
                         <tbody>
                             <tr>
                                 <td class="tw-border-2 tw-border-gray-400 tw-pl-3">{{ product.name }}</td>
-                                <td class="tw-border-2 tw-border-gray-400 tw-pl-3">{{ product.price }}</td>
+                                <td class="tw-border-2 tw-border-gray-400 tw-pl-3">{{ n(product.price, 'currency', currency)}}</td>
                                 <td class="tw-border-2 tw-border-gray-400 tw-h-full">
                                     <button type="button" class="btn tw-w-1/4 tw-bg-yellow-600 tw-inline-block tw-rounded-l-lg tw-rounded-r-none" @click="removeFromCart()">-</button> 
                                     <div class="tw-w-1/2 tw-text-center tw-inline-block">
@@ -46,12 +46,24 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name: "ProductDrawer",
     props: ["product", "active"],
+    setup() {
+        const { t, n,  locale } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+        return { t, n, locale };
+    },
     computed: {
         product_total() {
             return this.$store.getters.productQuantity(this.product)
+        },
+        currency() {
+            return this.$store.state.currency
         }
     },
     methods: {
