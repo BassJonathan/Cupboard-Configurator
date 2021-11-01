@@ -108,15 +108,31 @@
                   <a
                     class="dropdown-item tw-pl-8"
                     :class="{ highlight: locale == 'de' }"
-                    @click="locale = 'de'"
+                    @click="locale = 'de'; changeTax('de')"
                     >Deutsch</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item tw-pl-8"
+                    :class="{ highlight: locale == 'de-AT' }"
+                    @click="locale = 'de-AT'; changeTax('a')"
+                    >Österreich</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item tw-pl-8"
+                    :class="{ highlight: locale == 'de-CH' }"
+                    @click="locale = 'de-CH'; changeTax('ch')"
+                    >Schweiz</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item tw-pl-8"
                     :class="{ highlight: locale == 'en' }"
-                    @click="locale = 'en'"
+                    @click="locale = 'en'; changeTax('en')"
                     >English</a
                   >
                 </li>
@@ -124,7 +140,7 @@
                   <a
                     class="dropdown-item tw-pl-8"
                     :class="{ highlight: locale == 'fr' }"
-                    @click="locale = 'fr'"
+                    @click="locale = 'fr'; changeTax('fr')"
                     >Français</a
                   >
                 </li>
@@ -132,7 +148,7 @@
                   <a
                     class="dropdown-item tw-pl-8"
                     :class="{ highlight: locale == 'it' }"
-                    @click="locale = 'it'"
+                    @click="locale = 'it'; changeTax('it')"
                     >Italiano</a
                   >
                 </li>
@@ -221,6 +237,9 @@ export default {
     changeC(newC) {
       this.$store.commit("setCurrency", newC);
     },
+    changeTax(country) {
+      this.$store.commit("setTax", country)
+    }
   },
   mounted() {
     //Scroll behavior
