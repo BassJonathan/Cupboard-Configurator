@@ -16,7 +16,8 @@
           </div>
         </div>
       </div>
-      
+
+      <div class="tw-overflow-auto tw-h-3/6">
         <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Böden auswählen
@@ -172,6 +173,7 @@
               </div>
             </div>
           </div>
+      </div>
 
 
             <div class ="flex tw-justify-center tw-align-center tw-mb-12 tw-mt-12 tw-mr-12 tw-ml-12 tw-h-20 tw-w-80 bg-hauptfarbe tw-text-white tw-text-2xl">
@@ -197,7 +199,14 @@
             <p>Gesamt: 450€</p>
           </div>
       </div>
-
+      <div class="border-4 border-bg-hauptfarbe">
+        Zum Warenkorb hinzufügen
+      </div>
+      <div class="flex tw-justify-end tw-align-left">
+          <div class="tw-mr-32 tw-mt-8 tw-w-60 tw-text-2xl tw-tx-hauptfarbe tw-text-white tw-bg-green-dark">
+            <p>Gemeinsam für Nachhaltigkeit, mit unseren Produkten stehen Sie für vollständig durch erneuerbare Energie betriebene Produktion, Filialen und Büros. Lokale Produktionspartner und Holzlieferanten. FSC-Zertifikat Aufforstungszertifikat unseres Holzes</p>
+          </div>
+      </div>
       
     </div>
   </div>
