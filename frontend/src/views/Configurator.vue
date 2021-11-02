@@ -10,14 +10,14 @@
         <div class ="tw-ml-8 tw-mr-8">
           <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Schrankkonfigurator</p>
         </div>
-        <div class="talk-bubble tri-right round right-in">
+        <div class="tw-align-right talk-bubble tri-right round right-in inset-y-0 right-0">
           <div class="talktext">
             <p class="tw-text-4xl tw-text-white tw-text-center">Chatbot<br/></p>
           </div>
         </div>
       </div>
       
-        <div class="tw-ml-8 tw-mr-8 tw-text-2xl tw-tx-hauptfarbe">
+        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Böden auswählen
           </div>
@@ -28,22 +28,177 @@
                 </div>
               </div>
               <div class="tw-flex tw-flex-col">
-                <div class="tw-flex tw-flex-col tw-gap-4">
-                  <p class="tw-text-2xl">
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
                     Holzart
                   </p>
-                  <p class="tw-text-xl text_font">
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
+                    ▼
+                  </p>
+                </div>
+                </div>
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
                     Anzahl Böden
                   </p>
                 </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
+                    ♦
+                  </p>
+                </div>
+                </div>
               </div>
             </div>
+          </div>
 
-        </div>
+          <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+          <div class ="tw-mb-4">
+            Stangen auswählen
+          </div>
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+              <div class="tw-flex tw-flex-col tw-justify-start">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
+                </div>
+              </div>
+              <div class="tw-flex tw-flex-col">
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
+                    
+                  </p>
+                </div>
+                </div>
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    Anzahl Stangen
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
+                    ♦
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+          <div class ="tw-mb-4">
+            Körbe auswählen
+          </div>
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+              <div class="tw-flex tw-flex-col tw-justify-start">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
+                </div>
+              </div>
+              <div class="tw-flex tw-flex-col">
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
+                    
+                  </p>
+                </div>
+                </div>
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    Anzahl Körbe
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
+                    ♦
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+          <div class ="tw-mb-4">
+            Schubladen auswählen
+          </div>
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+              <div class="tw-flex tw-flex-col tw-justify-start">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
+                </div>
+              </div>
+              <div class="tw-flex tw-flex-col">
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
+                    
+                  </p>
+                </div>
+                </div>
+                <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
+                  <p class="tw-text-2xl ">
+                    Anzahl Schubladen
+                  </p>
+                </div>
+                <div>
+                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
+                    ♦
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+            <div class ="flex tw-justify-center tw-align-center tw-mb-12 tw-mt-12 tw-mr-12 tw-ml-12 tw-h-20 tw-w-80 bg-hauptfarbe tw-text-white tw-text-2xl">
+              Direkt zum Warenkorb
+            </div>
+
+
     </div>
 
     <div>
-      <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Preisliste</p>
+      <div class="tw-mr-40 flex tw-justify-end flex-wrap content-center tw-h-12">
+          <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Preisliste</p>
+      </div>
+      <div class="tw-mr-20 tw-mt-8 flex tw-justify-end tw-align-left tw-h-12">
+          <p class="tw-text-2xl tw-tx-hauptfarbe">Ihre aktuelle Konfiguration</p>
+      </div>
+      <div class="flex tw-justify-end tw-align-left">
+          <div class="tw-mr-32 tw-mt-8 tw-h-60 tw-w-60 tw-text-2xl tw-tx-hauptfarbe tw-text-white bg-hauptfarbe">
+            <p>1x Korpus: 100€</p>
+            <p>2x Böden: 150€</p>
+            <p>4x Stangen: 200€</p>
+            <p>-----------------</p>
+            <p>Gesamt: 450€</p>
+          </div>
+      </div>
+
+      
     </div>
   </div>
 
