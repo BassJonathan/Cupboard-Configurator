@@ -30,9 +30,9 @@
                       Holzart
                     </div>
                   </div>
-                  <div class="tw-ml-8">
+                  <div class="tw-ml-8 tw-mr-4">
                     <div class="dropdown inline-block relative">
-                      <button class="bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
+                      <button class="tw-mr-4 bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
                         <span class="mr-1">Mehr</span>
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                       </button>
@@ -154,35 +154,34 @@
       </div>
            
       <div class="tw-flex tw-grid-cols-2 tw-justify-center">
-      <button type="button" class="tw-col-span-1 btn btn-primary tw-text-2xl tw-w-2/6  tw-py-4 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 bg-hauptfarbe tw-text-white tw-flex tw-justify-center"> Direkt zum Warenkorb </button>
-      <img src="/img/icons/arrow_right.png" alt="Error" class="tw-h-20 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 tw-inline-block tw-pl-4"/>
+      <button type="button" href="/cart" class="tw-col-span-1 btn btn-primary tw-text-2xl tw-w-2/6  tw-py-4 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 bg-hauptfarbe tw-text-white tw-flex tw-justify-center"> Direkt zum Warenkorb </button>
+      <router-link to="/cart"><img src="/img/icons/arrow_right.png" alt="Error"  class="tw-h-20 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 tw-inline-block tw-pl-4"/></router-link>
       </div>
 
     </div>
 
     <div>
-      <div class="tw-mr-40 tw-flex tw-justify-left flex-wrap tw-h-12">
+      <div class="tw-ml-8 tw-mb-8 tw-flex tw-justify-left flex-wrap tw-h-12">
           <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Preisliste</p>
       </div>
-      <div class="tw-mr-20 tw-mt-8 flex tw-justify-end tw-align-left tw-h-12">
+      <div class="tw-ml-8 tw-mt-8 tw-flex tw-justify-left tw-h-12">
           <p class="tw-text-2xl tw-tx-hauptfarbe">Ihre aktuelle Konfiguration</p>
       </div>
-      <div class="flex tw-justify-end tw-align-left">
-          <div class="tw-mr-32 tw-mt-8 tw-h-60 tw-w-60 tw-text-2xl tw-tx-hauptfarbe tw-text-white bg-hauptfarbe">
-            <p>1x Korpus: 100€</p>
-            <p>2x Böden: 150€</p>
-            <p>4x Stangen: 200€</p>
-            <p>-----------------</p>
-            <p>Gesamt: 450€</p>
+      <div class="tw-ml-8 tw-mr-8 tw-mb-8 tw-w-full tw-flex tw-justify-left">
+          <div class="tw-mr-8 tw-w-full tw-text-2xl tw-text-white bg-hauptfarbe">
+            <div>1x Korpus: 100€</div>
+            <div>2x Böden: 150€</div>
+            <div>4x Stangen: 200€</div>
+            <div>-----------------</div>
+            <div>Gesamt: 450€</div>
           </div>
       </div>
-      <div class="border-4 border-bg-hauptfarbe">
-        Zum Warenkorb hinzufügen <img src="/img/icons/shopping-cart.jpg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/>
+      <div class="tw-ml-8 border-4 tw-text-2xl tw-tx-hauptfarbe border-bg-hauptfarbe tw-flex tw-justify-left">
+        <router-link to="/cart">Zum Warenkorb hinzufügen <img src="/img/icons/shopping-cart.jpg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></router-link>
       </div>
-      <div class="flex tw-justify-end tw-align-left">
-          <div class="tw-mr-32 tw-mt-8 tw-w-60 tw-text-2xl tw-tx-hauptfarbe tw-text-white tw-bg-green-dark">
-            <p>Gemeinsam für Nachhaltigkeit, mit unseren Produkten stehen Sie für vollständig durch erneuerbare Energie betriebene Produktion, Filialen und Büros. Lokale Produktionspartner und Holzlieferanten. FSC-Zertifikat Aufforstungszertifikat unseres Holzes</p>
-          </div>
+      <div class="tw-ml-8 tw-mt-8 tw-flex tw-justify-left tw-text-white tw-bg-green-dark">
+            <router-link to="/about">Gemeinsam für Nachhaltigkeit, mit unseren Produkten stehen Sie für vollständig durch erneuerbare Energie betriebene Produktion, Filialen und Büros. Lokale Produktionspartner und Holzlieferanten. FSC-Zertifikat Aufforstungszertifikat unseres Holzes</router-link>
+            <img src="/img/footer/FSC_Logo.jpeg" alt="Error" class="tw-h-24 tw-inline-block tw-align-bottom"/>
       </div>
       
     </div>
