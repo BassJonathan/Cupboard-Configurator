@@ -4,187 +4,164 @@
     WIP
   </p>
   
-  <div class ="tw-ml-8 tw-mr-8 tw-grid tw-grid-cols-2">
-    <div>
+  <div class ="tw-ml-8 tw-mr-8 tw-grid tw-grid-cols-3">
+    <div class="tw-col-span-2">
       <div class ="tw-grid tw-grid-cols-2">
         <div class ="tw-ml-8 tw-mr-8">
-          <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Schrankkonfigurator</p>
-        </div>
-        <div class="tw-align-right talk-bubble tri-right round right-in inset-y-0 right-0">
-          <div class="talktext">
-            <p class="tw-text-4xl tw-text-white tw-text-center">Chatbot<br/></p>
-          </div>
+          <p class="tw-text-5xl tw-mb-8 tw-font-bold tw-tx-hauptfarbe">Schrankkonfigurator</p>
         </div>
       </div>
-
-      <div class="tw-overflow-auto tw-h-3/6">
+      <div class="tw-overflow-auto tw-h-4/6">
+      
         <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Böden auswählen
           </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
               <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
                   <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
                 </div>
               </div>
-              <div class="tw-flex tw-flex-col">
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    Holzart
-                  </p>
+              <div class="tw-flex tw-flex-col tw-col-span-2">
+                <div class="tw-mb-8 tw-grid tw-grid-cols-10">
+                  <div class="tw-mb-8 tw-flex tw-flex-col tw-py-2 tw-gap-4 tw-bg-white tw-col-span-8">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Holzart
+                    </div>
+                  </div>
+                  <div class="tw-ml-8">
+                    <div class="dropdown inline-block relative">
+                      <button class="bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
+                        <span class="mr-1">Mehr</span>
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                      </button>
+                      <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Buche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Eiche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Fichte<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
-                    ▼
-                  </p>
-                </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    Anzahl Böden
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
-                    ♦
-                  </p>
-                </div>
+                <div class="tw-grid tw-grid-cols-10">
+                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Anzahl Böden
+                    </div>
+                  </div>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+ 
+        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Stangen auswählen
           </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
               <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
                   <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
                 </div>
               </div>
-              <div class="tw-flex tw-flex-col">
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
-                    
-                  </p>
-                </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    Anzahl Stangen
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
-                    ♦
-                  </p>
-                </div>
+              <div class="tw-flex tw-flex-col tw-col-span-2">
+                <div class="tw-mt-8 tw-grid tw-grid-cols-10">
+                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Anzahl Stangen
+                    </div>
+                  </div>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
                 </div>
               </div>
             </div>
           </div>
 
-        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+
+         <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Körbe auswählen
           </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
               <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
                   <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
                 </div>
               </div>
-              <div class="tw-flex tw-flex-col">
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
-                    
-                  </p>
-                </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    Anzahl Körbe
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
-                    ♦
-                  </p>
-                </div>
+              <div class="tw-flex tw-flex-col tw-col-span-2">
+                <div class="tw-mt-8 tw-grid tw-grid-cols-10">
+                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Anzahl Körbe
+                    </div>
+                  </div>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
+ 
+        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
           <div class ="tw-mb-4">
             Schubladen auswählen
           </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-2 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
+          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
               <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden">
+                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
                   <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
                 </div>
               </div>
-              <div class="tw-flex tw-flex-col">
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    
-                  </p>
+              <div class="tw-flex tw-flex-col tw-col-span-2">
+                <div class="tw-mb-8 tw-grid tw-grid-cols-10">
+                  <div class="tw-mb-8 tw-flex tw-flex-col tw-py-2 tw-gap-4 tw-bg-white tw-col-span-8">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Holzart
+                    </div>
+                  </div>
+                  <div class="tw-ml-8">
+                    <div class="dropdown inline-block relative">
+                      <button class="bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
+                        <span class="mr-1">Mehr</span>
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                      </button>
+                      <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Buche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Eiche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Fichte<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-bg-white">
-                    
-                  </p>
-                </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-2">
-                <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white">
-                  <p class="tw-text-2xl ">
-                    Anzahl Schubladen
-                  </p>
-                </div>
-                <div>
-                  <p class="tw-mr-8 tw-text-2xl tw-font-bold tw-bg-white">
-                    ♦
-                  </p>
-                </div>
+                <div class="tw-grid tw-grid-cols-10">
+                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
+                    <div class="tw-ml-8 tw-text-2xl ">
+                      Anzahl Schubladen
+                    </div>
+                  </div>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
+                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
                 </div>
               </div>
             </div>
           </div>
       </div>
-
-
-            <div class ="flex tw-justify-center tw-align-center tw-mb-12 tw-mt-12 tw-mr-12 tw-ml-12 tw-h-20 tw-w-80 bg-hauptfarbe tw-text-white tw-text-2xl">
-              Direkt zum Warenkorb
-            </div>
-
+           
+      <div class="tw-flex tw-grid-cols-2 tw-justify-center">
+      <button type="button" class="tw-col-span-1 btn btn-primary tw-text-2xl tw-w-2/6  tw-py-4 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 bg-hauptfarbe tw-text-white tw-flex tw-justify-center"> Direkt zum Warenkorb </button>
+      <img src="/img/icons/arrow_right.png" alt="Error" class="tw-h-20 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 tw-inline-block tw-pl-4"/>
+      </div>
 
     </div>
 
     <div>
-      <div class="tw-mr-40 flex tw-justify-end flex-wrap content-center tw-h-12">
+      <div class="tw-mr-40 tw-flex tw-justify-left flex-wrap tw-h-12">
           <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Preisliste</p>
       </div>
       <div class="tw-mr-20 tw-mt-8 flex tw-justify-end tw-align-left tw-h-12">
@@ -200,7 +177,7 @@
           </div>
       </div>
       <div class="border-4 border-bg-hauptfarbe">
-        Zum Warenkorb hinzufügen
+        Zum Warenkorb hinzufügen <img src="/img/icons/shopping-cart.jpg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/>
       </div>
       <div class="flex tw-justify-end tw-align-left">
           <div class="tw-mr-32 tw-mt-8 tw-w-60 tw-text-2xl tw-tx-hauptfarbe tw-text-white tw-bg-green-dark">
@@ -271,7 +248,9 @@ h1 {
 	text-align: left;
   line-height: 1.5em;
 }
-
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
 
 
