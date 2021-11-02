@@ -57,7 +57,7 @@
     <Sustainability />
     <div class="tw-w-full">
       <p class="tw-text-3xl tw-p-8 heading_font">
-        Konfiguriere deinen individuellen Schrank in drei einfachen Schritten:
+        {{ t("Home.text") }}
       </p>
     </div>
     <div class="tw-w-full">
