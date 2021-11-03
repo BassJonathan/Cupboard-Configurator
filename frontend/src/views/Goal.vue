@@ -341,29 +341,10 @@
                     {{ t("Goal.arrowheader") }}
                   </h1>
 
-                  <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12.5"
-                          height="16"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </div>
-
                   <span
                     ><img
+                      class = "bg-gray-200 p-2 mb-5 rounded-full"
                       src="/img/arrow.png"
-                      height="35"
-                      width="30"
                       alt="Error"
                   /></span>
                   
@@ -518,12 +499,14 @@
                 </div>
               </div>
 
+              <!-- Bild  -->
+              <div>
               <span
                     ><img
-                      class="tw-object-cover tw-w-full tw-h-screen tw-absolute"
                       src="/img/production.png"
                       alt="Error"
                   /></span>
+              </div>
 
           </div>
         </div>
