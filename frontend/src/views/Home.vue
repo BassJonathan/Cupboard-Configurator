@@ -68,7 +68,7 @@
           tw-gap-6 tw-grid-rows-6 tw-grid-cols-1
         "
       >
-        <div class="md:tw-order-1 tw-order-2">Step1</div>
+        <div class="md:tw-order-1 tw-order-2">{{ t("Home.step1") }}</div>
         <div class="md:tw-order-2 tw-order-1">
           <InterAnim
             playerID="anim_size"
@@ -97,8 +97,8 @@
             ]"
           />
         </div>
-        <div class="tw-order-4">Step2</div>
-        <div class="md:tw-order-5 tw-order-6">Step3</div>
+        <div class="tw-order-4">{{ t("Home.step2") }}</div>
+        <div class="md:tw-order-5 tw-order-6">{{ t("Home.step3") }}</div>
         <div class="md:tw-order-6 tw-order-5">
           <InterAnim
             playerID="anim_material"
@@ -117,7 +117,7 @@
     </div>
     <div class="tw-w-full">
       <p class="tw-text-3xl tw-p-8 heading_font">
-        Hier direkt zum Konfigurator: (BUTTON)
+        {{ t("Home.configbutton") }} (BUTTON)
       </p>
     </div>
     <div style="height: 1000px"></div>
