@@ -1,4 +1,6 @@
 {
     "heading": "Produktbeschreibung",
-    "description": "Schönes {pName} white aus nachahltigem Holz gefertigt mit hochwertigen Schubladen."
+    "description": "Schönes {pName} white aus nachahltigem Holz gefertigt mit hochwertigen Schubladen.",
+    "cart": "Zum Warenkorb hinzufügen",
+    "config": "Konfigurieren"
 }

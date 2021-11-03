@@ -1,0 +1,11 @@
+{
+    "article": "Article",
+    "amount": "Amount",
+    "price": "Price",
+    "priceg": "Total price",
+    "cart": "Shopping cart",
+    "checkout": "Proceed to checkout",
+    "noarticle": "No items in the shopping cart!",
+    "sortiment": "Discover our wide range here:",
+    "allproducts": "All products"
+}

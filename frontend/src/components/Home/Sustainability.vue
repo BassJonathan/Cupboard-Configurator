@@ -33,24 +33,20 @@
     <div class="tw-flex tw-flex-col">
       <div class="tw-flex tw-flex-col tw-gap-4">
         <p class="tw-text-3xl tw-font-extrabold heading_font">
-          Gemeinsam für mehr Nachhaltigkeit
+          {{ t("Sustainability.sustainable") }}
         </p>
         <p class="tw-text-xl text_font">
-          Wir von der Cupboard Limited ermöglichen es Ihnen so einfach wie noch
-          nie einen Beitrag für den Schutz unserer Umwelt zu leisten.
+          {{ t("Sustainability.sustainabletxt") }}
         </p>
         <p class="tw-text-lg">
-          Mit dem Kauf unserer hochwertigen Produkte stehen Sie für nachhaltige,
-          lokal und mit erneuerbarer Energie produzierte Schränke. <br />
-          Das FSC®-Zertifiziert unseres Holzes garantiert eine kontinuierliche
-          Wiederaufforstung der Wälder.
+          {{ t("Sustainability.sustainabletxt2") }}
         </p>
         <div class="tw-mt-8"></div>
         <button
           type="button"
           class="btn btn-success tw-w-48 tw-h-12 tw-mx-auto tw-text-xl"
         >
-          Erfahre mehr
+          {{ t("Sustainability.button") }}
         </button>
       </div>
     </div>
@@ -58,8 +54,17 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
   name: "Sustainability",
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  },
 };
 </script>
 
