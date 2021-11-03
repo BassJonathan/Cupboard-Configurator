@@ -8,7 +8,7 @@
     </td>
     <td>
       <div class="tw-w-full tw-text-right">
-        Summe ({{ cart_number_items }} Artikel):
+        {{ t("CartSummary.sum") }} ({{ cart_number_items }} {{ t("CartSummary.article") }}):
       </div>
     </td>
     <td>
