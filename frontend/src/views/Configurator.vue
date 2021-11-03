@@ -1,9 +1,5 @@
 <template>
-  <p class="test tw-text-4xl tw-text-center tw-w-100 tw-m-40">
-    This is the Configurator Page! <br />
-    WIP
-  </p>
-  
+<!--
   <div class ="tw-ml-8 tw-mr-8 tw-grid tw-grid-cols-3">
     <div class="tw-col-span-2">
       <div class ="tw-grid tw-grid-cols-2">
@@ -186,12 +182,66 @@
       
     </div>
   </div>
-
+-->
+    <div class="tw-w-full tw-mt-20">
+		<div>
+			<ProductTile :product=selectables />
+		</div>
+		<div class="tw-w-full tw-flex tw-justify-between">
+			<div class="tw-w-2/3">
+				<div v-for="test in selectables.exteriors" :key="test.id">
+					<Exterior :exterior="test" />
+				</div>
+				<div v-for="interior in selectables.interiors" :key="interior.id">
+					<Interior :interior="interior" />
+				</div>
+				<div>
+					<Material :materials=selectables.materials />
+				</div>
+				<div v-for="accessory in selectables.accessories" :key="accessory.id">
+					<Accessory :accessory="accessory" />
+				</div>
+			</div>
+			<div class="tw-h-auto tw-w-1/3">
+				<div class="tw-w-full tw-h-20 tw-sticky tw-top-40 tw-bg-gray-400 tw-rounded-lg tw-mt-6">
+					<div class="tw-text-3xl tw-font-bold">
+						Momentane Konfiguration	
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div>
+		</div>
+    </div>
 </template>
 
 <script>
+import ProductTile from "@/components/Configurator/ProductTile.vue"
+import Exterior from "@/components/Configurator/Exterior.vue"
+import Interior from "@/components/Configurator/Interior.vue"
+import Material from "@/components/Configurator/Material.vue"
+import Accessory from "@/components/Configurator/Accessory.vue"
+
 export default {
   name: "Configurator",
+  components: {
+	  ProductTile,
+	  Exterior,
+	  Interior,
+	  Material,
+	  Accessory,
+  },
+  data() {
+    return {
+      selectables: [],
+    }
+  },
+  async mounted() {
+    const { data } = await this.axios.get("catalogue/products/2");
+    this.selectables = data;
+    console.log(this.selectables);
+  },
 };
 </script>
 
@@ -215,7 +265,6 @@ h1 {
 .bg-lightblue {
   background-color: #115D8C;
 }
-
 
 .talk-bubble {
 	margin: 40px;
@@ -251,7 +300,4 @@ h1 {
   display: block;
 }
 
-
-
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>

@@ -58,7 +58,7 @@
     <div class="tw-w-full">
       <p class="tw-text-4xl tw-font-extrabold tw-p-8 heading_font">
         Probiere jetzt unseren innovativen 3-Schritt-Konfigurator aus:
-        {{ t("Home.text") }}
+        <!--{{ t("Home.text") }}-->
       </p>
     </div>
     <div class="tw-w-full tw-h-auto tw-flex tw-justify-center">
@@ -81,7 +81,7 @@
         <div class="tw-w-full tw-p-5">
             <div class="tw-w-full tw-pb-1 tw-text-5xl tw-font-extrabold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
                 Schritt 1: Bestimme die Maße
-                {{ t("Home.step1") }}
+                <!--{{ t("Home.step1") }}-->
             </div>
             <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-pl-4">
                 Damit dein Schrank genau passt!
@@ -123,7 +123,7 @@
         <div class="tw-w-full tw-p-5">
             <div class="tw-w-full tw-pb-1 tw-text-5xl tw-font-extrabold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
                 Schritt 2: Wähle deine Austattung
-                {{ t("Home.step2") }}
+                <!--{{ t("Home.step2") }}-->
             </div>
             <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-pl-4">
                 Genau für deine Bedürfnisse!
@@ -165,6 +165,7 @@
         <div class="tw-w-full tw-p-5">
             <div class="tw-w-full tw-pb-1 tw-text-5xl tw-font-extrabold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
                 Schritt 3: Wähle das Holz
+                <!--{{ t("Home.step3") }}-->
             </div>
             <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-pl-4">
                 Harmoniert mit jeder Einrichtung!
@@ -206,7 +207,7 @@
       </div>
     </div>
     <div class="tw-w-full tw-flex tw-align-middle tw-justify-center tw-py-16 tw-bg-gray-200 tw-shadow-inner">
-      <div class="tw-text-3xl">Hier direkt zu unserem Konfigurator: {{ t("Home.configbutton") }}</div>
+      <div class="tw-text-3xl">Hier direkt zu unserem Konfigurator: <!--{{ t("Home.configbutton") }}--></div>
         <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/configurator">Zum Konfigurator</router-link>
     </div>
   </div>
