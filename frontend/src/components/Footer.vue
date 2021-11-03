@@ -58,7 +58,7 @@
             class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded tw-border-2"
           >
             <p class="heading_font">
-              <router-link to="/about">Kontakt:</router-link>
+              <router-link to="/about">{{ t("Footer.contact") }}</router-link>
             </p>
             <p><router-link to="/about">Michael Canadi</router-link></p>
             <p><router-link to="/about">Jochen Herrmann</router-link></p>
@@ -69,10 +69,10 @@
             class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded tw-border-2"
           >
             <p class="heading_font">
-              <router-link to="/imprint">Weitere Informationen:</router-link>
+              <router-link to="/imprint">{{ t("Footer.information") }}</router-link>
             </p>
-            <p><router-link to="/imprint">Impressum</router-link></p>
-            <p><router-link to="/imprint">Datenschutz</router-link></p>
+            <p><router-link to="/imprint">{{ t("Footer.imprint") }}</router-link></p>
+            <p><router-link to="/imprint">{{ t("Footer.data") }}</router-link></p>
           </div>
         </div>
         <div class="flex tw-justify-end tw-align-right tw-col-span-2 tw-h-12">
@@ -111,8 +111,17 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
   name: "index",
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  },
   data() {
     return {
       auto: true,
