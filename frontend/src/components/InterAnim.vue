@@ -85,7 +85,7 @@ export default {
       create({
         mode: self.interactivityMode,
         player: "#" + self.playerID,
-        container: self.interactivityContainer,
+        container: "#" + self.interactivityContainer,
         actions: self.interactivityActions,
       });
     });
