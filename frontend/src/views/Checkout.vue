@@ -4,7 +4,7 @@
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
     <div class="tw-w-full tw-flex tw-justify-center">
-      <form action="" id="orderForm" class="tw-w-2/3">
+      <form action="/" method="post" id="orderForm" class="tw-w-2/3">
         <div class="t tw-grid tw-grid-cols-6 tw-gap-3">
           <!-- GRID COL 1 -->
           <div class="form-floating mb-3 tw-col-span-3">
