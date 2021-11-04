@@ -57,7 +57,7 @@
     <Sustainability />
     <div class="tw-w-full">
       <p class="tw-text-4xl tw-font-extrabold tw-p-8 heading_font">
-        {{ t("Home.text") }}‚
+        {{ t("Home.text") }}
       </p>
     </div>
     <div class="tw-w-full tw-h-auto tw-flex tw-justify-center">
