@@ -17,7 +17,9 @@
                     <img :src="interior.imageUrl" :alt="interior.name">
                 </div>
             </div>
-            
+            <button type="button" class="btn btn-primary" @click="addToConfiguration()">Add</button>
+            <button type="button" class="btn btn-primary" @click="removeFromConfiguration()">Remove</button>
+            <div> Anzahl: {{ item_total }}</div>
             
         </div>
     </div>
@@ -26,8 +28,20 @@
 <script>
 export default {
     name: "Interior",
-    props: ["interior"],
-
+    props: ["interior", "product"],
+    methods: {
+        addToConfiguration() {
+            this.$store.commit("addToConfiguration", {interior: this.interior, product: this.product})
+        },
+        removeFromConfiguration() {
+            this.$store.commit("removeFromConfiguration", {interior: this.interior, product: this.product})
+        }
+    },
+    computed: {
+        item_total() {
+            return this.$store.getters.itemQuantity({interior: this.interior, product: this.product})
+        }
+    }
 }
 </script>
 

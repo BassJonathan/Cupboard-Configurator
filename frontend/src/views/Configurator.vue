@@ -193,7 +193,7 @@
 					<Exterior :exterior="test" />
 				</div>
 				<div v-for="interior in selectables.interiors" :key="interior.id">
-					<Interior :interior="interior" />
+					<Interior :interior="interior" :product=selectables />
 				</div>
 				<div>
 					<Material :materials=selectables.materials />

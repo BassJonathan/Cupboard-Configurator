@@ -16,7 +16,16 @@ const getters = {
     else return null;
   },
 
-  //Return ttems in cart
+  //Get quantity of a configuration item
+  itemQuantity: (state) => (payload) => {
+    const item = state.cart.find((i) => i.id === payload.product.id);
+    const part = item.configuration.find((a) => a.id === payload.interior.id);
+
+    if (part) return part.quantity;
+    else return null;
+  },
+
+  //Return items in cart
   cartItems: (state) => {
     return state.cart;
   },
@@ -36,11 +45,29 @@ const mutations = {
   //Add product to cart
   addToCart(state, product) {
     let item = state.cart.find((i) => i.id === product.id);
-
+    console.log (this.item)
     if (item) {
       item.quantity++;
     } else {
-      state.cart.push({ ...product, quantity: 1 });
+      if (product.customizable) {
+        state.cart.push({ ...product, quantity: 1, configuration: [] });
+      } else {
+        state.cart.push({ ...product, quantity: 1 });
+      }
+    }
+
+    updateLocalStorage(state.cart);
+  },
+
+  //Add configuration to product
+  addToConfiguration(state, payload) {
+    let item = state.cart.find((i) => i.id === payload.product.id);
+    let part = item.configuration.find((a) => a.id === payload.interior.id);
+    
+    if (part) {
+      part.quantity++;
+    } else {
+      item.configuration.push({ ...payload.interior, quantity: 1});
     }
 
     updateLocalStorage(state.cart);
@@ -60,6 +87,22 @@ const mutations = {
 
     updateLocalStorage(state.cart);
   },
+
+    //Remove configuration to product
+    removeFromConfiguration(state, payload) {
+      let item = state.cart.find((i) => i.id === payload.product.id);
+      let part = item.configuration.find((a) => a.id === payload.interior.id);
+      
+      if (part) {
+        if (part.quantity > 1) {
+          part.quantity--;
+        } else {
+          item.configuration = item.configuration.filter((i) => i.id !== part.id);
+        }
+      }
+  
+      updateLocalStorage(state.cart);
+    },
 
   //Manually use local storage. If Vue-Persistentstate is implemented this can be deleted
   updateCartFromLocalStorage(state) {
