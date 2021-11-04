@@ -7,14 +7,18 @@
             <div class="tw-w-full tw-flex tw-justify-between">
                 
                 <div class="tw-w-1/2 tw-align-middle">
-                    <form action="">
+                    <form>
                         <div class="form-floating tw-mb-3">
-                            <input type="height" class="form-control" id="floatingHeight" placeholder="100cm">
+                            <input type="height" class="form-control" id="floatingHeight" :value="100" @change="updateHeight">
                             <label for="floatingHeight">Höhe in cm</label>
                         </div>
                         <div class="form-floating">
-                            <input type="width" class="form-control" id="floatingWidth" placeholder="Password">
+                            <input type="width" class="form-control" id="floatingWidth" :value="100" @change="updateWidth">
                             <label for="floatingWidth">Breite in cm</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="depth" class="form-control" id="floatingDepth" :value="100" @change="updateDepth">
+                            <label for="floatingWidth">Tiefe in cm</label>
                         </div>
                     </form>
                 </div>
@@ -30,8 +34,23 @@
 <script>
 export default {
     name: "Exterior",
-    props: ["exterior"],
-
+    props: ["exterior", "product"],
+    methods: {
+        updateHeight(e) {
+            this.$store.commit("updateHeight", {product: this.product, height: e.target.value})
+        },
+        updateWidth(e) {
+            this.$store.commit("updateWidth", {product: this.product, width: e.target.value})
+        },
+        updateDepth(e) {
+            this.$store.commit("updateDepth", {product: this.product, depth: e.target.value})
+        }
+    },
+    created() {
+        this.$store.commit("updateHeight", {product: this.product, height: 100})
+        this.$store.commit("updateWidth", {product: this.product, width: 100})
+        this.$store.commit("updateDepth", {product: this.product, depth: 100})
+    }
 }
 </script>
 

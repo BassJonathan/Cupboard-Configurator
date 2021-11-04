@@ -8,7 +8,7 @@
                         <img :src="material.imageUrl" :alt="material.name">
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" :id="flexRadio + material.name">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" :id="flexRadio + material.name" >
                         <label class="form-check-label" :for="flexRadio + material.name">
                             {{ material.name}}
                         </label>
@@ -23,7 +23,7 @@
 <script>
 export default {
     name: "Material",
-    props: ["materials"],
+    props: ["materials", "product"],
 
 }
 </script>
