@@ -1,26 +1,25 @@
 <template>
     <div class="tw-w-full">
-        <div class="tw-full tw-bg-gray-200 tw-rounded-lg tw-m-6 tw-px-10 tw-py-6">
-            <div class="tw-text-4xl tw-font-bold">
+        <div class="tw-full tw-bg-gray-200 tw-rounded-lg tw-my-6 tw-mr-6 tw-px-10 tw-py-6 tw-shadow-inner">
+            <div class="tw-text-4xl tw-font-bold tw-pb-4">
                 {{ interior.name}}
             </div>
-            <div>
-                Kosten: {{ interior.price }}
-            </div>
-            <div class="tw-w-full tw-flex tw-justify-between">
-                <div class="tw-w-1/2">
-                    <form action="">
-                        <input type="number" value="0">
-                    </form>
+            <div class="tw-w-full tw-flex tw-justify-between tw-items-center">
+                <div class="tw-w-1/4">
+                    <img :src="interior.imageUrl" :alt="interior.name" class="tw-object-contain tw-rounded-xl">
                 </div>
-                <div class="tw-w-96">
-                    <img :src="interior.imageUrl" :alt="interior.name">
+                <div class="tw-w-2/3">
+                    <div class="tw-text-2xl tw-mb-10">
+                        Preis: {{ interior.price }}
+                    </div>
+                    <div class="tw-flex tw-w-1/2 tw-h-10">
+                        <button type="button" class="btn btn-primary tw-w-1/6 tw-rounded-l-lg tw-rounded-r-none" @click="removeFromConfiguration()">-</button>
+                        <div class="tw-h-full tw-w-1/4 tw-flex tw-justify-center tw-flex-col tw-text-center tw-box-border tw-border-t-2 tw-border-b-2 tw-border-gray-400">{{ item_total }}</div>
+                        <button type="button" class="btn btn-primary tw-w-1/6 tw-rounded-r-lg tw-rounded-l-none" @click="addToConfiguration()">+</button>
+                    </div>
                 </div>
+                
             </div>
-            <button type="button" class="btn btn-primary" @click="addToConfiguration()">Add</button>
-            <button type="button" class="btn btn-primary" @click="removeFromConfiguration()">Remove</button>
-            <div> Anzahl: {{ item_total }}</div>
-            
         </div>
     </div>
 </template>

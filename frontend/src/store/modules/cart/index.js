@@ -1,6 +1,7 @@
 //Update local storage with changes
-function updateLocalStorage(cart) {
+function updateLocalStorage(cart, customIndex) {
   localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("customIndex", JSON.stringify(customIndex));
 }
 
 const state = {
@@ -23,7 +24,7 @@ const getters = {
     const part = item.configuration.find((a) => a.id === payload.interior.id);
 
     if (part) return part.quantity;
-    else return null;
+    else return 0;
   },
 
   //Return items in cart
@@ -48,7 +49,6 @@ const getters = {
     const item = state.cart.find((i) => i.configurationID === configId);
     if (item) return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
     else return null;
-    
   },
 
   //Return number of items
@@ -62,6 +62,27 @@ const getters = {
 
   getCustomIndex: (state) => {
     return state.customIndex;
+  },
+
+  getDimensions: (state) => (configId) => {
+    const item = state.cart.find((i) => i.configurationID === configId);
+    var response = {};
+    if (item.height) {
+      response.height = item.height;
+    } else {
+      response.height = null;
+    }
+    if (item.width) {
+      response.width = item.width;
+    } else {
+      response.width = null;
+    }
+    if (item.depth) {
+      response.depth = item.depth;
+    } else {
+      response.depth = null;
+    }
+    return response;
   },
 };
 
@@ -79,7 +100,7 @@ const mutations = {
       }
     }
 
-    updateLocalStorage(state.cart);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Bump index for custom products
@@ -114,7 +135,7 @@ const mutations = {
       console.log("ERROR Adding item")
     }
 
-    updateLocalStorage(state.cart);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Remove item from cart
@@ -132,7 +153,7 @@ const mutations = {
       }
     }
 
-    updateLocalStorage(state.cart);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Remove configuration to product
@@ -147,7 +168,7 @@ const mutations = {
         item.configuration = item.configuration.filter((i) => i.id !== part.id);
       }
     }
-      updateLocalStorage(state.cart);
+      updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update height of product
@@ -156,7 +177,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.height = payload.height;
 
-      updateLocalStorage(state.cart);
+      updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update width of product
@@ -165,7 +186,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.width = payload.width;
 
-      updateLocalStorage(state.cart);
+      updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update depth of product
@@ -174,7 +195,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.depth = payload.depth;
 
-      updateLocalStorage(state.cart);
+      updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Manually use local storage. If Vue-Persistentstate is implemented this can be deleted
@@ -182,6 +203,10 @@ const mutations = {
     const cart = localStorage.getItem("cart");
     if (cart) {
       state.cart = JSON.parse(cart);
+    }
+    const customIndex = localStorage.getItem("customIndex")
+    if (customIndex) {
+      state.customIndex = JSON.parse(customIndex);
     }
   },
 };

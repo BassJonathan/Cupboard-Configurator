@@ -1,23 +1,26 @@
 <template>
     <div class="tw-w-full">
-        <div class="tw-text-3xl tw-font-bold">
-            Accessories
-        </div>
-        <div>
-            Kosten: {{ accessory.price }}
-        </div>
-        <div class="tw-flex tw-justify-around">
-            <div class="tw-w-1/2">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @change="toggleAccessory(accessory)">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">{{ accessory.name }}</label>
+        <div class="tw-full tw-bg-gray-200 tw-rounded-lg tw-mt-6 tw-mr-6 tw-px-10 tw-py-6 tw-shadow-inner">
+            <div class="tw-text-4xl tw-font-bold tw-pb-4">
+            {{accessory.name}}
+            </div>
+            <div class="tw-w-full tw-flex tw-justify-between tw-items-center">
+                <div class="tw-w-1/4">
+                    <img :src="accessory.imageUrl" :alt="accessory.name" class="tw-object-contain tw-rounded-xl">
+                </div>
+                <div class="tw-w-2/3">
+                    <div class="tw-text-2xl tw-mb-10">
+                        Preis: {{ accessory.price }}
+                    </div>
+                    <div class="tw-flex tw-w-1/2 tw-h-10">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @change="toggleAccessory(accessory)">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">{{ accessory.name }}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tw-w-96">
-                <img :src="accessory.imageUrl" :alt="accessory.name">
-            </div>
         </div>
-        
     </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
     <div class="tw-w-full tw-flex tw-justify-between">
-        This is a test
 			<div class="tw-w-2/3">
 				<div v-for="exterior in selectables.exteriors" :key="exterior.id">
 					<Exterior :exterior="exterior" :product=selectables :configId="configId"/>
@@ -16,7 +15,7 @@
 				</div>
 			</div>
 			<div class="tw-h-auto tw-w-1/3">
-				<div class="tw-w-full tw-sticky tw-top-40 tw-bg-gray-400 tw-rounded-lg tw-mt-6">
+				<div class="tw-w-full tw-sticky tw-top-40 tw-bg-gray-200 tw-rounded-lg tw-mt-6 tw-shadow-xl tw-border tw-border-solid tw-border-gray-300">
 					<div class="tw-text-sm">
 						<ConfigSummary :parts="parts" :product=selectables :configId="configId" />
 					</div>

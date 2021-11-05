@@ -1,26 +1,30 @@
 <template>
     <div class="tw-w-full">
-        <div>Zusammenfassung:</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Artikel</th>
-                    <th>Menge</th>
-                    <th>Preis</th>
-                    <th>Preis gesamt</th>
-                </tr>
-            </thead>
-            <tbody>
-                <SummaryItem v-for="part in parts" :key="part.id" :item="part" />
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th>Hallo</th>
-                    <th> {{ configuration_total }} </th>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="tw-w-full tw-p-5">
+            <div class="tw-text-3xl tw-font-semibold tw-pb-3">
+                Zusammenfassung:
+            </div>
+            <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1 tw-mb-4"></div>
+            <table class="tw-table-fixed tw-border-collapse tw-text-center tw-w-full tw-text-xl">
+                <thead class="tw-bg-gray-300 tw-border-b-2 tw-border-gray-400">
+                    <tr class="tw-divide-x-2 tw-divide-gray-500 tw-divide-opacity-60">
+                        <th class="tw-w-1/3">Artikel</th>
+                        <th class="tw-w-1/6">Menge</th>
+                        <th class="tw-w-1/6">Preis</th>
+                        <th class="tw-w-1/6">Preis gesamt</th>
+                    </tr>
+                </thead>
+                <tbody class="tw-divide-y-2">
+                    <SummaryItem v-for="part in parts" :key="part.id" :item="part" />
+                    <tr class="tw-font-semibold">
+                        <th></th>
+                        <th></th>
+                        <th>Summe:</th>
+                        <th> {{ configuration_total }} </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
