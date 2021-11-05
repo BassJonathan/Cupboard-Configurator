@@ -5,6 +5,7 @@ function updateLocalStorage(cart) {
 
 const state = {
   cart: [],
+  customIndex: 0,
 };
 
 const getters = {
@@ -45,32 +46,60 @@ const getters = {
   //Retur toal of configuration
   configurationTotal: (state) => (product) => {
     const item = state.cart.find((i) => i.id === product.id);
-    console.log(item)
-    return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
+    if (item) return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
+    else return null;
+    
   },
 
   //Return number of items
   cartNumberItems: (state) => {
     return state.cart.reduce((a, b) => a + b.quantity, 0);
   },
+
+  getCustomProducts: (state) => {
+    return state.cart.filter((i) => i.customizable);
+  },
+
+  getCustomIndex: (state) => {
+    return state.customIndex;
+  },
 };
 
 const mutations = {
   //Add product to cart
-  addToCart(state, product) {
+  addToCart(state, payload) {
+    if (payload.product.customizable) {
+      state.cart.push({ ...payload.product, configurationID: payload.configId, configuration: [] });
+    } else {
+      let item = state.cart.find((i) => i.id === payload.product.id);
+      if (item) {
+        item.quantity++;
+      } else {
+        state.cart.push({ ...payload.product, configurationID: "none", quantity: 1 });
+      }
+    }
+
+    /*
     let item = state.cart.find((i) => i.id === product.id);
     console.log (this.item)
     if (item) {
       item.quantity++;
     } else {
       if (product.customizable) {
-        state.cart.push({ ...product, quantity: 1, configuration: [] });
+        state.cart.push({ ...product, configurationID: state.customIndex, configuration: [] });
+        state.customIndex = state.customIndex + 1
       } else {
         state.cart.push({ ...product, quantity: 1 });
       }
     }
+    */
 
     updateLocalStorage(state.cart);
+  },
+
+  //Bump index for custom products
+  bumpCustomIndex(state) {
+    state.customIndex = state.customIndex + 1;
   },
 
   //Add configuration to product
@@ -119,7 +148,8 @@ const mutations = {
 
   //Update height of product
   updateHeight(state, payload) {
-    let item = state.cart.find((i) => i.id === payload.product.id);
+    let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = items.find((i) => i.configurationID === payload.configId);
     item.height = payload.height;
 
       updateLocalStorage(state.cart);
@@ -127,7 +157,8 @@ const mutations = {
 
   //Update width of product
   updateWidth(state, payload) {
-    let item = state.cart.find((i) => i.id === payload.product.id);
+    let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = items.find((i) => i.configurationID === payload.configId);
     item.width = payload.width;
 
       updateLocalStorage(state.cart);
@@ -135,7 +166,8 @@ const mutations = {
 
   //Update depth of product
   updateDepth(state, payload) {
-    let item = state.cart.find((i) => i.id === payload.product.id);
+    let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = items.find((i) => i.configurationID === payload.configId);
     item.depth = payload.depth;
 
       updateLocalStorage(state.cart);

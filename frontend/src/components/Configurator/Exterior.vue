@@ -34,23 +34,26 @@
 <script>
 export default {
     name: "Exterior",
-    props: ["exterior", "product"],
+    props: ["exterior", "product", "configId"],
     methods: {
         updateHeight(e) {
-            this.$store.commit("updateHeight", {product: this.product, height: e.target.value})
+            this.$store.commit("updateHeight", {product: this.product, configId: this.configId, height: e.target.value})
         },
         updateWidth(e) {
-            this.$store.commit("updateWidth", {product: this.product, width: e.target.value})
+            this.$store.commit("updateWidth", {product: this.product, configId: this.configId, width: e.target.value})
         },
         updateDepth(e) {
-            this.$store.commit("updateDepth", {product: this.product, depth: e.target.value})
+            this.$store.commit("updateDepth", {product: this.product, configId: this.configId, depth: e.target.value})
         }
     },
+    /*
     created() {
-        this.$store.commit("updateHeight", {product: this.product, height: 100})
+        console.log(this.configId)
+        this.$store.commit("updateHeight", {product: this.product, configId: this.configId, height: 100})
         this.$store.commit("updateWidth", {product: this.product, width: 100})
         this.$store.commit("updateDepth", {product: this.product, depth: 100})
     }
+    */
 }
 </script>
 

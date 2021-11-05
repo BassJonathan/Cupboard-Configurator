@@ -183,10 +183,24 @@
     </div>
   </div>
 -->
-    <div class="tw-w-full tw-mt-20">
+  <div class="tw-w-full tw-mt-20">
 		<div>
-			<ProductTile :product=selectables />
+      Konfigurierbare Produkte:
+        <div v-for="product in products" :key="product.id">
+          <ProductTile :product="product" v-on:config-product="configProduct($event)" />
+        </div>
 		</div>
+    <div>
+      Konfigurationen
+      <div v-for=" custom in customs" :key="custom.id">
+        <ConfigurationSelect :product="custom" v-on:edit-product="editProduct($event)"/>
+      </div>
+    </div>
+    <div>
+      Konfigurator
+      <ConfigurationTool :product="product" :configId="configId" />
+    </div>
+    <!--
 		<div class="tw-w-full tw-flex tw-justify-between">
 			<div class="tw-w-2/3">
 				<div v-for="exterior in selectables.exteriors" :key="exterior.id">
@@ -210,44 +224,67 @@
 				</div>
 			</div>
 		</div>
-		
-		<div>
+		-->
+		  <div>
 		</div>
-    </div>
+  </div>
 </template>
 
 <script>
 import ProductTile from "@/components/Configurator/ProductTile.vue"
-import Exterior from "@/components/Configurator/Exterior.vue"
-import Interior from "@/components/Configurator/Interior.vue"
-import Material from "@/components/Configurator/Material.vue"
-import Accessory from "@/components/Configurator/Accessory.vue"
-import ConfigSummary from "@/components/Configurator/ConfigSummary.vue"
+import ConfigurationTool from "@/components/Configurator/ConfigurationTool.vue"
+import ConfigurationSelect from "@/components/Configurator/ConfigurationSelect.vue"
+
 
 export default {
   name: "Configurator",
   components: {
 	  ProductTile,
-	  Exterior,
-	  Interior,
-	  Material,
-	  Accessory,
-    ConfigSummary,
+    ConfigurationTool,
+    ConfigurationSelect,
   },
   data() {
-    return {
-      selectables: [],
+    return{
+      categories: [],
+      products: [],
+      product: null,
+      configId: null,
     }
   },
   async mounted() {
-    const { data } = await this.axios.get("catalogue/products/2");
-    this.selectables = data;
+    const { data } = await this.axios.get("catalogue/categories");
+    this.categories = data;
+    for (const categorie of this.categories) {
+      const { data } = await this.axios.get(
+        "catalogue/categories/" + categorie.id + "/products"
+      );
+      this.products.push(data[0]);
+    }
+    this.products = this.products.filter((i) => i.customizable);
   },
   computed: {
-    parts() {
-      return this.$store.getters.itemConfiguration(this.selectables);
+    customs() {
+      return this.$store.getters.getCustomProducts;
+    },
+    customId() {
+      return this.$store.getters.getCustomIndex;
     }
   },
+  methods: {
+    addToCart() {
+      this.$store.commit("addToCart", {product: this.product, configId: this.configId});
+      this.$store.commit("bumpCustomIndex")
+    },
+    configProduct(product) {
+      console.log(this.customId)
+      this.product = product;
+      this.configId = this.customId;
+      this.addToCart()
+    },
+    editProduct(configId) {
+      this.configId = configId
+    }
+  }
 };
 </script>
 
