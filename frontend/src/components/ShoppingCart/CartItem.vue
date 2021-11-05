@@ -12,7 +12,7 @@
               tw-flex-col
             "
             :src="item.imageUrl"
-            alt=""
+            :alt="item.name"
           />
         </div>
         <div class="tw-h-full tw-w-1/2 tw-flex tw-justify-center tw-flex-col">
@@ -21,7 +21,7 @@
       </div>
     </td>
     <td>
-      <div class="tw-w-auto tw-h-12 tw-flex tw-pl-10">
+      <div v-if="!item.customizable" class="tw-w-auto tw-h-12 tw-flex tw-pl-10">
         <button
           type="button"
           class="
@@ -55,17 +55,27 @@
           +
         </button>
       </div>
+      <div v-else>
+        Hello i am an customized product
+      </div>
     </td>
     <td>
-      <div class="tw-pl-10">
+      <div v-if="!item.customizable" class="tw-pl-10">
         {{ n(item.price, "currency", currency) }}
       </div>
-    </td>
-    <td>
-      <div class="tw-font-bold tw-pl-10">
-        {{ n(item_cost, "currency", currency) }}
+      <div v-else>
+        Hello i am an customized product
       </div>
     </td>
+    <td>
+      <div v-if="!item.customizable" class="tw-font-bold tw-pl-10">
+        {{ n(item_cost, "currency", currency) }}
+      </div>
+      <div v-else>
+        Hello i am an customized product
+      </div>
+    </td>
+    -->
   </tr>
 </template>
 

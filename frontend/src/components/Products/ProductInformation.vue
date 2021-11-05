@@ -52,10 +52,6 @@
             tw-translate-x-1/2
             lg:tw-translate-x-0 lg:tw-right-0
           "
-
-          @click="
-            addToCart();
-          "
           to="/configurator"
           >{{ t("ProductInformation.config") }}</router-link
         >
