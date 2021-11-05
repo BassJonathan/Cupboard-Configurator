@@ -9,7 +9,7 @@
         <div class="tw-flex tw-justify-around">
             <div class="tw-w-1/2">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @change="toggleAccessory(accessory)">
                     <label class="form-check-label" for="flexSwitchCheckDefault">{{ accessory.name }}</label>
                 </div>
             </div>
@@ -24,7 +24,13 @@
 <script>
 export default {
     name: "Accessory",
-    props: ["accessory"],
+    props: ["accessory", "configId"],
+    methods: {
+        toggleAccessory(e) {
+            console.log(e)
+            this.$store.commit("addToConfiguration", {interior: e, configId: this.configId, product: this.product})
+        }
+    }
 
 }
 </script>

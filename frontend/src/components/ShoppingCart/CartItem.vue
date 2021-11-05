@@ -98,7 +98,7 @@ export default {
       this.$store.commit("addToCart", {product: this.item});
     },
     removeFromCart() {
-      this.$store.commit("removeFromCart", this.item);
+      this.$store.commit("removeFromCart", {product: this.item});
     },
   },
 };

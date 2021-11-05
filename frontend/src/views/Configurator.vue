@@ -193,10 +193,10 @@
     <div>
       Konfigurationen
       <div v-for=" custom in customs" :key="custom.id">
-        <ConfigurationSelect :product="custom" v-on:edit-product="editProduct($event)"/>
+        <ConfigurationSelect :product="custom" :configId="configId" v-on:edit-configuration="editConfiguration($event)" v-on:delete-configuration="deleteConfiguration($event)"/>
       </div>
     </div>
-    <div>
+    <div v-if="configId != null">
       Konfigurator
       <ConfigurationTool :product="product" :configId="configId" />
     </div>
@@ -275,14 +275,17 @@ export default {
       this.$store.commit("addToCart", {product: this.product, configId: this.configId});
       this.$store.commit("bumpCustomIndex")
     },
+    deleteConfiguration(configId) {
+      this.$store.commit("removeFromCart", {product: this.product, configId: configId});
+      this.configId = null;
+    },
     configProduct(product) {
-      console.log(this.customId)
       this.product = product;
       this.configId = this.customId;
       this.addToCart()
     },
-    editProduct(configId) {
-      this.configId = configId
+    editConfiguration(configId) {
+      this.configId = configId;
     }
   }
 };

@@ -19,7 +19,7 @@ const getters = {
 
   //Get quantity of a configuration item
   itemQuantity: (state) => (payload) => {
-    const item = state.cart.find((i) => i.id === payload.product.id);
+    const item = state.cart.find((i) => i.configurationID === payload.configId);
     const part = item.configuration.find((a) => a.id === payload.interior.id);
 
     if (part) return part.quantity;
@@ -32,8 +32,8 @@ const getters = {
   },
 
   //Return configuration of item
-  itemConfiguration: (state) => (product) => {
-    const item = state.cart.find((i) => i.id === product.id);
+  itemConfiguration: (state) => (configId) => {
+    const item = state.cart.find((i) => i.configurationID === configId);
     if (item) return item.configuration;
     else return null;
   },
@@ -44,8 +44,8 @@ const getters = {
   },
 
   //Retur toal of configuration
-  configurationTotal: (state) => (product) => {
-    const item = state.cart.find((i) => i.id === product.id);
+  configurationTotal: (state) => (configId) => {
+    const item = state.cart.find((i) => i.configurationID === configId);
     if (item) return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
     else return null;
     
@@ -79,21 +79,6 @@ const mutations = {
       }
     }
 
-    /*
-    let item = state.cart.find((i) => i.id === product.id);
-    console.log (this.item)
-    if (item) {
-      item.quantity++;
-    } else {
-      if (product.customizable) {
-        state.cart.push({ ...product, configurationID: state.customIndex, configuration: [] });
-        state.customIndex = state.customIndex + 1
-      } else {
-        state.cart.push({ ...product, quantity: 1 });
-      }
-    }
-    */
-
     updateLocalStorage(state.cart);
   },
 
@@ -104,27 +89,46 @@ const mutations = {
 
   //Add configuration to product
   addToConfiguration(state, payload) {
-    let item = state.cart.find((i) => i.id === payload.product.id);
-    let part = item.configuration.find((a) => a.id === payload.interior.id);
+    let item = state.cart.find((i) => i.configurationID === payload.configId);
+    if (payload.interior.selectableCategory === 'interior') {
+      console.log(item)
+      let part = item.configuration.find((a) => a.id === payload.interior.id);
     
-    if (part) {
-      part.quantity++;
+      if (part) {
+        part.quantity++;
+      } else {
+        item.configuration.push({ ...payload.interior, quantity: 1});
+      }
+    } else if (payload.interior.selectableCategory === 'material') {
+      console.log(item)
+      item.configuration = item.configuration.filter((i) => i.selectableCategory !== 'material');
+      item.configuration.push({ ...payload.interior, quantity: 1})
+    } else if (payload.interior.selectableCategory === 'accessories') {
+      let accessory = item.configuration.find((a) => a.id === payload.interior.id);
+      if (accessory) {
+        item.configuration = item.configuration.filter((i)=> i.selectableCategory !== 'accessories');
+      } else {
+        item.configuration.push({ ...payload.interior, quantity: 1})
+      }
     } else {
-      item.configuration.push({ ...payload.interior, quantity: 1});
+      console.log("ERROR Adding item")
     }
 
     updateLocalStorage(state.cart);
   },
 
   //Remove item from cart
-  removeFromCart(state, product) {
-    let item = state.cart.find((i) => i.id === product.id);
-
-    if (item) {
-      if (item.quantity > 1) {
-        item.quantity--;
-      } else {
-        state.cart = state.cart.filter((i) => i.id !== product.id);
+  removeFromCart(state, payload) {
+    if (payload.product.customizable) {
+      state.cart = state.cart.filter((i) => i.configurationID !== payload.configId)
+    } else {
+      let item = state.cart.find((i) => i.id === payload.product.id);
+      if (item) {
+        if (item.quantity > 1) {
+          item.quantity--;
+        } else {
+          state.cart = state.cart.filter((i) => i.id !== payload.product.id);
+        }
       }
     }
 
@@ -133,7 +137,7 @@ const mutations = {
 
   //Remove configuration to product
   removeFromConfiguration(state, payload) {
-    let item = state.cart.find((i) => i.id === payload.product.id);
+    let item = state.cart.find((i) => i.configurationID === payload.configId);
     let part = item.configuration.find((a) => a.id === payload.interior.id);
       
     if (part) {
@@ -148,8 +152,8 @@ const mutations = {
 
   //Update height of product
   updateHeight(state, payload) {
-    let items = state.cart.filter((i) => i.id === payload.product.id)
-    let item = items.find((i) => i.configurationID === payload.configId);
+    //let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.height = payload.height;
 
       updateLocalStorage(state.cart);
@@ -157,8 +161,8 @@ const mutations = {
 
   //Update width of product
   updateWidth(state, payload) {
-    let items = state.cart.filter((i) => i.id === payload.product.id)
-    let item = items.find((i) => i.configurationID === payload.configId);
+    //let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.width = payload.width;
 
       updateLocalStorage(state.cart);
@@ -166,13 +170,12 @@ const mutations = {
 
   //Update depth of product
   updateDepth(state, payload) {
-    let items = state.cart.filter((i) => i.id === payload.product.id)
-    let item = items.find((i) => i.configurationID === payload.configId);
+    //let items = state.cart.filter((i) => i.id === payload.product.id)
+    let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.depth = payload.depth;
 
       updateLocalStorage(state.cart);
   },
-  
 
   //Manually use local storage. If Vue-Persistentstate is implemented this can be deleted
   updateCartFromLocalStorage(state) {

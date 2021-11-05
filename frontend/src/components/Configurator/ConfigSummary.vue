@@ -32,11 +32,10 @@ export default {
     components: {
         SummaryItem,
     },
-    props: ["parts", "product"],
+    props: ["parts", "product", "configId"],
     computed: {
         configuration_total() {
-            console.log(this.product)
-            return this.$store.getters.configurationTotal(this.product);
+            return this.$store.getters.configurationTotal(this.configId);
         }
     }
 }

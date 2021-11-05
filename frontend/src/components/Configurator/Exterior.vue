@@ -9,15 +9,15 @@
                 <div class="tw-w-1/2 tw-align-middle">
                     <form>
                         <div class="form-floating tw-mb-3">
-                            <input type="height" class="form-control" id="floatingHeight" :value="100" @change="updateHeight">
+                            <input type="height" class="form-control" id="floatingHeight" :value=null @change="updateHeight">
                             <label for="floatingHeight">Höhe in cm</label>
                         </div>
                         <div class="form-floating">
-                            <input type="width" class="form-control" id="floatingWidth" :value="100" @change="updateWidth">
+                            <input type="width" class="form-control" id="floatingWidth" :value=null @change="updateWidth">
                             <label for="floatingWidth">Breite in cm</label>
                         </div>
                         <div class="form-floating">
-                            <input type="depth" class="form-control" id="floatingDepth" :value="100" @change="updateDepth">
+                            <input type="depth" class="form-control" id="floatingDepth" :value=null @change="updateDepth">
                             <label for="floatingWidth">Tiefe in cm</label>
                         </div>
                     </form>
@@ -50,10 +50,11 @@ export default {
     created() {
         console.log(this.configId)
         this.$store.commit("updateHeight", {product: this.product, configId: this.configId, height: 100})
-        this.$store.commit("updateWidth", {product: this.product, width: 100})
-        this.$store.commit("updateDepth", {product: this.product, depth: 100})
+        this.$store.commit("updateWidth", {product: this.product, configId: this.configId, width: 100})
+        this.$store.commit("updateDepth", {product: this.product, configId: this.configId, depth: 100})
     }
     */
+    
 }
 </script>
 

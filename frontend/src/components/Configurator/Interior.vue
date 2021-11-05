@@ -28,18 +28,19 @@
 <script>
 export default {
     name: "Interior",
-    props: ["interior", "product"],
+    props: ["interior", "product", "configId"],
     methods: {
         addToConfiguration() {
-            this.$store.commit("addToConfiguration", {interior: this.interior, product: this.product})
+            console.log(this.interior)
+            this.$store.commit("addToConfiguration", {interior: this.interior, configId: this.configId, product: this.product})
         },
         removeFromConfiguration() {
-            this.$store.commit("removeFromConfiguration", {interior: this.interior, product: this.product})
+            this.$store.commit("removeFromConfiguration", {interior: this.interior, configId: this.configId, product: this.product})
         }
     },
     computed: {
         item_total() {
-            return this.$store.getters.itemQuantity({interior: this.interior, product: this.product})
+            return this.$store.getters.itemQuantity({interior: this.interior, configId: this.configId, product: this.product})
         }
     }
 }
