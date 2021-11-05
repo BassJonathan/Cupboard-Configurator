@@ -7,7 +7,7 @@
       tw-grid
       tw-grid-cols-2
       tw-gap-8
-      tw-bg-green-dark
+      tw-bg-green
       tw-shadow-inner
     "
   >

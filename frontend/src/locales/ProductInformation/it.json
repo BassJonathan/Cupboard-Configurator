@@ -1,4 +1,6 @@
 {
     "heading": "Descrizione del prodotto",
-    "description": "Bella {pName} in legno di palo con cassetti di alta qualità"
+    "description": "Bella {pName} in legno di palo con cassetti di alta qualità",
+    "cart": "Aggiungi al carrello",
+    "config": "Configura"
 }

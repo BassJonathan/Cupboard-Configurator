@@ -53,7 +53,7 @@
             lg:tw-translate-x-0 lg:tw-right-0
           "
           to="/configurator"
-          >Konfigurieren</router-link
+          >{{ t("ProductInformation.config") }}</router-link
         >
         <button
           v-else
@@ -77,7 +77,7 @@
             addToCart();
           "
         >
-          Zum Warenkorb hinzufügen
+          {{ t("ProductInformation.cart") }}
         </button>
       </div>
     </div>
