@@ -1,5 +1,6 @@
 <template>
   <div id="content_wrapper">
+    <SustainabilityHover />
     <div class="welcome_image_container">
       <img
         src="/img/cupboard_welcome.jpg"
@@ -54,7 +55,7 @@
       </div>
     </div>
     <div class="tw-relative tw-h-10"></div>
-    <Individuality />
+    <ProductDisplay />
     <Sustainability />
     <div class="tw-w-full">
       <p class="tw-text-4xl tw-font-extrabold tw-p-8 heading_font">
@@ -213,14 +214,16 @@ import { useI18n } from "vue-i18n";
 
 import Sustainability from "@/components/Home/Sustainability.vue";
 import InterAnim from "@/components/InterAnim.vue";
-import Individuality from "@/components/Home/Individuality.vue";
+import ProductDisplay from "@/components/Home/ProductDisplay.vue";
+import SustainabilityHover from "@/components/Home/SustainabilityHover.vue"
 
 export default {
   name: "Home",
   components: {
     Sustainability,
     InterAnim,
-    Individuality,
+    ProductDisplay,
+    SustainabilityHover
   },
   setup() {
     const { t, locale } = useI18n({
