@@ -99,7 +99,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub1_1") }}
                       </h4>
                     </div>
@@ -140,7 +140,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub1_2") }}
                       </h4>
                     </div>
@@ -181,7 +181,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub1_3") }}
                       </h4>
                     </div>
@@ -248,7 +248,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub2_1") }}
                       </h4>
                     </div>
@@ -289,7 +289,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub2_2") }}
                       </h4>
                     </div>
@@ -330,7 +330,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub2_3") }}
                       </h4>
                     </div>
@@ -340,13 +340,15 @@
                   <h1 class="pb-4 tw-text-center text-2xl font-semibold">
                     {{ t("Goal.arrowheader") }}
                   </h1>
-
-                  <span
-                    ><img
-                      class = "bg-gray-200 p-2 mb-5 rounded-full"
+                  <div class="tw-flex tw-justify-center tw-w-full">
+                    <img
+                      class = "tw-h-16 tw-w-16"
                       src="/img/arrow.png"
                       alt="Error"
-                  /></span>
+                  />
+                  </div>
+
+                
                   
                   </div>
                 </div>
@@ -408,7 +410,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub3_1") }}
                       </h4>
                     </div>
@@ -449,7 +451,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub3_2") }}
                       </h4>
                     </div>
@@ -490,7 +492,7 @@
 
                       <!-- Text zu Pfeil hinzufügen -->
 
-                      <h4 class="text-md text-gray-900 dark:text-gray-100">
+                      <h4 class="text-xl text-gray-900 dark:text-gray-100">
                         {{ t("Goal.sub3_3") }}
                       </h4>
                     </div>
@@ -498,17 +500,18 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Bild  -->
-              <div>
-              <span
-                    ><img
-                      src="/img/production.png"
-                      alt="Error"
-                  /></span>
-              </div>
-
           </div>
+
+          <!-- Bild  -->
+              <div>
+
+                <img
+                  class ="tw-w-full"
+                  src="/img/production.png"
+                  alt="Error"
+                />
+
+              </div>
         </div>
       </div>
     </div>
