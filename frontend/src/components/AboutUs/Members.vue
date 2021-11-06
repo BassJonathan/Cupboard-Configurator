@@ -171,33 +171,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 5vw;
-}
 
-.test {
-  height: 10vw;
-  width: 10vw;
-  margin: 0 auto;
-}
-.tx-hauptfarbe {
-  color: #012840;
-}
-.bg-hauptfarbe {
-  background-color: #012840;
-}
-.bg-cb-brown{
-  background-color:  #403F08;
-}
-.bg-cb-red{
-  background-color:  #400808;
-}
-
-.tx-yellow {
-  color: #8c8a0a;
-}
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>
 
-// https://tailwindcss.com/docs //
-https://bootstrap-vue.org/docs/components/button-group

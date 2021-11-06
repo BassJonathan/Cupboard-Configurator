@@ -55,24 +55,6 @@
 
 </script>
 
-<style scoped>
-h1 {
-  font-size: 5vw;
-}
+<style>
 
-.test {
-  height: 10vw;
-  width: 10vw;
-  margin: 0 auto;
-}
-.tx-hauptfarbe {
-  color: #012840;
-}
-.bg-hauptfarbe {
-  background-color: #012840;
-}
-.tx-yellow {
-  color: #8c8a0a;
-}
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>
