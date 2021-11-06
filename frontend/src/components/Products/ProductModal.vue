@@ -151,10 +151,10 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", this.product);
+      this.$store.commit("addToCart", {product: this.product});
     },
     removeFromCart() {
-      this.$store.commit("removeFromCart", this.product);
+      this.$store.commit("removeFromCart", {product: this.product});
     },
   },
 };

@@ -54,6 +54,7 @@
       </div>
     </div>
     <div class="tw-relative tw-h-10"></div>
+    <Individuality />
     <Sustainability />
     <div class="tw-w-full">
       <p class="tw-text-4xl tw-font-extrabold tw-p-8 heading_font">
@@ -212,12 +213,14 @@ import { useI18n } from "vue-i18n";
 
 import Sustainability from "@/components/Home/Sustainability.vue";
 import InterAnim from "@/components/InterAnim.vue";
+import Individuality from "@/components/Home/Individuality.vue";
 
 export default {
   name: "Home",
   components: {
     Sustainability,
     InterAnim,
+    Individuality,
   },
   setup() {
     const { t, locale } = useI18n({

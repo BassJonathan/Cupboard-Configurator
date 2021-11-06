@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
-      <div class="text-center pb-12">
-        <h1
+      <div class="tw-mt-16 text-center pb-12">
+        <p
           class="
             font-bold
             text-3xl
@@ -13,7 +13,7 @@
           "
         >
           {{ t("Members.headline") }}
-        </h1>
+        </p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div
@@ -58,6 +58,7 @@
             </div>
           </div>
         </div>
+        
         <div
           class="
             w-full
@@ -185,6 +186,13 @@ h1 {
 .bg-hauptfarbe {
   background-color: #012840;
 }
+.bg-cb-brown{
+  background-color:  #403F08;
+}
+.bg-cb-red{
+  background-color:  #400808;
+}
+
 .tx-yellow {
   color: #8c8a0a;
 }

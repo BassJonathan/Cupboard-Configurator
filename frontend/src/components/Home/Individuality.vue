@@ -1,14 +1,12 @@
 <template>
   <div
     class="
-      tw-border-t
-      tw-border-b
+      tw-mt-16
+      tw-mb-16
       tw-py-8
       tw-grid
       tw-grid-cols-2
       tw-gap-8
-      bg-hauptfarbe
-      tw-shadow-inner
     "
   >
     <div class="tw-flex tw-flex-col tw-justify-start">
@@ -24,21 +22,21 @@
         "
       >
         <img
-          src="/img/Individual_Cupboards.jpeg"
+          src="/img/Customer_is_king.jpeg"
           alt="Error"
-          class="tw-rounded-xl tw-w-3/6"
+          class="tw-ml-16 tw-rounded-xl tw-w-3/6"
         />
       </div>
     </div>
     <div class="tw-flex tw-flex-col">
       <div class="tw-flex tw-flex-col tw-gap-4">
-        <p class="tw-text-3xl tw-font-extrabold heading_font tw-text-white">
+        <p class="tw-text-3xl tw-font-extrabold heading_font">
           Der Kunde ist bei uns König
         </p>
-        <p class="tw-text-xl text_font tw-text-white">
+        <p class="tw-text-xl text_font">
           Unsere Top Schränke nur für Sie. Passen Sie sich Ihren Schrank nach Ihren Wünschen an. 
         </p>
-        <p class="tw-text-lg tw-text-white">
+        <p class="tw-text-lg">
           Schon ab 250€, nur für Sie.
         </p>
         <div class="tw-mt-8"></div>
