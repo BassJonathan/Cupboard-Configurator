@@ -114,40 +114,13 @@
 import { useI18n } from "vue-i18n";
 
 export default {
-  name: "index",
+  name: "Footer",
   setup() {
     const { t, locale } = useI18n({
       inheritLocale: true,
       useScope: "global",
     });
     return { t, locale };
-  },
-  data() {
-    return {
-      auto: true,
-      light: false,
-      dark: false,
-    };
-  },
-  mounted() {},
-  methods: {
-    toggle(event) {
-      if (event.target.value === "auto") {
-        this.auto = true;
-        this.light = false;
-        this.dark = false;
-      }
-      if (event.target.value === "light") {
-        this.auto = false;
-        this.light = true;
-        this.dark = false;
-      }
-      if (event.target.value === "dark") {
-        this.auto = false;
-        this.light = false;
-        this.dark = true;
-      }
-    },
   },
 };
 </script>

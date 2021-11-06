@@ -1,5 +1,6 @@
 <template>
   <div id="content_wrapper">
+    <SustainabilityHover />
     <div class="welcome_image_container">
       <img
         src="/img/cupboard_welcome.jpg"
@@ -214,6 +215,7 @@ import { useI18n } from "vue-i18n";
 import Sustainability from "@/components/Home/Sustainability.vue";
 import InterAnim from "@/components/InterAnim.vue";
 import Individuality from "@/components/Home/Individuality.vue";
+import SustainabilityHover from "@/components/Home/SustainabilityHover.vue"
 
 export default {
   name: "Home",
@@ -221,6 +223,7 @@ export default {
     Sustainability,
     InterAnim,
     Individuality,
+    SustainabilityHover
   },
   setup() {
     const { t, locale } = useI18n({
