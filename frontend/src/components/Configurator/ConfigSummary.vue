@@ -4,6 +4,10 @@
             <div class="tw-text-3xl tw-font-semibold tw-pb-3">
                 Zusammenfassung:
             </div>
+            <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1"></div>
+            <div class="tw-w-full tw-text-lg tw-text-gray-500 tw-text-left tw-py-2">
+                BxHxT: {{product.width}} x {{product.height}} x {{product.depth}}
+            </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1 tw-mb-4"></div>
             <table class="tw-table-fixed tw-border-collapse tw-text-center tw-w-full tw-text-xl">
                 <thead class="tw-bg-gray-300 tw-border-b-2 tw-border-gray-400">
@@ -15,12 +19,13 @@
                     </tr>
                 </thead>
                 <tbody class="tw-divide-y-2">
+                    <SummaryItem :item="product" />
                     <SummaryItem v-for="part in parts" :key="part.id" :item="part" />
                     <tr class="tw-font-semibold">
                         <th></th>
                         <th></th>
                         <th>Summe:</th>
-                        <th> {{ configuration_total }} </th>
+                        <th> {{ configuration_total + product.price }}</th>
                     </tr>
                 </tbody>
             </table>

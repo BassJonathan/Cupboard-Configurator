@@ -19,6 +19,9 @@
 					<div class="tw-text-sm">
 						<ConfigSummary :parts="parts" :product=selectables :configId="configId" />
 					</div>
+					<div class="tw-p-4">
+						<SustainabilityBox />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -30,6 +33,7 @@ import Interior from "@/components/Configurator/Interior.vue"
 import Material from "@/components/Configurator/Material.vue"
 import Accessory from "@/components/Configurator/Accessory.vue"
 import ConfigSummary from "@/components/Configurator/ConfigSummary.vue"
+import SustainabilityBox from "@/components/Configurator/SustainabilityBox.vue"
 
 export default {
     name: "ConfigurationTool",
@@ -39,6 +43,7 @@ export default {
 	    Material,
 	    Accessory,
         ConfigSummary,
+		SustainabilityBox,
     },
     props: ["product", "configId"],
     data() {

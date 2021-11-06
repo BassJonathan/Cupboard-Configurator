@@ -15,13 +15,13 @@
             :alt="item.name"
           />
         </div>
-        <div class="tw-h-full tw-w-1/2 tw-flex tw-justify-center tw-flex-col">
+        <div class="tw-h-full tw-w-1/2 tw-flex tw-justify-center tw-flex-col tw-text-2xl tw-font-semibold">
           {{ item.name }}
         </div>
       </div>
     </td>
     <td>
-      <div v-if="!item.customizable" class="tw-w-auto tw-h-12 tw-flex tw-pl-10">
+      <div v-if="!item.customizable" class="tw-w-full tw-h-12 tw-flex tw-justify-center">
         <button
           type="button"
           class="
@@ -55,27 +55,40 @@
           +
         </button>
       </div>
-      <div v-else>
-        Hello i am an customized product
+      <div v-else class="tw-w-full ">
+        <div class="tw-w-full tw-text-lg tw-text-gray-500 tw-text-center tw-pt-2">
+          BxHxT: {{item.width}} x {{item.height}} x {{item.depth}}
+        </div>
+        <div class="tw-w-full tw-flex tw-justify-center">
+          <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-10/12 tw-my-1"></div>
+        </div>
+        <div v-for="part in parts" :key="part.id" class="tw-pl-10">
+          <div>{{part.quantity}} x {{part.name}}</div>
+        </div>
+        <div class="tw-w-full tw-flex tw-justify-center">
+          <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-10/12 tw-my-2"></div>
+        </div>
+        <div class="tw-w-full tw-flex tw-justify-center">
+          <button type="button" class="btn btn-danger tw-w-5/12 tw-px-2" @click="deleteConfiguration()">Löschen</button>
+        </div>
       </div>
     </td>
     <td>
       <div v-if="!item.customizable" class="tw-pl-10">
         {{ n(item.price, "currency", currency) }}
       </div>
-      <div v-else>
-        Hello i am an customized product
+      <div v-else class="tw-pl-10">
+        {{ n(configuration_total + item.price, "currency", currency) }}
       </div>
     </td>
     <td>
       <div v-if="!item.customizable" class="tw-font-bold tw-pl-10">
         {{ n(item_cost, "currency", currency) }}
       </div>
-      <div v-else>
-        Hello i am an customized product
+      <div v-else class="tw-font-bold tw-pl-10">
+        {{ n(configuration_total + item.price, "currency", currency) }}
       </div>
     </td>
-    -->
   </tr>
 </template>
 
@@ -99,6 +112,13 @@ export default {
     product_total() {
       return this.$store.getters.productQuantity(this.product);
     },
+    configuration_total() {
+      console.log(this.item)
+      return this.$store.getters.configurationTotal(this.item.configurationID);
+    },
+    parts() {
+      return this.$store.getters.itemConfiguration(this.item.configurationID);
+    },
     currency() {
       return this.$store.state.currency;
     },
@@ -109,6 +129,9 @@ export default {
     },
     removeFromCart() {
       this.$store.commit("removeFromCart", {product: this.item});
+    },
+    deleteConfiguration() {
+      this.$store.commit("removeFromCart", {product: this.item, configId: this.item.configurationID});
     },
   },
 };

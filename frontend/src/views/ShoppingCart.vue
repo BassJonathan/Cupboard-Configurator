@@ -14,7 +14,7 @@
           <thead class="tw-bg-gray-200 tw-border-b-2 tw-border-gray-400">
             <tr class="tw-divide-x-2 tw-divide-gray-500 tw-divide-opacity-60">
               <th class="tw-w-1/2 tw-pl-3">{{ t("ShoppingCard.article") }}</th>
-              <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.amount") }}</th>
+              <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.amount") }} / Konfiguration</th>
               <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.price") }}</th>
               <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.priceg") }}</th>
             </tr>

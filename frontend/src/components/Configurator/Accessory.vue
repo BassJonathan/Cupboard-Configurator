@@ -14,7 +14,7 @@
                     </div>
                     <div class="tw-flex tw-w-1/2 tw-h-10">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @change="toggleAccessory(accessory)">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @change="toggleAccessory(accessory)" :checked="activeAccessory(accessory, inputAccessories)">
                             <label class="form-check-label" for="flexSwitchCheckDefault">{{ accessory.name }}</label>
                         </div>
                     </div>
@@ -30,8 +30,19 @@ export default {
     props: ["accessory", "configId"],
     methods: {
         toggleAccessory(e) {
-            console.log(e)
             this.$store.commit("addToConfiguration", {interior: e, configId: this.configId, product: this.product})
+        },
+        activeAccessory(accessory, inputs) {
+            for (const input of inputs) {
+                if (input.name === accessory.name) {
+                    return true
+                }
+            }
+        }
+    },
+    computed: {
+        inputAccessories() {
+            return this.$store.getters.getAccessories(this.configId);
         }
     }
 

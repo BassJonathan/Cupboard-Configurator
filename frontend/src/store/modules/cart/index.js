@@ -84,6 +84,18 @@ const getters = {
     }
     return response;
   },
+
+  getMaterial: (state) => (configId) => {
+    const item = state.cart.find((i) => i.configurationID === configId);
+    var material = item.configuration.filter((i) => i.selectableCategory === 'material');
+    return material[0];
+  },
+
+  getAccessories: (state) => (configId) => {
+    const item = state.cart.find((i) => i.configurationID === configId);
+    var accessories = item.configuration.filter((i) => i.selectableCategory === 'accessories');
+    return accessories;
+  }
 };
 
 const mutations = {
@@ -112,16 +124,13 @@ const mutations = {
   addToConfiguration(state, payload) {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     if (payload.interior.selectableCategory === 'interior') {
-      console.log(item)
       let part = item.configuration.find((a) => a.id === payload.interior.id);
-    
       if (part) {
         part.quantity++;
       } else {
         item.configuration.push({ ...payload.interior, quantity: 1});
       }
     } else if (payload.interior.selectableCategory === 'material') {
-      console.log(item)
       item.configuration = item.configuration.filter((i) => i.selectableCategory !== 'material');
       item.configuration.push({ ...payload.interior, quantity: 1})
     } else if (payload.interior.selectableCategory === 'accessories') {

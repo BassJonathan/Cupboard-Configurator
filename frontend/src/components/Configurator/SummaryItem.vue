@@ -16,8 +16,11 @@
             </div>
         </td>
         <td>
-            <div class="tw-w-full tw-text-center">
+            <div v-if="item_cost" class="tw-w-full tw-text-center">
                 {{ item_cost }}
+            </div>
+            <div v-else class="tw-w-full tw-text-center">
+                {{ item.price }}
             </div>
         </td>
     </tr>

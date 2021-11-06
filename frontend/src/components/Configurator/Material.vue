@@ -11,8 +11,8 @@
                             <img :src="material.imageUrl" :alt="material.name" class="tw-bg-transparent tw-rounded-xl">
                         </div>
                         <div class="form-check tw-flex tw-justify-center tw-pt-5">
-                            <input class="form-check-input tw-mr-3" type="radio" name="flexRadioDefault" :id="flexRadio + material.name" :value="material" @change="changeMaterial(material)">
-                            <label class="form-check-label" :for="flexRadio + material.name">
+                            <input class="form-check-input tw-mr-3" type="radio" name="flexRadioDefault" :id="'flexRadio' + material.name" :value="material" @change="changeMaterial(material)" :checked="activeMaterial(material, inputMaterial)">
+                            <label class="form-check-label" :for="'flexRadio' + material.name">
                                 {{ material.name}} - {{material.price}}
                             </label>
                         </div>
@@ -29,10 +29,25 @@ export default {
     props: ["materials", "product", "configId"],
     methods: {
         changeMaterial(e) {
-            console.log(e)
             this.$store.commit("addToConfiguration", {interior: e, configId: this.configId, product: this.product})
+        },
+        activeMaterial(material, input) {
+            console.log(material)
+            console.log(input)
+            if (material.name === input.name) {
+                console.log(true)
+                return true;
+            } else {
+                console.log(false)
+                return false;
+            }
         }
-    }
+    },
+    computed: {
+        inputMaterial() {
+            return this.$store.getters.getMaterial(this.configId);
+        }
+    },
 
 }
 </script>
