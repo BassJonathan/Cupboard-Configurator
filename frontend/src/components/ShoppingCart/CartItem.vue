@@ -10,6 +10,8 @@
               tw-content-center
               tw-justify-center
               tw-flex-col
+              tw-rounded-xl
+              tw-ml-5
             "
             :src="item.imageUrl"
             :alt="item.name"

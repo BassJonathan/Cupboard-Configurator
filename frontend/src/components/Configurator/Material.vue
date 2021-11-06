@@ -34,13 +34,18 @@ export default {
         activeMaterial(material, input) {
             console.log(material)
             console.log(input)
-            if (material.name === input.name) {
-                console.log(true)
-                return true;
+            if(input) {
+                if (material.name === input.name) {
+                    console.log(true)
+                    return true;
+                } else {
+                    console.log(false)
+                    return false;
+                }
             } else {
-                console.log(false)
                 return false;
             }
+            
         }
     },
     computed: {

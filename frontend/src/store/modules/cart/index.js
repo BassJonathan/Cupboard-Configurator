@@ -41,7 +41,19 @@ const getters = {
 
   //Return total of cart
   cartTotal: (state) => {
-    return state.cart.reduce((a, b) => a + b.price * b.quantity, 0);
+    const products = state.cart.filter((i) => !i.customizable);
+    const configs = state.cart.filter((i) => i.customizable);
+    let total = 0;
+    for (const product of products) {
+      console.log(product)
+      total = total + (product.price * product.quantity);
+    }
+    for (const config of configs) {
+      var configTotal = config.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
+      total = total + configTotal + config.price;
+
+    }
+    return total;
   },
 
   //Retur toal of configuration
@@ -102,7 +114,7 @@ const mutations = {
   //Add product to cart
   addToCart(state, payload) {
     if (payload.product.customizable) {
-      state.cart.push({ ...payload.product, configurationID: payload.configId, configuration: [] });
+      state.cart.push({ ...payload.product, configurationID: payload.configId, configuration: [], quantity: 1 });
     } else {
       let item = state.cart.find((i) => i.id === payload.product.id);
       if (item) {

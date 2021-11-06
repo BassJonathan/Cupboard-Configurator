@@ -15,7 +15,7 @@ import "@/assets/css/main.css";
 
 /*
 if (process.env.NODE_ENV === 'production') {
-    axios.defaults.baseURL = '//cablecard-cct-backend.eu-de.mybluemix.net'
+    axios.defaults.baseURL = '//'
   } else {
     axios.defaults.baseURL = '//localhost:4000/'
   }
@@ -33,6 +33,8 @@ createApp(App)
 LoadScript(
   "https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"
 );
+
 LoadScript(
   "https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"
 );
+

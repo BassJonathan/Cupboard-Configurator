@@ -21,7 +21,7 @@
           </thead>
           <tbody class="tw-divide-y-2">
             <CartItem v-for="item in items" :key="item.id" :item="item" />
-            <!--<CartSummary />-->
+            <CartSummary />
           </tbody>
         </table>
         <div class="tw-w-full tw-px-10 tw-flex tw-justify-end">
@@ -48,13 +48,13 @@
 <script>
 import { useI18n } from "vue-i18n";
 import CartItem from "@/components/ShoppingCart/CartItem.vue";
-//import CartSummary from "@/components/ShoppingCart/CartSummary.vue";
+import CartSummary from "@/components/ShoppingCart/CartSummary.vue";
 
 export default {
   name: "ShoppingCart",
   components: {
     CartItem,
-    //CartSummary,
+    CartSummary,
   },
   setup() {
     const { t, locale } = useI18n({
