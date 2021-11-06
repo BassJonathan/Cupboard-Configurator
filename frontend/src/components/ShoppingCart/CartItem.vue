@@ -59,7 +59,7 @@
       </div>
       <div v-else class="tw-w-full ">
         <div class="tw-w-full tw-text-lg tw-text-gray-500 tw-text-center tw-pt-2">
-          BxHxT: {{item.width}} x {{item.height}} x {{item.depth}}
+          {{ t("CartItem.measure") }} {{item.width}} x {{item.height}} x {{item.depth}}
         </div>
         <div class="tw-w-full tw-flex tw-justify-center">
           <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-10/12 tw-my-1"></div>
@@ -71,7 +71,7 @@
           <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-10/12 tw-my-2"></div>
         </div>
         <div class="tw-w-full tw-flex tw-justify-center tw-pb-3">
-          <button type="button" class="btn btn-danger tw-w-5/12 tw-px-2" @click="deleteConfiguration()">Löschen</button>
+          <button type="button" class="btn btn-danger tw-w-5/12 tw-px-2" @click="deleteConfiguration()">{{ t("CartItem.delete") }}</button>
         </div>
       </div>
     </td>

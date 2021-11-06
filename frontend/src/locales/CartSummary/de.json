@@ -1,4 +1,6 @@
 {
     "sum": "Summe",
-    "article": "Artikel"
+    "article": "Artikel",
+    "netto": "Davon Netto:",
+    "mwst": "Mwst:"
 }

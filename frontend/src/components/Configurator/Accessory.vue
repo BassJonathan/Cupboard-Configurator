@@ -10,7 +10,7 @@
                 </div>
                 <div class="tw-w-2/3">
                     <div class="tw-text-2xl tw-mb-10">
-                        Preis: {{ n(getBrutto(accessory.price, taxes), "currency", currency) }}
+                        {{ t("Accessory.p") }} {{ n(getBrutto(accessory.price, taxes), "currency", currency) }}
                     </div>
                     <div class="tw-flex tw-w-1/2 tw-h-10">
                         <div class="form-check form-switch">

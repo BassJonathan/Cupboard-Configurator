@@ -10,7 +10,7 @@
                 </div>
                 <div class="tw-w-2/3">
                     <div class="tw-text-2xl tw-mb-10">
-                        Preis: {{ n(getBrutto(interior.price, taxes), "currency", currency) }}
+                        {{ t("Interior.price") }} {{ n(getBrutto(interior.price, taxes), "currency", currency) }}
                     </div>
                     <div class="tw-flex tw-w-1/2 tw-h-10">
                         <button type="button" class="btn btn-primary tw-w-1/6 tw-rounded-l-lg tw-rounded-r-none" @click="removeFromConfiguration()">-</button>

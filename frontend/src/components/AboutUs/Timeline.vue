@@ -9,8 +9,8 @@
         <p class="tw-mx-auto tw-font-semibold text-white tw-text-2xl">1</p>
       </div>
       <div class="tw-order-1 bg-cb-brown tw-rounded-lg tw-shadow-xl tw-w-5/12 tw-px-6 tw-py-4">
-        <p class="tw-mb-3 tw-font-bold tw-text-white tw-text-xl">Bisher physischer Retail</p>
-        <p class="tw-text-sm tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100">Unsere Produkte werden ausschließlich in unseren eigenen Filialen verkauft</p>
+        <p class="tw-mb-3 tw-font-bold tw-text-white tw-text-xl"> {{ t("Timeline.retail") }}</p>
+        <p class="tw-text-sm tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100">{{ t("Timeline.un") }}</p>
       </div>
     </div>
 
@@ -20,14 +20,8 @@
         <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">2</p>
       </div>
       <div class="tw-order-1 bg-cb-red tw-rounded-lg tw-shadow-xl tw-w-5/12 tw-px-6 tw-py-4">
-        <p class="tw-mb-3 tw-font-bold text-white tw-text-xl">Seit 2019 Digitale Transformation</p>
-        <p class="tw-text-sm tw-font-medium tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100">Erarbeitung von Konzepten für die
-digitale Transformation unseres
-Verkaufsprozesses.<br />
-Erstes Ergebnis: Build your own
-Cupboard<br />
-Umsetzung digitaler Lösungen im
-Backend</p>
+        <p class="tw-mb-3 tw-font-bold text-white tw-text-xl">{{ t("Timeline.tran") }}</p>
+        <p class="tw-text-sm tw-font-medium tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100"> {{ t("Timeline.conc") }}</p>
       </div>
     </div>
     
@@ -37,11 +31,8 @@ Backend</p>
         <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">3</p>
       </div>
       <div class="tw-order-1 bg-cb-brown tw-rounded-lg tw-shadow-xl tw-w-5/12 tw-px-6 tw-py-4">
-        <p class="tw-mb-3 tw-font-bold tw-text-white tw-text-xl">2020 Corona Pandemie</p>
-        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Schließung alle Filialen während
-des Lockdowns in den einzelnen Ländern.<br />
-Kein Bestellungseingang während
-dieser Zeit.</p>
+        <p class="tw-mb-3 tw-font-bold tw-text-white tw-text-xl">{{ t("Timeline.cor") }}</p>
+        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">{{ t("Timeline.pand") }}</p>
       </div>
     </div>
 
@@ -51,13 +42,8 @@ dieser Zeit.</p>
         <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">4</p>
       </div>
       <div class="tw-order-1 bg-cb-red tw-rounded-lg tw-shadow-xl tw-w-5/12 tw-px-6 py-4">
-        <p class="tw-mb-3 tw-font-bold text-white tw-text-xl">Heute</p>
-        <p class="tw-text-sm tw-font-medium tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100">Beschlossener Sparkurs in allen
-Bereichen <br />
-Backend befindet sich in der
-Entwicklung<br />
-Entscheidung für die
-Entwicklung: Build your own
+        <p class="tw-mb-3 tw-font-bold text-white tw-text-xl">{{ t("Timeline.today") }}</p>
+        <p class="tw-text-sm tw-font-medium tw-leading-snug tw-tracking-wide tw-text-white tw-text-opacity-100">{{ t("Timeline.save") }} Build your own
 Cupboard</p>
       </div>
     </div>
@@ -67,8 +53,17 @@ Cupboard</p>
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
   name: "index",
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  }
 };
 </script>
 

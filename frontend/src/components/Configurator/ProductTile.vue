@@ -13,10 +13,10 @@
       {{ product.name }}
     </div>
     <div class="tw-col-span-2 tw-flex tw-text-3xl tw-text-left tw-items-center">
-      ab {{ n(getBrutto(product.price, taxes), "currency", currency) }}
+      {{ t("ProductTile.ab") }} {{ n(getBrutto(product.price, taxes), "currency", currency) }}
     </div>
     <div class="tw-col-span-2 tw-flex tw-justify-center tw-items-center">
-      <button class="btn btn-primary" @click="$emit('config-product', product)">Konfigurieren</button>
+      <button class="btn btn-primary" @click="$emit('config-product', product)">{{ t("ProductTile.conf") }}</button>
     </div>
   </div>
 </template>
