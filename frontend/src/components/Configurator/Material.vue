@@ -2,7 +2,7 @@
     <div class="tw-w-full">
         <div class="tw-full tw-bg-gray-200 tw-rounded-lg tw-my-6 tw-mr-6 tw-px-10 tw-py-6 tw-shadow-inner">
             <div class="tw-text-4xl tw-font-bold tw-pb-4">
-                Material
+                {{ t("Material.mat") }}
             </div>
             <form>
                 <div class="tw-flex tw-justify-around tw-items-end">

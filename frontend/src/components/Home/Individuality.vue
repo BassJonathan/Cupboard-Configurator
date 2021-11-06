@@ -37,14 +37,14 @@
           {{ t("Individuality.closset") }}
         </p>
         <p class="tw-text-lg">
-          Schon ab 250€, nur für Sie.
+          {{ t("Individuality.250") }}
         </p>
         <div class="tw-mt-8"></div>
         <button
           type="button"
           class="btn btn-primary tw-w-48 tw-h-12 tw-mx-auto tw-text-xl"
         >
-          Direkt gönnen
+          {{ t("Individuality.start") }}
         </button>
       </div>
     </div>
@@ -52,6 +52,18 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
+export default {
+  name: "Individuality",
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  },
+};
 
 </script>
 

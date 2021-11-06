@@ -2,20 +2,20 @@
     <div class="tw-w-full">
         <div class="tw-w-full tw-p-5">
             <div class="tw-text-3xl tw-font-semibold tw-pb-3">
-                Zusammenfassung:
+                {{ t("ConfigSummary.zu") }}
             </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1"></div>
             <div class="tw-w-full tw-text-lg tw-text-gray-500 tw-text-left tw-py-2">
-                BxHxT: {{dimensions.width}} x {{dimensions.height}} x {{dimensions.depth}}
+                {{ t("ConfigSummary.bht") }} {{dimensions.width}} x {{dimensions.height}} x {{dimensions.depth}}
             </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1 tw-mb-4"></div>
             <table class="tw-table-fixed tw-border-collapse tw-text-center tw-w-full tw-text-xl">
                 <thead class="tw-bg-gray-300 tw-border-b-2 tw-border-gray-400">
                     <tr class="tw-divide-x-2 tw-divide-gray-500 tw-divide-opacity-60">
-                        <th class="tw-w-1/3">Artikel</th>
-                        <th class="tw-w-1/6">Menge</th>
-                        <th class="tw-w-1/6">Preis</th>
-                        <th class="tw-w-1/6">Preis gesamt</th>
+                        <th class="tw-w-1/3">{{ t("ConfigSummary.art") }}</th>
+                        <th class="tw-w-1/6">{{ t("ConfigSummary.meng") }}</th>
+                        <th class="tw-w-1/6">{{ t("ConfigSummary.pric") }}</th>
+                        <th class="tw-w-1/6">{{ t("ConfigSummary.pricG") }}</th>
                     </tr>
                 </thead>
                 <tbody class="tw-divide-y-2">
@@ -24,7 +24,7 @@
                     <tr class="tw-font-semibold">
                         <th></th>
                         <th></th>
-                        <th>Summe:</th>
+                        <th>{{ t("ConfigSummary.sum") }}</th>
                         <th> {{ n(getBrutto(configuration_total + product.price, taxes), "currency", currency) }} </th>
                     </tr>
                 </tbody>

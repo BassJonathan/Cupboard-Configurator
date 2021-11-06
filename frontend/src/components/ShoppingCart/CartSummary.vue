@@ -12,10 +12,10 @@
           {{ t("CartSummary.sum") }} ({{ cart_number_items }} {{ t("CartSummary.article") }}):
         </div>
         <div class="tw-text-gray-600 tw-text-lg">
-          Davon Netto:
+          {{ t("CartSummary.netto") }}
         </div>
         <div class="tw-text-gray-600 tw-text-lg">
-          Mwst:
+          {{ t("CartSummary.mwst") }}
         </div>
       </div>
     </td>

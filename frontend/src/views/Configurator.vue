@@ -2,19 +2,19 @@
   <div class="tw-w-full tw-mt-20 tw-px-20">
     <div class="tw-w-full tw-py-6 tw-px-8">
       <div class="tw-w-full tw-text-6xl tw-pb-1 tw-font-bold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
-        Cupboard Konfigurator
+        {{ t("Configurator.con") }}
       </div>
       <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
-        Für deine individuellen Möbel!
+        {{ t("Configurator.ind") }}
       </div>
       <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
       <div class="tw-w-full tw-px-8 tw-py-2 tw-text-lg">
-        Unser patentierter Cupboard-Konfigurator ermöglicht dir die individuelle erstellung von Möbelstücken nach deinen Wünschen. Die folgende Auflistung zeigt dir alle Produkte, welche du individuell gestalten kannst. Darunter kannst du deine aktuellen Konfigurationen ansehen und auch löschen, wenn du diese nicht mehr benötigst.
+        {{ t("Configurator.fur") }}
       </div>
     </div>
 		<div class="tw-w-full tw-px-10">
       <div class="tw-w-full tw-text-4xl tw-font-semibold tw-pb-4">
-        Konfigurierbare Produkte:
+        {{ t("Configurator.conf") }}
       </div>
       <div v-for="product in products" :key="product.id" class="tw-w-full tw-bg-gray-200 tw-rounded-xl tw-shadow-inner">
         <ProductTile :product="product" v-on:config-product="configProduct($event)" />
@@ -22,7 +22,7 @@
 		</div>
     <div class="tw-w-full tw-px-10">
       <div class="tw-w-full tw-text-4xl tw-font-semibold tw-py-4">
-        Deine Konfigurationen:
+        {{ t("Configurator.you") }}
       </div>
       <div v-if="customs.length" class="tw-w-full tw-bg-gray-200 tw-rounded-xl tw-shadow-inner tw-p-6 tw-overflow-x-scroll tw-overflow-y-hidden tw-whitespace-nowrap">
         <div v-for=" custom in customs" :key="custom.id" class="tw-inline-block tw-mr-5 tw-w-1/5">
@@ -30,12 +30,12 @@
         </div>
       </div>
       <div v-else class="tw-p-4 tw-rounded-md tw-border-dashed tw-border-red tw-border-2">
-        Du hast noch keine Konfigurationen erstellt! Wähle ein Produkt aus der obrigen Liste aus.
+        {{ t("Configurator.choose") }}
       </div>
     </div>
     <div v-if="configId != null" class="tw-w-full tw-px-10">
       <div class="tw-w-full tw-text-4xl tw-font-semibold tw-py-4">
-        Konfigurator:
+        {{ t("Configurator.confi") }}
       </div>
       <div>
         <ConfigurationTool :product="product" :configId="configId" />
@@ -52,6 +52,7 @@ import ProductTile from "@/components/Configurator/ProductTile.vue"
 import ConfigurationTool from "@/components/Configurator/ConfigurationTool.vue"
 import ConfigurationSelect from "@/components/Configurator/ConfigurationSelect.vue"
 
+import { useI18n } from "vue-i18n";
 
 export default {
   name: "Configurator",
@@ -59,6 +60,13 @@ export default {
 	  ProductTile,
     ConfigurationTool,
     ConfigurationSelect,
+  },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
   },
   data() {
     return{
