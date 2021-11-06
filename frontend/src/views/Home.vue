@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="tw-relative tw-h-10"></div>
-    <ProductDisplay />
+    <Individuality />
     <Sustainability />
     <div class="tw-w-full">
       <p class="tw-text-4xl tw-font-extrabold tw-p-8 heading_font">
@@ -214,7 +214,7 @@ import { useI18n } from "vue-i18n";
 
 import Sustainability from "@/components/Home/Sustainability.vue";
 import InterAnim from "@/components/InterAnim.vue";
-import ProductDisplay from "@/components/Home/ProductDisplay.vue";
+import Individuality from "@/components/Home/Individuality.vue";
 import SustainabilityHover from "@/components/Home/SustainabilityHover.vue"
 
 export default {
@@ -222,7 +222,7 @@ export default {
   components: {
     Sustainability,
     InterAnim,
-    ProductDisplay,
+    Individuality,
     SustainabilityHover
   },
   setup() {
