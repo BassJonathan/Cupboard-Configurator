@@ -69,62 +69,10 @@ Cupboard</p>
 <script>
 export default {
   name: "index",
-  data() {
-    return {
-      auto: true,
-      light: false,
-      dark: false,
-    };
-  },
-  mounted() {},
-  methods: {
-    toggle(event) {
-      if (event.target.value === "auto") {
-        this.auto = true;
-        this.light = false;
-        this.dark = false;
-      }
-      if (event.target.value === "light") {
-        this.auto = false;
-        this.light = true;
-        this.dark = false;
-      }
-      if (event.target.value === "dark") {
-        this.auto = false;
-        this.light = false;
-        this.dark = true;
-      }
-    },
-  },
 };
 </script>
 
 <style scoped>
-h1 {
-  font-size: 5vw;
-}
 
-.test {
-  height: 10vw;
-  width: 10vw;
-  margin: 0 auto;
-}
-.tx-hauptfarbe {
-  color: #012840;
-}
-.bg-hauptfarbe {
-  background-color: #012840;
-}
-.bg-cb-brown{
-  background-color:  #403F08;
-}
-.bg-cb-red{
-  background-color:  #400808;
-}
-
-.tx-yellow {
-  color: #8c8a0a;
-}
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>
 
