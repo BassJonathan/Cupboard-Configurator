@@ -12,15 +12,15 @@
                     <form>
                         <div class="form-floating tw-mb-3">
                             <input type="height" class="form-control" id="floatingHeight" :value="inputDimensions.height" @change="updateHeight">
-                            <label for="floatingHeight">Höhe in cm</label>
+                            <label for="floatingHeight">{{ t("Exterior.high") }}</label>
                         </div>
                         <div class="form-floating tw-mb-3">
                             <input type="width" class="form-control" id="floatingWidth" :value="inputDimensions.width" @change="updateWidth">
-                            <label for="floatingWidth">Breite in cm</label>
+                            <label for="floatingWidth">{{ t("Exterior.brei") }}</label>
                         </div>
                         <div class="form-floating">
                             <input type="depth" class="form-control" id="floatingDepth" :value="inputDimensions.depth" @change="updateDepth">
-                            <label for="floatingWidth">Tiefe in cm</label>
+                            <label for="floatingWidth">{{ t("Exterior.tie") }}</label>
                         </div>
                     </form>
                 </div>
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name: "Exterior",
     props: ["exterior", "product", "configId"],
@@ -44,6 +46,13 @@ export default {
         updateDepth(e) {
             this.$store.commit("updateDepth", {product: this.product, configId: this.configId, depth: e.target.value})
         }
+    },
+    setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
     },
     computed: {
         inputDimensions() {

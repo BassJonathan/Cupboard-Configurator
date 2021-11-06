@@ -80,7 +80,7 @@
           <div class="w-full md:w-3/5 text-left p-4 md:p-4 space-y-2">
             <p class="text-2xl text-gray-700 font-bold">Jochen Herrmann</p>
             <p class="text-xl text-gray-400 font-normal">
-              Solution Architect , Vertrieb der Zukunft Europe
+              Solution Architect , {{ t("Members.fut") }}
             </p>
             <div class="flex justify-start space-x-2">
               <a href="#" class="text-gray-500 hover:text-gray-600">
@@ -144,7 +144,7 @@
           >
             <p class="text-2xl text-gray-700 font-bold">Lucy</p>
             <p class="text-xl text-gray-400 font-normal">
-              Moralische Helferin
+              {{ t("Members.moral") }}
             </p>
           </div>
         </div>
