@@ -31,10 +31,10 @@
     <div class="tw-flex tw-flex-col">
       <div class="tw-flex tw-flex-col tw-gap-4">
         <p class="tw-text-3xl tw-font-extrabold heading_font">
-          Der Kunde ist bei uns König
+          {{ t("Individuality.king") }}
         </p>
         <p class="tw-text-xl text_font">
-          Unsere Top Schränke nur für Sie. Passen Sie sich Ihren Schrank nach Ihren Wünschen an. 
+          {{ t("Individuality.closset") }}
         </p>
         <p class="tw-text-lg">
           Schon ab 250€, nur für Sie.
