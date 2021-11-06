@@ -107,7 +107,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", this.product);
+      this.$store.commit("addToCart", {product: this.product});
     },
     getBrutto(price, tax) {
       return (price + (price * tax));
