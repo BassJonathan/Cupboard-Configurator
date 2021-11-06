@@ -10,7 +10,7 @@
                 </div>
                 <div class="tw-w-2/3">
                     <div class="tw-text-2xl tw-mb-10">
-                        Preis: {{ interior.price }}
+                        Preis: {{ n(getBrutto(interior.price, taxes), "currency", currency) }}
                     </div>
                     <div class="tw-flex tw-w-1/2 tw-h-10">
                         <button type="button" class="btn btn-primary tw-w-1/6 tw-rounded-l-lg tw-rounded-r-none" @click="removeFromConfiguration()">-</button>
@@ -25,9 +25,18 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name: "Interior",
     props: ["interior", "product", "configId"],
+    setup() {
+        const { t, n } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+    return { t, n };
+    },
     methods: {
         addToConfiguration() {
             console.log(this.interior)
@@ -35,12 +44,22 @@ export default {
         },
         removeFromConfiguration() {
             this.$store.commit("removeFromConfiguration", {interior: this.interior, configId: this.configId, product: this.product})
-        }
+        },
+        getBrutto(price, tax) {
+            console.log(tax)
+            return (price + (price * tax));
+        },
     },
     computed: {
         item_total() {
             return this.$store.getters.itemQuantity({interior: this.interior, configId: this.configId, product: this.product})
-        }
+        },
+        currency() {
+            return this.$store.state.currency;
+        },
+        taxes() {
+            return this.$store.state.taxRate;
+        },
     }
 }
 </script>

@@ -70,25 +70,25 @@
         <div class="tw-w-full tw-flex tw-justify-center">
           <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-10/12 tw-my-2"></div>
         </div>
-        <div class="tw-w-full tw-flex tw-justify-center">
+        <div class="tw-w-full tw-flex tw-justify-center tw-pb-3">
           <button type="button" class="btn btn-danger tw-w-5/12 tw-px-2" @click="deleteConfiguration()">Löschen</button>
         </div>
       </div>
     </td>
     <td>
       <div v-if="!item.customizable" class="tw-pl-10">
-        {{ n(item.price, "currency", currency) }}
+        {{ n(getBrutto(item.price, taxes), "currency", currency) }}
       </div>
       <div v-else class="tw-pl-10">
-        {{ n(configuration_total + item.price, "currency", currency) }}
+        {{ n(getBrutto(configuration_total + item.price, taxes), "currency", currency) }}
       </div>
     </td>
     <td>
       <div v-if="!item.customizable" class="tw-font-bold tw-pl-10">
-        {{ n(item_cost, "currency", currency) }}
+        {{ n(getBrutto(item_cost, taxes), "currency", currency) }}
       </div>
       <div v-else class="tw-font-bold tw-pl-10">
-        {{ n(configuration_total + item.price, "currency", currency) }}
+        {{ n(getBrutto(configuration_total + item.price, taxes), "currency", currency) }}
       </div>
     </td>
   </tr>
@@ -101,11 +101,11 @@ export default {
   name: "CartItem",
   props: ["item"],
   setup() {
-    const { t, n, locale } = useI18n({
+    const { t, n, } = useI18n({
       inheritLocale: true,
       useScope: "global",
     });
-    return { t, n, locale };
+    return { t, n };
   },
   computed: {
     item_cost() {
@@ -115,7 +115,6 @@ export default {
       return this.$store.getters.productQuantity(this.product);
     },
     configuration_total() {
-      console.log(this.item)
       return this.$store.getters.configurationTotal(this.item.configurationID);
     },
     parts() {
@@ -123,6 +122,9 @@ export default {
     },
     currency() {
       return this.$store.state.currency;
+    },
+    taxes() {
+      return this.$store.state.taxRate;
     },
   },
   methods: {
@@ -134,6 +136,9 @@ export default {
     },
     deleteConfiguration() {
       this.$store.commit("removeFromCart", {product: this.item, configId: this.item.configurationID});
+    },
+    getBrutto(price, tax) {
+      return (price + (price * tax));
     },
   },
 };

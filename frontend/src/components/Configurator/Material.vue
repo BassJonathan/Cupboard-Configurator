@@ -13,7 +13,7 @@
                         <div class="form-check tw-flex tw-justify-center tw-pt-5">
                             <input class="form-check-input tw-mr-3" type="radio" name="flexRadioDefault" :id="'flexRadio' + material.name" :value="material" @change="changeMaterial(material)" :checked="activeMaterial(material, inputMaterial)">
                             <label class="form-check-label" :for="'flexRadio' + material.name">
-                                {{ material.name}} - {{material.price}}
+                                {{ material.name}} - {{ n(getBrutto(material.price, taxes), "currency", currency) }}
                             </label>
                         </div>
                     </div>
@@ -24,9 +24,18 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name: "Material",
     props: ["materials", "product", "configId"],
+    setup() {
+        const { t, n } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+    return { t, n };
+    },
     methods: {
         changeMaterial(e) {
             this.$store.commit("addToConfiguration", {interior: e, configId: this.configId, product: this.product})
@@ -46,12 +55,25 @@ export default {
                 return false;
             }
             
-        }
+        },
+        getBrutto(price, tax) {
+            if (price > 0) {
+                return (price + (price * tax));
+            } else {
+                return 0;
+            }
+        },
     },
     computed: {
         inputMaterial() {
             return this.$store.getters.getMaterial(this.configId);
-        }
+        },
+        currency() {
+            return this.$store.state.currency;
+        },
+        taxes() {
+            return this.$store.state.taxRate;
+        },
     },
 
 }

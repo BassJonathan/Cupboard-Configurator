@@ -1,7 +1,12 @@
 //Update local storage with changes
 function updateLocalStorage(cart, customIndex) {
   localStorage.setItem("cart", JSON.stringify(cart));
-  localStorage.setItem("customIndex", JSON.stringify(customIndex));
+  if (cart.length) {
+    localStorage.setItem("customIndex", JSON.stringify(customIndex));
+  } else {
+    localStorage.setItem("customIndex", JSON.stringify(0));
+  }
+  
 }
 
 const state = {

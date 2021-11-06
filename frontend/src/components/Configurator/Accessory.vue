@@ -10,7 +10,7 @@
                 </div>
                 <div class="tw-w-2/3">
                     <div class="tw-text-2xl tw-mb-10">
-                        Preis: {{ accessory.price }}
+                        Preis: {{ n(getBrutto(accessory.price, taxes), "currency", currency) }}
                     </div>
                     <div class="tw-flex tw-w-1/2 tw-h-10">
                         <div class="form-check form-switch">
@@ -25,9 +25,18 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
     name: "Accessory",
     props: ["accessory", "configId"],
+    setup() {
+        const { t, n } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+    return { t, n };
+    },
     methods: {
         toggleAccessory(e) {
             this.$store.commit("addToConfiguration", {interior: e, configId: this.configId, product: this.product})
@@ -38,12 +47,21 @@ export default {
                     return true
                 }
             }
-        }
+        },
+        getBrutto(price, tax) {
+            return (price + (price * tax));
+        },
     },
     computed: {
         inputAccessories() {
             return this.$store.getters.getAccessories(this.configId);
-        }
+        },
+        currency() {
+            return this.$store.state.currency;
+        },
+        taxes() {
+            return this.$store.state.taxRate;
+        },
     }
 
 }

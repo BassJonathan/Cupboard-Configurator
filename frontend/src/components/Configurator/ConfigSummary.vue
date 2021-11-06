@@ -6,7 +6,7 @@
             </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1"></div>
             <div class="tw-w-full tw-text-lg tw-text-gray-500 tw-text-left tw-py-2">
-                BxHxT: {{product.width}} x {{product.height}} x {{product.depth}}
+                BxHxT: {{dimensions.width}} x {{dimensions.height}} x {{dimensions.depth}}
             </div>
             <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full tw-my-1 tw-mb-4"></div>
             <table class="tw-table-fixed tw-border-collapse tw-text-center tw-w-full tw-text-xl">
@@ -25,7 +25,7 @@
                         <th></th>
                         <th></th>
                         <th>Summe:</th>
-                        <th> {{ configuration_total + product.price }}</th>
+                        <th> {{ n(getBrutto(configuration_total + product.price, taxes), "currency", currency) }} </th>
                     </tr>
                 </tbody>
             </table>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import SummaryItem from "@/components/Configurator/SummaryItem.vue"
 
 export default {
@@ -42,10 +43,35 @@ export default {
         SummaryItem,
     },
     props: ["parts", "product", "configId"],
+    setup() {
+        const { t, n } = useI18n({
+            inheritLocale: true,
+            useScope: "global",
+        });
+    return { t, n };
+    },
     computed: {
         configuration_total() {
             return this.$store.getters.configurationTotal(this.configId);
-        }
+        },
+        dimensions() {
+            return this.$store.getters.getDimensions(this.configId);
+        },
+        currency() {
+            return this.$store.state.currency;
+        },
+        taxes() {
+            return this.$store.state.taxRate;
+        },
+    },
+    methods: {
+        getBrutto(price, tax) {
+            if (price > 0) {
+                return (price + (price * tax));
+            } else {
+                return 0;
+            }
+        },
     }
 }
 </script>
