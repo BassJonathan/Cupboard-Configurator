@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
-      <div class="text-center pb-12">
-        <h1
+      <div class="tw-mt-16 text-center pb-12">
+        <p
           class="
             font-bold
             text-3xl
@@ -13,62 +13,8 @@
           "
         >
           Check our awesome team members
-        </h1>
+        </p>
       </div>
-
-<div class="container mx-auto w-full h-full">
-  <div class="relative wrap overflow-hidden p-10 h-full">
-    <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
-    <!-- right timeline -->
-    <div class="mb-8 flex justify-between items-center w-full right-timeline">
-      <div class="order-1 w-5/12"></div>
-      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-        <p class="tw-mx-auto tw-font-semibold text-white tw-text-2xl">1</p>
-      </div>
-      <div class="order-1 bg-cb-brown rounded-lg shadow-xl w-5/12 px-6 py-4">
-        <h3 class="mb-3 font-bold text-white text-xl">Lorem Ipsum</h3>
-        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
-    </div>
-
-    <!-- left timeline -->
-    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-      <div class="order-1 w-5/12"></div>
-      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-        <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">2</p>
-      </div>
-      <div class="order-1 bg-cb-red rounded-lg shadow-xl w-5/12 px-6 py-4">
-        <h3 class="mb-3 font-bold text-white text-xl">Lorem Ipsum</h3>
-        <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
-    </div>
-    
-    <!-- right timeline -->
-    <div class="mb-8 flex justify-between items-center w-full right-timeline">
-      <div class="order-1 w-5/12"></div>
-      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-        <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">3</p>
-      </div>
-      <div class="order-1 bg-cb-brown rounded-lg shadow-xl w-5/12 px-6 py-4">
-        <h3 class="mb-3 font-bold text-white text-xl">Lorem Ipsum</h3>
-        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
-    </div>
-
-    <!-- left timeline -->
-    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-      <div class="order-1 w-5/12"></div>
-      <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-        <p class="tw-mx-auto text-white tw-font-semibold tw-text-2xl">4</p>
-      </div>
-      <div class="order-1 bg-cb-red rounded-lg shadow-xl w-5/12 px-6 py-4">
-        <h3 class="mb-3 font-bold text-white text-xl">Lorem Ipsum</h3>
-        <p class="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </div>
-    </div>
-  </div>
-</div>
-      
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div
           class="
@@ -284,29 +230,6 @@
       </div>
     </section>
   </div>
-
-  <div class = "tw-grid tw-grid-cols-2">
-    <div class ="tw-ml-8 tw-mt-16">
-    <p class ="tw-text-3xl">• Premium Schrankhersteller aus Berlin</p>
-    <p class ="tw-text-2xl tw-ml-8">• Aufbauschränke</p>
-    <p class ="tw-text-2xl tw-ml-8">• Sideboards</p>
-    <p class ="tw-text-2xl tw-ml-8">• Highboards</p>
-    <p class ="tw-text-2xl tw-ml-8">• Lowboards</p><br />
-
-    <p class ="tw-text-3xl">• 20 Filialen in D/A/CH/IT/FR</p>
-    <p class ="tw-text-3xl">• Umsatz: 3 Millionen Euro</p>
-    <p class ="tw-text-3xl">• Mitarbeiter: 430</p>
-    </div>
-    <div class =" tw-mr-8">
-      <p class ="tw-text-3xl tw-text-center">Unsere Lokationen:</p>
-      <img
-              class="object-center object-cover w-full h-full"
-              src="/img/Locations.png"
-              alt="Error"
-            />
-    </div>>
-  </div>
-
 </template>
 
 <script>
