@@ -1,5 +1,5 @@
 <template>
-  <div class = "tw-grid tw-grid-cols-2">
+  <div class = "tw-grid tw-grid-cols-2 tw-px-20">
     <div class ="tw-ml-8 tw-mt-16">
     <p class ="tw-text-3xl">{{ t("Infoslide.berlin") }}</p>
     <p class ="tw-text-2xl tw-ml-8">{{ t("Infoslide.schrank") }}</p>

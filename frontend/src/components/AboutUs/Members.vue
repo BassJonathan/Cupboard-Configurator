@@ -1,20 +1,6 @@
 <template>
   <div>
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
-      <div class="tw-mt-16 text-center pb-12">
-        <p
-          class="
-            font-bold
-            text-3xl
-            md:text-4xl
-            lg:text-5xl
-            font-heading
-            text-gray-900
-          "
-        >
-          {{ t("Members.headline") }}
-        </p>
-      </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div
           class="
