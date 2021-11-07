@@ -5,7 +5,7 @@ import cart from "./modules/cart";
 export default createStore({
   state: {
     currency: "de", //TO-DO: Change start-state to i18n global loacal
-    taxRate: 1.19,
+    taxRate: 0.19,
 
   },
   getters: {

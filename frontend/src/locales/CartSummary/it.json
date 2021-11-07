@@ -1,4 +1,6 @@
 {
     "sum": "Totale",
-    "article": "Oggetti"
+    "article": "Oggetti",
+    "netto": "Di cui netto:",
+    "mwst": "I.V.A.:"
 }

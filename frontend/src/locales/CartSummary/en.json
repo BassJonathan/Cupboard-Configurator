@@ -1,4 +1,6 @@
 {
     "sum": "Total",
-    "article": "Article"
+    "article": "Article",
+    "netto": "Net price:",
+    "mwst": "VAT:"
 }

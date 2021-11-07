@@ -288,4 +288,9 @@ export default {
 .dropdown-item {
   display: inline-block !important;
 }
+
+.router-link-active,
+.router-link-exact-active {
+    border-bottom: 1px solid white;
+}
 </style>

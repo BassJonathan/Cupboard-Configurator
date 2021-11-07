@@ -1,197 +1,118 @@
 <template>
-  <p class="test tw-text-4xl tw-text-center tw-w-100 tw-m-40">
-    This is the Configurator Page! <br />
-    WIP
-  </p>
-  
-  <div class ="tw-ml-8 tw-mr-8 tw-grid tw-grid-cols-3">
-    <div class="tw-col-span-2">
-      <div class ="tw-grid tw-grid-cols-2">
-        <div class ="tw-ml-8 tw-mr-8">
-          <p class="tw-text-5xl tw-mb-8 tw-font-bold tw-tx-hauptfarbe">Schrankkonfigurator</p>
+  <div class="tw-w-full tw-mt-20 tw-px-20">
+    <div class="tw-w-full tw-py-6 tw-px-8">
+      <div class="tw-w-full tw-text-6xl tw-pb-1 tw-font-bold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
+        {{ t("Configurator.con") }}
+      </div>
+      <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
+        {{ t("Configurator.ind") }}
+      </div>
+      <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
+      <div class="tw-w-full tw-px-8 tw-py-2 tw-text-lg">
+        {{ t("Configurator.fur") }}
+      </div>
+    </div>
+		<div class="tw-w-full tw-px-10">
+      <div class="tw-w-full tw-text-4xl tw-font-semibold tw-pb-4">
+        {{ t("Configurator.conf") }}
+      </div>
+      <div v-for="product in products" :key="product.id" class="tw-w-full tw-bg-gray-200 tw-rounded-xl tw-shadow-inner">
+        <ProductTile :product="product" v-on:config-product="configProduct($event)" />
+      </div>
+		</div>
+    <div class="tw-w-full tw-px-10">
+      <div class="tw-w-full tw-text-4xl tw-font-semibold tw-py-4">
+        {{ t("Configurator.you") }}
+      </div>
+      <div v-if="customs.length" class="tw-w-full tw-bg-gray-200 tw-rounded-xl tw-shadow-inner tw-p-6 tw-overflow-x-scroll tw-overflow-y-hidden tw-whitespace-nowrap">
+        <div v-for=" custom in customs" :key="custom.id" class="tw-inline-block tw-mr-5 tw-w-1/5">
+          <ConfigurationSelect :product="custom" :configId="configId" v-on:edit-configuration="editConfiguration($event)" v-on:delete-configuration="deleteConfiguration($event)"/>
         </div>
       </div>
-      <div class="tw-overflow-auto tw-h-4/6">
-      
-        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
-          <div class ="tw-mb-4">
-            Böden auswählen
-          </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
-              <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
-                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
-                </div>
-              </div>
-              <div class="tw-flex tw-flex-col tw-col-span-2">
-                <div class="tw-mb-8 tw-grid tw-grid-cols-10">
-                  <div class="tw-mb-8 tw-flex tw-flex-col tw-py-2 tw-gap-4 tw-bg-white tw-col-span-8">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Holzart
-                    </div>
-                  </div>
-                  <div class="tw-ml-8 tw-mr-4">
-                    <div class="dropdown inline-block relative">
-                      <button class="tw-mr-4 bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
-                        <span class="mr-1">Mehr</span>
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                      </button>
-                      <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Buche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Eiche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Fichte<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-10">
-                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Anzahl Böden
-                    </div>
-                  </div>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
- 
-        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
-          <div class ="tw-mb-4">
-            Stangen auswählen
-          </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
-              <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
-                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
-                </div>
-              </div>
-              <div class="tw-flex tw-flex-col tw-col-span-2">
-                <div class="tw-mt-8 tw-grid tw-grid-cols-10">
-                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Anzahl Stangen
-                    </div>
-                  </div>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-         <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
-          <div class ="tw-mb-4">
-            Körbe auswählen
-          </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
-              <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
-                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
-                </div>
-              </div>
-              <div class="tw-flex tw-flex-col tw-col-span-2">
-                <div class="tw-mt-8 tw-grid tw-grid-cols-10">
-                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Anzahl Körbe
-                    </div>
-                  </div>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
- 
-        <div class="tw-ml-8 tw-mr-8 tw-mb-20 tw-text-2xl tw-tx-hauptfarbe">
-          <div class ="tw-mb-4">
-            Schubladen auswählen
-          </div>
-          <div class="tw-border-t tw-border-b tw-py-4 tw-grid tw-grid-cols-3 tw-gap-4 bg-lightblue tw-shadow-inner tw-w-full">
-              <div class="tw-flex tw-flex-col tw-justify-start">
-                <div class="tw-flex tw-flex-col tw-px-4 tw-object-cover tw-justify-items-start tw-overflow-hidden tw-col-span-2">
-                  <img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-40 tw-w-60 tw-inline-block tw-pl-4"/>
-                </div>
-              </div>
-              <div class="tw-flex tw-flex-col tw-col-span-2">
-                <div class="tw-mb-8 tw-grid tw-grid-cols-10">
-                  <div class="tw-mb-8 tw-flex tw-flex-col tw-py-2 tw-gap-4 tw-bg-white tw-col-span-8">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Holzart
-                    </div>
-                  </div>
-                  <div class="tw-ml-8">
-                    <div class="dropdown inline-block relative">
-                      <button class="bg-white tw-text-gray-700 tw-font-semibold tw-py-2 tw-px-4 tw-rounded tw-inline-flex tw-items-center">
-                        <span class="mr-1">Mehr</span>
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                      </button>
-                      <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Buche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Eiche<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Fichte<img src="/img/Customer_is_king.jpeg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="tw-grid tw-grid-cols-10">
-                  <div class="tw-mr-1 tw-mb-8 tw-flex tw-flex-col tw-gap-4 tw-bg-white tw-col-span-8 tw-py-2">
-                    <div class="tw-ml-8 tw-text-2xl ">
-                      Anzahl Schubladen
-                    </div>
-                  </div>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-1 tw-ml-8 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▲ </button>
-                  <button type="button" class="tw-col-span-1 btn btn-primary tw-h-4/6 tw-text-2xl tw-py-2 tw-px-4 tw-mr-8 tw-ml-1 tw-bg-white tw-text-black tw-flex tw-justify-center"> ▼ </button>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div v-else class="tw-p-4 tw-rounded-md tw-border-dashed tw-border-red tw-border-2">
+        {{ t("Configurator.choose") }}
       </div>
-           
-      <div class="tw-flex tw-grid-cols-2 tw-justify-center">
-      <button type="button" href="/cart" class="tw-col-span-1 btn btn-primary tw-text-2xl tw-w-2/6  tw-py-4 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 bg-hauptfarbe tw-text-white tw-flex tw-justify-center"> Direkt zum Warenkorb </button>
-      <router-link to="/cart"><img src="/img/icons/arrow_right.png" alt="Error"  class="tw-h-20 tw-px-8 tw-mt-8 tw-mb-8 tw-mr-8 tw-ml-8 tw-inline-block tw-pl-4"/></router-link>
-      </div>
-
     </div>
-
-    <div>
-      <div class="tw-ml-8 tw-mb-8 tw-flex tw-justify-left flex-wrap tw-h-12">
-          <p class="tw-text-5xl tw-font-bold tw-tx-hauptfarbe">Preisliste</p>
+    <div v-if="configId != null" class="tw-w-full tw-px-10">
+      <div class="tw-w-full tw-text-4xl tw-font-semibold tw-py-4">
+        {{ t("Configurator.confi") }}
       </div>
-      <div class="tw-ml-8 tw-mt-8 tw-flex tw-justify-left tw-h-12">
-          <p class="tw-text-2xl tw-tx-hauptfarbe">Ihre aktuelle Konfiguration</p>
-      </div>
-      <div class="tw-ml-8 tw-mr-8 tw-mb-8 tw-w-full tw-flex tw-justify-left">
-          <div class="tw-mr-8 tw-w-full tw-text-2xl tw-text-white bg-hauptfarbe">
-            <div>1x Korpus: 100€</div>
-            <div>2x Böden: 150€</div>
-            <div>4x Stangen: 200€</div>
-            <div>-----------------</div>
-            <div>Gesamt: 450€</div>
-          </div>
-      </div>
-      <div class="tw-ml-8 border-4 tw-text-2xl tw-tx-hauptfarbe border-bg-hauptfarbe tw-flex tw-justify-left">
-        <router-link to="/cart">Zum Warenkorb hinzufügen <img src="/img/icons/shopping-cart.jpg" alt="Error" class="tw-h-12 tw-inline-block tw-pl-4"/></router-link>
-      </div>
-      <div class="tw-ml-8 tw-mt-8 tw-flex tw-justify-left tw-text-white tw-bg-green-dark">
-            <router-link to="/about">Gemeinsam für Nachhaltigkeit, mit unseren Produkten stehen Sie für vollständig durch erneuerbare Energie betriebene Produktion, Filialen und Büros. Lokale Produktionspartner und Holzlieferanten. FSC-Zertifikat Aufforstungszertifikat unseres Holzes</router-link>
-            <img src="/img/footer/FSC_Logo.jpeg" alt="Error" class="tw-h-24 tw-inline-block tw-align-bottom"/>
+      <div>
+        <ConfigurationTool :product="product" :configId="configId" />
       </div>
       
     </div>
+		  <div>
+		</div>
   </div>
-
 </template>
 
 <script>
+import ProductTile from "@/components/Configurator/ProductTile.vue"
+import ConfigurationTool from "@/components/Configurator/ConfigurationTool.vue"
+import ConfigurationSelect from "@/components/Configurator/ConfigurationSelect.vue"
+
+import { useI18n } from "vue-i18n";
+
 export default {
   name: "Configurator",
+  components: {
+	  ProductTile,
+    ConfigurationTool,
+    ConfigurationSelect,
+  },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  },
+  data() {
+    return{
+      categories: [],
+      products: [],
+      product: null,
+      configId: null,
+    }
+  },
+  async mounted() {
+    const { data } = await this.axios.get("catalogue/categories");
+    this.categories = data;
+    for (const categorie of this.categories) {
+      const { data } = await this.axios.get(
+        "catalogue/categories/" + categorie.id + "/products"
+      );
+      this.products.push(data[0]);
+    }
+    this.products = this.products.filter((i) => i.customizable);
+  },
+  computed: {
+    customs() {
+      return this.$store.getters.getCustomProducts;
+    },
+    customId() {
+      return this.$store.getters.getCustomIndex;
+    }
+  },
+  methods: {
+    addToCart() {
+      this.$store.commit("addToCart", {product: this.product, configId: this.configId});
+      this.$store.commit("bumpCustomIndex")
+    },
+    deleteConfiguration(configId) {
+      this.$store.commit("removeFromCart", {product: this.product, configId: configId});
+      this.configId = null;
+    },
+    configProduct(product) {
+      this.product = product;
+      this.configId = this.customId;
+      this.addToCart()
+    },
+    editConfiguration(configId) {
+      this.configId = configId;
+    }
+  }
 };
 </script>
 
@@ -215,7 +136,6 @@ h1 {
 .bg-lightblue {
   background-color: #115D8C;
 }
-
 
 .talk-bubble {
 	margin: 40px;
@@ -251,7 +171,4 @@ h1 {
   display: block;
 }
 
-
-
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>
