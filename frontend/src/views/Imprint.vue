@@ -1,30 +1,28 @@
 <template>
-  <div>
-    <!--<p class="test tw-text-4xl tw-text-center tw-w-100 tw-m-40">This is the Imprint Page! <br> WIP</p>-->
+  <div class="tw-mt-20 tw-px-28">
+    <div class="tw-w-full tw-py-6 ">
+      <div
+        class="
+          tw-w-full
+          tw-text-6xl
+          tw-py-1
+          tw-font-bold
+          tw-text-transparent
+          tw-bg-gradient-to-br
+          tw-from-primary-gradient2
+          tw-to-primary-gradient4
+          tw-bg-clip-text
+        "
+      >
+        Impressum und Datenschutz
+      </div>
+      <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
+        Ihre Daten in besten Händen
+      </div>
+      <div class="tw-h-0.5 tw-bg-gray-300 tw-rounded-full tw-w-full"></div>
+    </div>
     <div>
       <div class="tw-bg-primary tw-text-white">
-        <div
-          class="
-            w-screen
-            tw-text-4xl tw-text-center tw-font-extrabold
-            heading_font
-            bg-hauptfarbe
-            tx-weiss
-          "
-        >
-          <br /><br />
-        </div>
-        <div
-          class="
-            w-screen
-            tw-text-4xl tw-text-center tw-font-extrabold
-            heading_font
-            bg-hauptfarbe
-            tx-weiss
-          "
-        >
-          <br /><br />{{ t("Imprint.start") }}
-        </div>
         <div
           class="
             tw-border-t tw-border-b tw-py-8 tw-grid tw-grid-cols-2 tw-gap-8
