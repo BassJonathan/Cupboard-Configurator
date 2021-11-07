@@ -23,6 +23,11 @@
     src: url(roboto/Roboto-Bold-webfont.woff);
 }
 
+li.router-link-active,
+i.router-link-exact-active {
+    color: red;
+}
+
 /*Fonts*/
 .logo_font {
     font-family: logoFont;
