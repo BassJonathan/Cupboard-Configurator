@@ -12,7 +12,7 @@
     "city_req": "Stadt ist ein Pflichtfeld.",
     "post": "Postleitzahl*",
     "post_req": "Postleitzahl ist ein Pflichtfeld.",
-    "country": "Land",
+    "country": "Land*",
     "ger": "Deutschland",
     "fra": "Frankreich",
     "aus": "Österreich",

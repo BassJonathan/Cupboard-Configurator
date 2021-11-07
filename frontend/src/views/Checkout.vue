@@ -4,21 +4,18 @@
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
     <div class="tw-w-full tw-flex tw-justify-center">
-      <form action="/" method="post" id="orderForm" class="tw-w-2/3">
+      <form @submit.prevent="postOrder" id="orderForm" class="tw-w-2/3">
         <div class="t tw-grid tw-grid-cols-6 tw-gap-3">
           <!-- GRID COL 1 -->
           <div class="form-floating mb-3 tw-col-span-3">
             <input
               class="form-control"
               id="firstName"
-              type="email"
+              type="text"
               placeholder="First Name"
-              data-sb-validations="required"
+              required
             />
             <label for="firstName"> {{ t("Checkout.firstname") }}</label>
-            <div class="invalid-feedback" data-sb-feedback="firstName:required">
-              {{ t("Checkout.firstname_req") }}
-            </div>
           </div>
           <div class="form-floating mb-3 tw-col-span-3">
             <input
@@ -26,7 +23,6 @@
               id="middleName"
               type="text"
               placeholder="Middle Name"
-              data-sb-validations=""
             />
             <label for="middleName"> {{ t("Checkout.middelname") }}</label>
           </div>
@@ -37,7 +33,7 @@
               id="lastName"
               type="text"
               placeholder="Last Name"
-              data-sb-validations="required"
+              required
             />
             <label for="lastName"> {{ t("Checkout.lastname") }} </label>
             <div class="invalid-feedback" data-sb-feedback="lastName:required">
@@ -52,6 +48,7 @@
               type="text"
               placeholder="Street"
               data-sb-validations="required"
+              required
             />
             <label for="street">{{ t("Checkout.street") }}</label>
             <div class="invalid-feedback" data-sb-feedback="street:required">
@@ -62,9 +59,9 @@
             <input
               class="form-control"
               id="houseNumber"
-              type="text"
+              type="number"
               placeholder="House number"
-              data-sb-validations="required"
+              required
             />
             <label for="houseNumber">{{ t("Checkout.numb") }}</label>
             <div
@@ -81,7 +78,7 @@
               id="city"
               type="text"
               placeholder="City"
-              data-sb-validations="required"
+              required
             />
             <label for="city">{{ t("Checkout.city") }}</label>
             <div class="invalid-feedback" data-sb-feedback="city:required">
@@ -92,9 +89,9 @@
             <input
               class="form-control"
               id="postalCode"
-              type="text"
+              type="number"
               placeholder="Postal Code"
-              data-sb-validations="required"
+              required
             />
             <label for="postalCode">{{ t("Checkout.post") }}</label>
             <div
@@ -106,22 +103,23 @@
           </div>
           <!-- GRID COL 5 -->
           <div class="form-floating mb-3 tw-col-span-6">
-            <select class="form-select" id="country" aria-label="Country">
+            <select class="form-select" id="country" aria-label="Country" required>
               <option value="Germany">{{ t("Checkout.ger") }}</option>
               <option value="France">{{ t("Checkout.fra") }}</option>
               <option value="Austria">{{ t("Checkout.aus") }}</option>
               <option value="UK">{{ t("Checkout.uk") }}</option>
             </select>
             <label for="country">{{ t("Checkout.country") }}</label>
+            
           </div>
           <!-- GRID COL 6 -->
           <div class="form-floating mb-3 tw-col-span-3">
             <input
               class="form-control"
               id="eMail"
-              type="text"
+              type="email"
               placeholder="E-Mail"
-              data-sb-validations="required"
+              required
             />
             <label for="eMail">{{ t("Checkout.email") }}</label>
             <div class="invalid-feedback" data-sb-feedback="eMail:required">
@@ -134,7 +132,7 @@
               id="phoneNumber"
               type="text"
               placeholder="Phone-number"
-              data-sb-validations="required"
+              required
             />
             <label for="phoneNumber">{{ t("Checkout.phone") }}</label>
             <div
@@ -170,7 +168,7 @@
                   id="optionA"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
                 <label class="form-check-label" for="optionA">{{ t("Checkout.option-a") }}</label>
               </div>
@@ -180,7 +178,7 @@
                   id="optionB"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
                 <label class="form-check-label" for="optionB">{{ t("Checkout.option-b") }}</label>
               </div>
@@ -190,7 +188,7 @@
                   id="optionC"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
                 <label class="form-check-label" for="optionC">{{ t("Checkout.option-c") }}</label>
               </div>
@@ -216,7 +214,7 @@
             </div>
             <div class="d-grid">
               <button
-                class="btn btn-primary btn-lg disabled"
+                class="btn btn-primary btn-lg"
                 id="submitButton"
                 type="submit"
               >
@@ -236,12 +234,68 @@ import { useI18n } from "vue-i18n";
 export default {
   name: "Checkout",
   setup() {
-    const { t, locale } = useI18n({
+    const { t } = useI18n({
+      globalInjection: true,
       inheritLocale: true,
       useScope: "global",
     });
-    return { t, locale };
+    return { t, };
   },
+  computed:{
+    currency() {
+      return this.$store.state.currency;
+    },
+    cart_items() {
+      return this.$store.getters.cartItems;
+    },
+    cart_total() {
+      return this.$store.getters.cartTotal;
+    },
+    tax() {
+      return this.$store.getters.getTaxRate;
+    }
+  },
+  methods: {
+    postOrder(){
+      var d = new Date()
+      var orderData = {
+        "orderDate": d.toISOString(),
+        "country": document.getElementById('country').value,
+        "customer": {
+            "firstname": document.getElementById('firstName').value,
+            "middlename": document.getElementById('middleName').value,
+            "lastname": document.getElementById('lastName').value,
+            "address": document.getElementById('street').value + document.getElementById('houseNumber').value,
+            "postalCode": document.getElementById('postalCode').value,
+            "city": document.getElementById('city').value,
+            "country": document.getElementById('country').value,
+            "phone": document.getElementById('phoneNumber').value,
+            "email": document.getElementById('eMail').value
+        },
+        "price": {
+            "currency": this.currency,
+            "netPrice": this.cart_total,
+            "taxPercentage": this.tax,
+            "taxAmmount": this.cart_total * this.tax,
+            "grossPrice": this.cart_total + (this.cart_total * this.tax)
+        },
+      }
+
+      let products = JSON.parse(JSON.stringify(this.cart_items))
+      orderData['products'] = products
+
+      console.log(products)
+      console.log(orderData)
+
+      this.axios.post('/order', orderData)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+  }
 };
 </script>
 

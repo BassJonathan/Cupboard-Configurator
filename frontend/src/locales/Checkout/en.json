@@ -12,7 +12,7 @@
     "city_req": "City is required.",
     "post": "Postal Code*",
     "post_req": "Postal Code is required.",
-    "country": "Country",
+    "country": "Country*",
     "ger": "Germany",
     "fra": "France",
     "aus": "Austria",
