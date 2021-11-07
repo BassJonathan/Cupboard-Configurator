@@ -1,19 +1,23 @@
 {
-"headline": "Mit unserer Arbeit bleiben wir unseren Unternehmenszielen stehts treu:",
+    "goal": "Unser Ziel - Eine Grüne Mission",
+    "fut": "Alles über unsere Philosophie, unser Ziel und Pläne für die Zukunft.",
 
-"head1": "Sie als Kunde stehen bei uns im Mittelpunkt",
-"sub1_1": "Wir versuchen alles, damit Sie als unser Kunden zufrieden sind.",
-"sub1_2": "Unsere Produkte und Webseite sind durchgehend auf Sie abgestimmt.",
-"sub1_3": "Mit dieser Webseite binden wir Sie aktiv in den Erstellungsprozess ihrer Produkte mit ein zusätzlich erhalten sie nach dem Login spezifische Informationen über den Produktionsstatus ihrer Produkte.",
 
-"head2": "Wir stehen gemeinsam mit Ihnen für Umweltschutz",
-"sub2_1": "Mit dem Kauf unserer hochwertigen Produkte stehen Sie für nachhaltige Produktion, durch lokale Produktionspartner und Holzlieferanten.",
-"sub2_2": "Das FSC®-Zertifiziert unseres Holzes garantiert eine kontinuierliche Wiederaufforstung der Wälder.",
-"sub2_3": "Unsere Produktion und Büros werden vollständig mit erneuerbare Energie betriebenen.",
-"arrowheader": "Erfahre mehr über unsere Produktion",
+    "headline": "Mit unserer Arbeit bleiben wir unseren Unternehmenszielen stehts treu:",
 
-"head3": "Ihre Individualität liegt uns am Herzen",
-"sub3_1": "Wohnen heißt sich ausdrücken und zu präsentieren.",
-"sub3_2": "Mit uns können sie Ihr Eigenheim individuell nach Ihren Wünschen einzigartig gestalten.",
-"sub3_3": "Konfigurieren Sie die Größe, Farbe und Innenaustattung Ihres neuen Lieblingsmöbelstücks."
+    "head1": "Sie als Kunde stehen bei uns im Mittelpunkt",
+    "sub1_1": "Wir versuchen alles, damit Sie als unser Kunden zufrieden sind.",
+    "sub1_2": "Unsere Produkte und Webseite sind durchgehend auf Sie abgestimmt.",
+    "sub1_3": "Mit dieser Webseite binden wir Sie aktiv in den Erstellungsprozess ihrer Produkte mit ein zusätzlich erhalten sie nach dem Login spezifische Informationen über den Produktionsstatus ihrer Produkte.",
+
+    "head2": "Wir stehen gemeinsam mit Ihnen für Umweltschutz",
+    "sub2_1": "Mit dem Kauf unserer hochwertigen Produkte stehen Sie für nachhaltige Produktion, durch lokale Produktionspartner und Holzlieferanten.",
+    "sub2_2": "Das FSC®-Zertifiziert unseres Holzes garantiert eine kontinuierliche Wiederaufforstung der Wälder.",
+    "sub2_3": "Unsere Produktion und Büros werden vollständig mit erneuerbare Energie betriebenen.",
+    "arrowheader": "Erfahre mehr über unsere Produktion",
+
+    "head3": "Ihre Individualität liegt uns am Herzen",
+    "sub3_1": "Wohnen heißt sich ausdrücken und zu präsentieren.",
+    "sub3_2": "Mit uns können sie Ihr Eigenheim individuell nach Ihren Wünschen einzigartig gestalten.",
+    "sub3_3": "Konfigurieren Sie die Größe, Farbe und Innenaustattung Ihres neuen Lieblingsmöbelstücks."
 }

@@ -5,23 +5,23 @@
                 <div class="tw-text-white">
                     <div class="tw-text-3xl tw-font-bold tw-text-left">
                         <span class="tw-text-4xl tw-font-bold tw-bg-clip-text tw-bg-gradient-to-tl tw-from-green-600 tw-to-green-400 tw-text-transparent">
-                            Grün
+                            {{ t("SustainabilityHover.green") }}
                         </span>
-                         ist nicht nur eine Farbe,
+                        {{ t("SustainabilityHover.color") }}
                     </div>
                     <div class="tw-text-3xl tw-font-bold tw-text-right">
-                        sondern auch unsere 
+                        {{ t("SustainabilityHover.our") }}
                         <span class="tw-text-4xl tw-font-bold tw-bg-clip-text tw-bg-gradient-to-tl tw-from-primary-gradient4 tw-to-primary-gradient6 tw-text-transparent">
-                            Leitlinie!
+                            {{ t("SustainabilityHover.leit") }}
                         </span> 
                     </div>
                 </div>
                 <div class="tw-h-0.5 tw-bg-primary-gradient4 tw-rounded-full tw-w-full tw-my-4"></div>
                 <div class="tw-text-white tw-text-xl">
-                    Wir bei Cupboard Ltd. sind davon überzeugt, dass eine grüne und klimaneutrale Produktion von Möbeln möglich und machbar ist. Daher arbeiten wir seit über 10 Jahren an einer möglichst umweltschonenden Produktion, welche die Rohstoffe, die Fertigung und die Lieferung umfasst.
+                    {{ t("SustainabilityHover.we") }}
                 </div>
                 <div class="tw-w-full tw-flex tw-justify-center tw-items-center tw-pt-4">
-                    <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/goal">Erfahre mehr</router-link>
+                    <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/goal">{{ t("SustainabilityHover.more") }}</router-link>
                 </div>
             </div>
             <div class="tw-bottom-4 tw-absolute" id="SustainabilityLogo">
@@ -32,7 +32,16 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 export default {
+    setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  }
 
 }
 </script>
