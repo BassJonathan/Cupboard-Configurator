@@ -4,19 +4,19 @@
       <div class="tw-w-3/5 all_container tw-h-96 tw-p-10">
         <div class="tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center">
           <div class="tw-text-5xl tw-font-bold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
-            Hochwertige Möbel aus nachhaltigem Holz.
+            {{ t("ProductDisplay.heading") }}
           </div>
           <div class="tw-text-2xl tw-font-semibold tw-text-gray-500 tw-px-4 tw-pt-5">
-            Bequem von Zuhause aus bestellen oder sogar individuell Konfigurieren
+            {{ t("ProductDisplay.subheading") }}
           </div>
           <div class="tw-text-xl tw-pt-8">
-            Wir bieten Ihnen hochwertige Möbelstücke aus FSC-Zertifizierten Holz zu fairen preisen. Sie können dabei aus einer Vielzahl an Produkten auswählen und einzelne Möbelstücke sogar indivuduell Konfigurerien.
+            {{ t("ProductDisplay.text") }}
           </div>
           <div class="tw-text-2xl tw-pt-8 tw-text-center">
-            Haben wir Ihr Interesse geweckt?
+            {{ t("ProductDisplay.question") }}
           </div>
           <div class="tw-w-full tw-flex tw-justify-center tw-pt-2">
-            <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/products">Zu unseren Produkten</router-link>
+            <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/products">{{ t("ProductDisplay.button") }}</router-link>
           </div>
         </div>
       </div>
