@@ -10,7 +10,7 @@ router.post("/", (request, response) => {
     })
     .catch((e) => {
       console.log("ERROR: ", e);
-      res.end();
+      response.end();
     });
 });
 
