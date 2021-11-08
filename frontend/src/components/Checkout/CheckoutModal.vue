@@ -29,7 +29,7 @@
               </tr>
             </table>
             <div class="tw-pt-8 tw-w-full tw-flex tw-justify-center">
-              <router-link class="btn btn-primary tw-mr-4 tw-float-right tw-text-l tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/">{{ t("CheckoutModal.btn") }}</router-link>
+              <router-link class="btn btn-primary tw-mr-4 tw-float-right tw-text-l tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/" @click="clear_store()">{{ t("CheckoutModal.btn") }}</router-link>
             </div>
           </div>
         </div>
@@ -52,6 +52,12 @@
     });
     return { t };
   },
+  methods: {
+    clear_store(){
+      console.log("DELETE")
+      this.$store.commit("cleanCart");
+    }
+  }
   }
 </script>
 

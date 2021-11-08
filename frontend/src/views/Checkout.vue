@@ -1,5 +1,6 @@
 <template>
-  <div class="tw-w-full tw-px-16 tw-mt-20">
+  <div>
+    <div class="tw-w-full tw-px-16 tw-mt-20">
     <checkout-modal :orderId="orderId" v-if="displayModal"/>
   </div>
 
@@ -242,6 +243,7 @@
       </form>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -313,7 +315,6 @@ export default {
       let products = JSON.parse(JSON.stringify(this.cart_items))
       orderData['products'] = products
 
-      this.clear_store()
       this.displayModal = true;
 
       const vm = this;
@@ -326,9 +327,6 @@ export default {
       .catch(function (error) {
         console.log(error);
       });
-    },
-    clear_store(){
-      this.$store.commit("cleanCart");
     }
   }
 };
