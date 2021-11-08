@@ -1,6 +1,7 @@
 <template>
-
-  <checkout-modal :orderId="orderId" v-if="displayModal"/>
+  <div class="tw-w-full tw-px-16 tw-mt-20">
+    <checkout-modal :orderId="orderId" v-if="displayModal"/>
+  </div>
 
   <div v-if="cart_number_items == 0" class="tw-w-full tw-px-16 tw-mt-20">
     <div class="tw-pt-8 tw-w-full tw-flex tw-justify-center">
