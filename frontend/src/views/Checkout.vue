@@ -4,6 +4,7 @@
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
     <div class="tw-w-full tw-flex tw-justify-center">
+      <checkout-modal :orderId="orderId" v-if="displayModal"/>
       <form @submit.prevent="postOrder" id="orderForm" class="tw-w-2/3">
         <div class="t tw-grid tw-grid-cols-6 tw-gap-3">
           <!-- GRID COL 1 -->
@@ -230,6 +231,7 @@
 
 <script>
 import { useI18n } from "vue-i18n";
+import CheckoutModal from "@/components/Checkout/CheckoutModal.vue";
 
 export default {
   name: "Checkout",
@@ -240,6 +242,15 @@ export default {
       useScope: "global",
     });
     return { t, };
+  },
+  components: {
+    CheckoutModal
+  },
+  data() {
+    return {
+      displayModal: false,
+      orderId: 0
+    }
   },
   computed:{
     currency() {
@@ -284,17 +295,23 @@ export default {
       let products = JSON.parse(JSON.stringify(this.cart_items))
       orderData['products'] = products
 
-      console.log(products)
       console.log(orderData)
+      this.displayModal = true;
 
+      const vm = this;
       this.axios.post('/order', orderData)
       .then(function (response) {
         console.log(response);
+        vm.orderId = response.data.orderId;
+        vm.displayModal = true;
       })
       .catch(function (error) {
         console.log(error);
       });
-    }
+    },
+    showModal() {
+      
+    },
   }
 };
 </script>

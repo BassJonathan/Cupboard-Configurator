@@ -1,201 +1,108 @@
 <template>
-  <div>
-    <div
-      class="drawer_background tw-fixed tw-w-full tw-h-full tw-left-0 tw-top-0"
-      :class="{ show: active }"
-      @click="$emit('close-product-drawer')"
-    ></div>
-
-    <div
-      :class="{ show: active }"
-      class="
-        drawer
-        tw-w-1/2
-        tw-mx-auto
-        tw-bg-white
-        tw-fixed
-        tw-p-4
-        tw-left-1/4
-        tw-rounded-2xl
-      "
-    >
-      <div v-if="product" class="product-details">
-        <p class="tw-text-2xl tw-font-bold tw-text-center tw-pt-5">
-          {{ product.name }} {{ t("ProductModal.cart") }}
-        </p>
-        <div class="tw-w-full tw-p-7">
-          <table
-            class="
-              tw-table-fixed
-              tw-border-collapse
-              tw-border-2
-              tw-border-gray-400
-              tw-text-left
-            "
-            v-if="product_total"
-          >
-            <thead class="tw-bg-gray-200">
-              <tr>
-                <th class="tw-w-1/2 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  {{ t("ProductModal.narticle") }}
-                </th>
-                <th class="tw-w-1/4 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  {{ t("ProductModal.nprice") }}
-                </th>
-                <th class="tw-w-1/4 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  {{ t("ProductModal.ncount") }}
-                </th>
+  <div class="checkout-modal drawer_background tw-fixed tw-w-full tw-h-full tw-left-0 tw-top-0">
+    <div class="modal">
+      <div class="modal-dialog tw-max-w-xl" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title tw-font-bold tw-text-2xl">{{ t("CheckoutModal.thanks") }}</h2>
+          </div>
+          <div class="modal-body">
+            <p><span class="tw-font-bold">{{ t("CheckoutModal.orderId") }}</span> {{ orderId }}</p>
+            <br>
+            <h2 class="tw-font-bold tw-text-xl">{{ t("CheckoutModal.productionProgress")}}</h2>
+            <table>
+              <tr id="tr1">
+                <td class="tw-w-9 tw-font-bold tw-py-2"><p>&#10003;</p></td>
+                <td><p>{{ t("CheckoutModal.step1") }}</p></td>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="tw-border-2 tw-border-gray-400 tw-pl-3">
-                  {{ product.name }}
-                </td>
-                <td class="tw-border-2 tw-border-gray-400 tw-pl-3">
-                  {{ n(product.price, "currency", currency) }}
-                </td>
-                <td class="tw-border-2 tw-border-gray-400 tw-h-full">
-                  <button
-                    type="button"
-                    class="
-                      btn
-                      tw-w-1/4
-                      tw-bg-yellow-600
-                      tw-inline-block
-                      tw-rounded-l-lg
-                      tw-rounded-r-none
-                    "
-                    @click="removeFromCart()"
-                  >
-                    -
-                  </button>
-                  <div class="tw-w-1/2 tw-text-center tw-inline-block">
-                    <p>{{ product_total }}</p>
-                  </div>
-                  <button
-                    type="button"
-                    class="
-                      btn
-                      tw-w-1/4
-                      tw-bg-green-600
-                      tw-inline-block
-                      tw-rounded-r-lg
-                      tw-rounded-l-none
-                    "
-                    @click="addToCart()"
-                  >
-                    +
-                  </button>
-                </td>
+              <tr id="tr2">
+                <td class="tw-w-9 tw-font-bold tw-py-2"><p>&#10003;</p></td>
+                <td><p>{{ t("CheckoutModal.step2") }}</p></td>
               </tr>
-            </tbody>
-          </table>
-          <div v-else class="tw-w-full">
-            <p class="tw-text-center tw-text-xl">
-              {{ t("ProductModal.emptycart") }}
-            </p>
-            <div class="tw-w-full tw-flex tw-items-center tw-content-center">
-              <button
-                type="button"
-                class="
-                  btn
-                  tw-mx-auto tw-my-5 tw-w-52 tw-bg-green-dark tw-text-white
-                  hover:tw-text-white hover:tw-bg-green-200 hover:tw-shadow-xl
-                "
-                @click="addToCart()"
-              >
-                {{ t("ProductModal.add") }}
-              </button>
+              <tr id="tr3">
+                <td class="tw-w-9 tw-font-bold tw-py-2"><p>&#10003;</p></td>
+                <td><p>{{ t("CheckoutModal.step3") }}</p></td>
+              </tr>
+              <tr id="tr4">
+                <td class="tw-w-9 tw-font-bold tw-py-2"><p>&#10003;</p></td>
+                <td><p>{{ t("CheckoutModal.step4") }}</p></td>
+              </tr>
+            </table>
+            <div class="tw-pt-8 tw-w-full tw-flex tw-justify-center">
+              <router-link class="btn btn-primary tw-mr-4 tw-float-right tw-text-l tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/">{{ t("CheckoutModal.btn") }}</router-link>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
-      <div class="tw-float-right tw-pt-5 tw-px-5">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          @click="$emit('close-product-drawer')"
-        >
-          {{ t("ProductModal.shop") }}
-        </button>
-        <router-link class="btn btn-primary tw-ml-4" to="/cart"
-          >{{ t("ProductModal.goto") }}</router-link
-        >
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
+  import { useI18n } from "vue-i18n";
 
-export default {
-  name: "ProductDrawer",
-  props: ["product", "active"],
-  setup() {
-    const { t, n, locale } = useI18n({
+  export default {
+    name: "CheckoutModal",
+    props: ["orderId"],
+    setup() {
+    const { t } = useI18n({
+      globalInjection: true,
       inheritLocale: true,
       useScope: "global",
     });
-    return { t, n, locale };
+    return { t, };
   },
-  computed: {
-    product_total() {
-      return this.$store.getters.productQuantity(this.product);
-    },
-    currency() {
-      return this.$store.state.currency;
-    },
-  },
-  methods: {
-    addToCart() {
-      this.$store.commit("addToCart", this.product);
-    },
-    removeFromCart() {
-      this.$store.commit("removeFromCart", this.product);
-    },
-  },
-};
+  }
 </script>
 
 <style lang="scss">
-.drawer_background {
-  background-color: rgba(124, 124, 124, 0.55);
-  z-index: 1000;
-  display: none;
-  transition: display 0.5s;
-
-  &.show {
+  .drawer_background {
+    background-color: rgba(124, 124, 124, 0.55);
+    z-index: 1000;
+    display: none;
+    transition: display 0.5s;
     display: block;
-  }
-}
 
-.drawer {
-  top: -80vh;
-  transition: top 0.5s;
-  z-index: 1001;
-
-  &.show {
-    top: 80px;
-  }
-}
-
-.product-details {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  .button-container {
-    button {
-      width: 150px;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 0 5px 50px 5px;
-      cursor: pointer;
+    &.show {
+      display: block;
     }
   }
-}
+  
+  .modal{
+    display: block;
+  }
+
+  tr {
+    color: black;
+  }
+
+  @keyframes changeColor {
+    0% {color: black;}
+    100% {color: black;}
+  }
+
+  #tr1 {
+    color: #8C8A0A;
+    animation: linear;
+    animation-name: changeColor;
+    animation-duration: 4s;
+  }
+  #tr2 {
+    color: #8C8A0A;
+    animation: linear;
+    animation-name: changeColor;
+    animation-duration: 8s;
+  }
+  #tr3 {
+    color: #8C8A0A;
+    animation: linear;
+    animation-name: changeColor;
+    animation-duration: 12s;
+  }
+  #tr4 {
+    color: #8C8A0A;
+    animation: linear;
+    animation-name: changeColor;
+    animation-duration: 16s;
+  }
 </style>
