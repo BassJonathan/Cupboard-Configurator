@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/BassJonathan/cupboard-configurator">
-    <img src="" alt="Logo" width="140">
+    <img src="https://github.com/BassJonathan/Cupboard-Configurator/blob/master/Documentation/Logo_icon.png" alt="Logo" width="140">
   </a>
 
   <h3 align="center">Cupboard Ltd Configurator by CLOSING< /TAG></h3>
