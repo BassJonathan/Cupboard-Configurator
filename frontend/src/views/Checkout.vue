@@ -1,4 +1,7 @@
 <template>
+
+  <checkout-modal :orderId="orderId" v-if="displayModal"/>
+
   <div v-if="cart_number_items == 0" class="tw-w-full tw-px-16 tw-mt-20">
     <div class="tw-pt-8 tw-w-full tw-flex tw-justify-center">
       <div>
@@ -16,7 +19,6 @@
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
     <div class="tw-w-full tw-flex tw-justify-center">
-      <checkout-modal :orderId="orderId" v-if="displayModal"/>
       <form @submit.prevent="postOrder" id="orderForm" class="tw-w-2/3">
         <div class="t tw-grid tw-grid-cols-6 tw-gap-3">
           <!-- GRID COL 1 -->
