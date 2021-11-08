@@ -18,7 +18,7 @@ module.exports = {
           gradient3: "#005080",
           gradient4: "#0066a3",
           gradient5: "#007dc7",
-          gradient6: "#00a0ff"
+          gradient6: "#00a0ff",
         },
         blue: "#115D8C",
         red: {
@@ -27,7 +27,7 @@ module.exports = {
           gradient2: "#8f0b0b",
           gradient3: "#b30c0c",
           gradient4: "#e00b0b",
-          gradient5: "#fc0303"
+          gradient5: "#fc0303",
         },
         green: {
           DEFAULT: "#8C8A0A",
@@ -35,8 +35,7 @@ module.exports = {
           gradient1: "#b3b00b",
           gradient2: "#c7c40a",
           gradient3: "#e3e009",
-          gradient4: "#f5f102"
-          
+          gradient4: "#f5f102",
         },
       },
       minHeight: (theme) => ({
@@ -46,9 +45,7 @@ module.exports = {
   },
   variants: {
     extend: {},
-  },
-  variants: {
-      textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ["responsive", "hover", "focus", "group-hover"],
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };

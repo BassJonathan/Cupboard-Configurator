@@ -100,8 +100,23 @@
                 type="button"
                 class="
                   btn
-                  tw-mx-auto tw-my-5 tw-w-52 tw-bg-green-dark tw-text-white
-                  hover:tw-text-white hover:tw-bg-green-200 hover:tw-shadow-xl
+                  tw-mx-auto
+                  tw-my-5
+                  tw-w-52
+                  tw-text-xl
+                  tw-transition
+                  tw-text-white
+                  tw-duration-700
+                  tw-border-green
+                  tw-shadow-lg
+                  tw-ease-in-out
+                  tw-bg-gradient-to-tl
+                  tw-from-green-gradient2
+                  tw-to-green-gradient1
+                  hover:tw-from-green-gradient4
+                  hover:tw-to-green-gradient2
+                  hover:tw-shadow-xl
+                  hover:tw-text-white
                 "
                 @click="addToCart()"
               >
@@ -120,7 +135,10 @@
         >
           {{ t("ProductModal.shop") }}
         </button>
-        <router-link class="btn btn-primary tw-ml-4" to="/cart" @click="$emit('close-product-drawer')"
+        <router-link
+          class="btn btn-primary tw-ml-4"
+          to="/cart"
+          @click="$emit('close-product-drawer')"
           >{{ t("ProductModal.goto") }}</router-link
         >
       </div>
@@ -151,10 +169,10 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", {product: this.product});
+      this.$store.commit("addToCart", { product: this.product });
     },
     removeFromCart() {
-      this.$store.commit("removeFromCart", {product: this.product});
+      this.$store.commit("removeFromCart", { product: this.product });
     },
   },
 };

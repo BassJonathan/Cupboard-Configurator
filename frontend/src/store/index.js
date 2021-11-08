@@ -6,7 +6,6 @@ export default createStore({
   state: {
     currency: "de", //TO-DO: Change start-state to i18n global loacal
     taxRate: 0.19,
-
   },
   getters: {
     getCurrency(state) {
@@ -14,7 +13,7 @@ export default createStore({
     },
     getTaxRate(state) {
       return state.taxRate;
-    }
+    },
   },
   mutations: {
     //synchronous
@@ -23,21 +22,21 @@ export default createStore({
     },
     setTax(state, value) {
       if (value == "de") {
-        state.taxRate = 0.19
+        state.taxRate = 0.19;
       } else if (value == "a") {
-        state.taxRate = 0.20
+        state.taxRate = 0.2;
       } else if (value == "ch") {
-        state.taxRate = 0.77
+        state.taxRate = 0.77;
       } else if (value == "en") {
-        state.taxRate = 0
+        state.taxRate = 0;
       } else if (value == "fr") {
-        state.taxRate = 0.20
+        state.taxRate = 0.2;
       } else if (value == "it") {
-        state.taxRate = 0.22
+        state.taxRate = 0.22;
       } else {
-        state.taxRate = 0
+        state.taxRate = 0;
       }
-    }
+    },
   },
   actions: {
     //async for api etc.

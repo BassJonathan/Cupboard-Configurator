@@ -29,5 +29,8 @@
     "payment_req": "Une mode de paiement est obligatoired.",
     "order": "Commandez",
     "success": "Soumission du formulaire réussie !",
-    "error": "Erreur d'envoi du message !"
+    "error": "Erreur d'envoi du message !",
+    "emptyCart": "Vous n'avez aucun produit dans votre panier !",
+    "eText": "Vous pouvez trouver nos produits durables ici :",
+    "eButton": "Nos produits"
 }

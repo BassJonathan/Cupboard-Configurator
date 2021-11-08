@@ -29,5 +29,8 @@
     "payment_req": "Un metodo di pagamento è richiesto.",
     "order": "Ordina",
     "success": "Invio del modulo riuscito!",
-    "error": "Errore nell'invio del messaggio!"
+    "error": "Errore nell'invio del messaggio!",
+    "emptyCart": "Non hai prodotti nel tuo carrello!",
+    "eText": "Puoi trovare i nostri prodotti sostenibili qui:",
+    "eButton": "I nostri prodotti"
 }

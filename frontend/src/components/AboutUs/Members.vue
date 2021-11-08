@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-        
+
         <div
           class="
             w-full
@@ -140,7 +140,6 @@
 </template>
 
 <script>
-
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -153,10 +152,6 @@ export default {
     return { t, locale };
   },
 };
-
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>

@@ -58,7 +58,7 @@ export default {
       useScope: "global",
     });
     return { t, locale };
-  }
+  },
 };
 </script>
 

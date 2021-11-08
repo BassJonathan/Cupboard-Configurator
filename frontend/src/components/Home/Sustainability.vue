@@ -30,9 +30,22 @@
         />
       </div>
     </div>
-    <div class=" tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center tw-pr-5">
+    <div
+      class="tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center tw-pr-5"
+    >
       <div class="tw-flex tw-flex-col tw-gap-4">
-        <div class="tw-text-5xl tw-font-bold  tw-text-transparent tw-bg-gradient-to-br tw-from-green-gradient3 tw-to-white tw-bg-clip-text tw-pb-1">
+        <div
+          class="
+            tw-text-5xl
+            tw-font-bold
+            tw-text-transparent
+            tw-bg-gradient-to-br
+            tw-from-green-gradient3
+            tw-to-white
+            tw-bg-clip-text
+            tw-pb-1
+          "
+        >
           {{ t("Sustainability.sustainable") }}
         </div>
         <div class="tw-font-semibold tw-text-2xl">
@@ -42,12 +55,29 @@
           {{ t("Sustainability.sustainabletxt2") }}
         </p>
         <div class="tw-mt-8"></div>
-        <button
-          type="button"
-          class="btn btn-success tw-w-48 tw-h-12 tw-mx-auto tw-text-xl"
+      </div>
+      <div class="tw-w-full tw-flex tw-justify-center">
+        <router-link
+          class="
+            btn btn-primary
+            tw-w-48
+            tw-ml-4
+            tw-text-xl
+            tw-transition
+            tw-duration-700
+            tw-border-green
+            tw-shadow-lg
+            tw-ease-in-out
+            tw-bg-gradient-to-tl
+            tw-from-green-gradient2
+            tw-to-green-gradient1
+            hover:tw-from-green-gradient4
+            hover:tw-to-green-gradient2
+            hover:tw-shadow-xl
+          "
+          to="/goal"
+          >{{ t("Sustainability.button") }}</router-link
         >
-          {{ t("Sustainability.button") }}
-        </button>
       </div>
     </div>
   </div>

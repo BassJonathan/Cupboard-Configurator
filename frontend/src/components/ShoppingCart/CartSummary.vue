@@ -9,7 +9,8 @@
     <td class="tw-pt-6">
       <div class="tw-w-full tw-text-right">
         <div class="tw-text-3xl">
-          {{ t("CartSummary.sum") }} ({{ cart_number_items }} {{ t("CartSummary.article") }}):
+          {{ t("CartSummary.sum") }} ({{ cart_number_items }}
+          {{ t("CartSummary.article") }}):
         </div>
         <div class="tw-text-gray-600 tw-text-lg">
           {{ t("CartSummary.netto") }}
@@ -28,8 +29,10 @@
           {{ n(cart_total, "currency", currency) }}
         </div>
         <div class="tw-text-gray-600 tw-text-lg">
-          {{ n(getBrutto(cart_total, taxes) - cart_total, "currency", currency) }}
-        </div>    
+          {{
+            n(getBrutto(cart_total, taxes) - cart_total, "currency", currency)
+          }}
+        </div>
       </div>
     </td>
   </tr>
@@ -63,9 +66,9 @@ export default {
   },
   methods: {
     getBrutto(price, tax) {
-      return (price + (price * tax));
+      return price + price * tax;
     },
-  }
+  },
 };
 </script>
 

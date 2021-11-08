@@ -29,5 +29,8 @@
     "payment_req": "One payment methode is required.",
     "order": "Order",
     "success": "Form submission successful!",
-    "error": "Error sending message!"
+    "error": "Error sending message!",
+    "emptyCart": "You have no products in your shopping cart!",
+    "eText": "You can find our sustainable products here:",
+    "eButton": "Our products"
 }

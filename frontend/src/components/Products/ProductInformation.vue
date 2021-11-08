@@ -26,7 +26,8 @@
         v-if="product.priceStarting"
         class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold"
       >
-        {{ t("ProductInformation.ab") }} {{ n(getBrutto(product.price, taxes), "currency", currency) }}
+        {{ t("ProductInformation.ab") }}
+        {{ n(getBrutto(product.price, taxes), "currency", currency) }}
       </h3>
       <h3
         v-else
@@ -107,10 +108,10 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", {product: this.product});
+      this.$store.commit("addToCart", { product: this.product });
     },
     getBrutto(price, tax) {
-      return (price + (price * tax));
+      return price + price * tax;
     },
   },
 };

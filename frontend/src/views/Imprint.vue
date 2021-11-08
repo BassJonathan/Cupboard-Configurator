@@ -1,6 +1,6 @@
 <template>
   <div class="tw-mt-20 tw-px-28">
-    <div class="tw-w-full tw-py-6 ">
+    <div class="tw-w-full tw-py-6">
       <div
         class="
           tw-w-full
@@ -32,7 +32,9 @@
         >
           <div class="ml-8 tw-flex tw-flex-col tw-justify-start">
             <div class="ml-8 tw-flex tw-flex-col tw-gap-4">
-              <p class="tw-text-3xl tw-font-bold tx-weiss">{{ t("Imprint.editor") }}</p>
+              <p class="tw-text-3xl tw-font-bold tx-weiss">
+                {{ t("Imprint.editor") }}
+              </p>
               <p class="tw-text-lg tx-weiss">
                 <!--{{ t("Imprint.editortext") }}-->
                 {{ t("Imprint.web") }}

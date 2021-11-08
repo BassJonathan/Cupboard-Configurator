@@ -69,10 +69,16 @@
             class="tw-w-full tw-py-3 tw-px-5 tw-bg-white tw-rounded tw-border-2"
           >
             <p class="heading_font">
-              <router-link to="/imprint">{{ t("Footer.information") }}</router-link>
+              <router-link to="/imprint">{{
+                t("Footer.information")
+              }}</router-link>
             </p>
-            <p><router-link to="/imprint">{{ t("Footer.imprint") }}</router-link></p>
-            <p><router-link to="/imprint">{{ t("Footer.data") }}</router-link></p>
+            <p>
+              <router-link to="/imprint">{{ t("Footer.imprint") }}</router-link>
+            </p>
+            <p>
+              <router-link to="/imprint">{{ t("Footer.data") }}</router-link>
+            </p>
           </div>
         </div>
         <div class="flex tw-justify-end tw-align-right tw-col-span-2 tw-h-12">

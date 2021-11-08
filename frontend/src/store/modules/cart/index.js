@@ -6,7 +6,6 @@ function updateLocalStorage(cart, customIndex) {
   } else {
     localStorage.setItem("customIndex", JSON.stringify(0));
   }
-  
 }
 
 const state = {
@@ -50,13 +49,15 @@ const getters = {
     const configs = state.cart.filter((i) => i.customizable);
     let total = 0;
     for (const product of products) {
-      console.log(product)
-      total = total + (product.price * product.quantity);
+      console.log(product);
+      total = total + product.price * product.quantity;
     }
     for (const config of configs) {
-      var configTotal = config.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
+      var configTotal = config.configuration.reduce(
+        (a, b) => a + b.price * b.quantity,
+        0
+      );
       total = total + configTotal + config.price;
-
     }
     return total;
   },
@@ -64,7 +65,8 @@ const getters = {
   //Retur toal of configuration
   configurationTotal: (state) => (configId) => {
     const item = state.cart.find((i) => i.configurationID === configId);
-    if (item) return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
+    if (item)
+      return item.configuration.reduce((a, b) => a + b.price * b.quantity, 0);
     else return null;
   },
 
@@ -104,28 +106,44 @@ const getters = {
 
   getMaterial: (state) => (configId) => {
     const item = state.cart.find((i) => i.configurationID === configId);
-    var material = item.configuration.filter((i) => i.selectableCategory === 'material');
+    var material = item.configuration.filter(
+      (i) => i.selectableCategory === "material"
+    );
     return material[0];
   },
 
   getAccessories: (state) => (configId) => {
     const item = state.cart.find((i) => i.configurationID === configId);
-    var accessories = item.configuration.filter((i) => i.selectableCategory === 'accessories');
+    var accessories = item.configuration.filter(
+      (i) => i.selectableCategory === "accessories"
+    );
     return accessories;
-  }
+  },
 };
 
 const mutations = {
   //Add product to cart
   addToCart(state, payload) {
     if (payload.product.customizable) {
-      state.cart.push({ ...payload.product, configurationID: payload.configId, configuration: [], quantity: 1 });
+      state.cart.push({
+        ...payload.product,
+        configurationID: payload.configId,
+        configuration: [],
+        quantity: 1,
+      });
     } else {
       let item = state.cart.find((i) => i.id === payload.product.id);
       if (item) {
         item.quantity++;
       } else {
-        state.cart.push({ ...payload.product, configurationID: "none", quantity: 1, height: 0, width: 0, depth: 0 });
+        state.cart.push({
+          ...payload.product,
+          configurationID: "none",
+          quantity: 1,
+          height: 0,
+          width: 0,
+          depth: 0,
+        });
       }
     }
 
@@ -142,25 +160,31 @@ const mutations = {
   //Add configuration to product
   addToConfiguration(state, payload) {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
-    if (payload.interior.selectableCategory === 'interior') {
+    if (payload.interior.selectableCategory === "interior") {
       let part = item.configuration.find((a) => a.id === payload.interior.id);
       if (part) {
         part.quantity++;
       } else {
-        item.configuration.push({ ...payload.interior, quantity: 1});
+        item.configuration.push({ ...payload.interior, quantity: 1 });
       }
-    } else if (payload.interior.selectableCategory === 'material') {
-      item.configuration = item.configuration.filter((i) => i.selectableCategory !== 'material');
-      item.configuration.push({ ...payload.interior, quantity: 1})
-    } else if (payload.interior.selectableCategory === 'accessories') {
-      let accessory = item.configuration.find((a) => a.id === payload.interior.id);
+    } else if (payload.interior.selectableCategory === "material") {
+      item.configuration = item.configuration.filter(
+        (i) => i.selectableCategory !== "material"
+      );
+      item.configuration.push({ ...payload.interior, quantity: 1 });
+    } else if (payload.interior.selectableCategory === "accessories") {
+      let accessory = item.configuration.find(
+        (a) => a.id === payload.interior.id
+      );
       if (accessory) {
-        item.configuration = item.configuration.filter((i)=> i.selectableCategory !== 'accessories');
+        item.configuration = item.configuration.filter(
+          (i) => i.selectableCategory !== "accessories"
+        );
       } else {
-        item.configuration.push({ ...payload.interior, quantity: 1})
+        item.configuration.push({ ...payload.interior, quantity: 1 });
       }
     } else {
-      console.log("ERROR Adding item")
+      console.log("ERROR Adding item");
     }
 
     updateLocalStorage(state.cart, state.customIndex);
@@ -169,7 +193,9 @@ const mutations = {
   //Remove item from cart
   removeFromCart(state, payload) {
     if (payload.product.customizable) {
-      state.cart = state.cart.filter((i) => i.configurationID !== payload.configId)
+      state.cart = state.cart.filter(
+        (i) => i.configurationID !== payload.configId
+      );
     } else {
       let item = state.cart.find((i) => i.id === payload.product.id);
       if (item) {
@@ -188,7 +214,7 @@ const mutations = {
   removeFromConfiguration(state, payload) {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     let part = item.configuration.find((a) => a.id === payload.interior.id);
-      
+
     if (part) {
       if (part.quantity > 1) {
         part.quantity--;
@@ -196,13 +222,13 @@ const mutations = {
         item.configuration = item.configuration.filter((i) => i.id !== part.id);
       }
     }
-      updateLocalStorage(state.cart, state.customIndex);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Delete Shopping Cart after checkout
   cleanCart(state) {
-    state.cart = []
-    state.customIndex = 0
+    state.cart = [];
+    state.customIndex = 0;
 
     updateLocalStorage(state.cart, state.customIndex);
   },
@@ -213,7 +239,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.height = payload.height;
 
-      updateLocalStorage(state.cart, state.customIndex);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update width of product
@@ -222,7 +248,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.width = payload.width;
 
-      updateLocalStorage(state.cart, state.customIndex);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update depth of product
@@ -231,7 +257,7 @@ const mutations = {
     let item = state.cart.find((i) => i.configurationID === payload.configId);
     item.depth = payload.depth;
 
-      updateLocalStorage(state.cart, state.customIndex);
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Manually use local storage. If Vue-Persistentstate is implemented this can be deleted
@@ -240,7 +266,7 @@ const mutations = {
     if (cart) {
       state.cart = JSON.parse(cart);
     }
-    const customIndex = localStorage.getItem("customIndex")
+    const customIndex = localStorage.getItem("customIndex");
     if (customIndex) {
       state.customIndex = JSON.parse(customIndex);
     }

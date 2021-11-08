@@ -37,4 +37,3 @@ LoadScript(
 LoadScript(
   "https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"
 );
-

@@ -29,5 +29,8 @@
     "payment_req": "Eine Zahlungsmethode muss ausgewählt werden.",
     "order": "Bestellen",
     "success": "Formular wurde erfolgreich übermittelt!",
-    "error": "Fehler beim Übermitteln des Formulars!"
+    "error": "Fehler beim Übermitteln des Formulars!",
+    "emptyCart": "Du hast keine Produkte im Warenkorb!",
+    "eText": "Unsere nachhaltigen Produkte findest du hier:",
+    "eButton": "Unsere Produkte"
 }

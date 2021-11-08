@@ -3,10 +3,24 @@
     <div class="tw-w-full tw-flex tw-justify-center tw-items-center">
       <div class="tw-w-3/5 all_container tw-h-96 tw-p-10">
         <div class="tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center">
-          <div class="tw-text-5xl tw-font-bold tw-text-transparent tw-bg-gradient-to-br tw-from-primary-gradient2 tw-to-primary-gradient4 tw-bg-clip-text">
+          <div
+            class="
+              tw-text-5xl
+              tw-font-bold
+              tw-text-transparent
+              tw-bg-gradient-to-br
+              tw-from-primary-gradient2
+              tw-to-primary-gradient4
+              tw-bg-clip-text
+            "
+          >
             {{ t("ProductDisplay.heading") }}
           </div>
-          <div class="tw-text-2xl tw-font-semibold tw-text-gray-500 tw-px-4 tw-pt-5">
+          <div
+            class="
+              tw-text-2xl tw-font-semibold tw-text-gray-500 tw-px-4 tw-pt-5
+            "
+          >
             {{ t("ProductDisplay.subheading") }}
           </div>
           <div class="tw-text-xl tw-pt-8">
@@ -16,7 +30,22 @@
             {{ t("ProductDisplay.question") }}
           </div>
           <div class="tw-w-full tw-flex tw-justify-center tw-pt-2">
-            <router-link class="btn btn-primary tw-ml-4 tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/products">{{ t("ProductDisplay.button") }}</router-link>
+            <router-link
+              class="
+                btn btn-primary
+                tw-ml-4
+                tw-text-xl
+                tw-transition
+                tw-duration-700
+                tw-ease-in-out
+                tw-bg-gradient-to-tr
+                tw-from-primary-gradient3
+                tw-to-primary-gradient5
+                hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6
+              "
+              to="/products"
+              >{{ t("ProductDisplay.button") }}</router-link
+            >
           </div>
         </div>
       </div>
@@ -49,8 +78,18 @@
             ></button>
           </div>
           <div class="carousel-inner all_container tw-flex tw-items-center">
-            <div v-for="product in products" :key="product.id" class="carousel-item tw-h-full" :class="{ active: isFirst(product) }" data-bs-interval="5000">
-              <img :src="product.imageUrl" class="tw-object-contain tw-w-full tw-h-full" :alt="product.name" />
+            <div
+              v-for="product in products"
+              :key="product.id"
+              class="carousel-item tw-h-full"
+              :class="{ active: isFirst(product) }"
+              data-bs-interval="5000"
+            >
+              <img
+                :src="product.imageUrl"
+                class="tw-object-contain tw-w-full tw-h-full"
+                :alt="product.name"
+              />
             </div>
           </div>
           <button
@@ -73,7 +112,6 @@
           </button>
         </div>
       </div>
-      
     </div>
   </div>
 </template>

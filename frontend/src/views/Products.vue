@@ -87,7 +87,7 @@ export default {
       console.log(this.product);
     },
     closeProductDrawer() {
-      console.log("Close Product drawer")
+      console.log("Close Product drawer");
       this.active.product_drawer = false;
     },
   },

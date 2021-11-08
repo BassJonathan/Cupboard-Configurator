@@ -14,7 +14,9 @@
           <thead class="tw-bg-gray-200 tw-border-b-2 tw-border-gray-400">
             <tr class="tw-divide-x-2 tw-divide-gray-500 tw-divide-opacity-60">
               <th class="tw-w-1/2 tw-pl-3">{{ t("ShoppingCard.article") }}</th>
-              <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.amount") }} / {{ t("ShoppingCard.con") }}</th>
+              <th class="tw-w-1/6 tw-pl-3">
+                {{ t("ShoppingCard.amount") }} / {{ t("ShoppingCard.con") }}
+              </th>
               <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.price") }}</th>
               <th class="tw-w-1/6 tw-pl-3">{{ t("ShoppingCard.priceg") }}</th>
             </tr>
@@ -37,9 +39,9 @@
       <p class="tw-text-4xl">{{ t("ShoppingCard.noarticle") }}</p>
       <p class="tw-text-2xl tw-pt-3 tw-center">
         {{ t("ShoppingCard.sortiment") }}
-        <router-link class="btn btn-primary tw-ml-4" to="/products"
-          >{{ t("ShoppingCard.allproducts") }}</router-link
-        >
+        <router-link class="btn btn-primary tw-ml-4" to="/products">{{
+          t("ShoppingCard.allproducts")
+        }}</router-link>
       </p>
     </div>
   </div>
@@ -65,7 +67,7 @@ export default {
   },
   computed: {
     items() {
-      console.log(this.$store.getters.cartItems)
+      console.log(this.$store.getters.cartItems);
       return this.$store.getters.cartItems;
     },
   },
