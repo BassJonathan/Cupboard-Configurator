@@ -14,10 +14,10 @@
           tw-bg-clip-text
         "
       >
-        Unsere Produkte
+        {{ t("Products.our") }}
       </div>
       <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
-        Qualität zu fairen Preisen
+        {{ t("Products.qual") }}
       </div>
       <div class="tw-h-0.5 tw-bg-gray-100 tw-rounded-full tw-w-full"></div>
     </div>
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 import ProductInformation from "@/components/Products/ProductInformation.vue";
 import ProductModal from "@/components/Products/ProductModal.vue";
 
@@ -47,6 +49,13 @@ export default {
   components: {
     ProductInformation,
     ProductModal,
+  },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
   },
   data() {
     return {

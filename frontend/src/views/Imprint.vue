@@ -14,10 +14,10 @@
           tw-bg-clip-text
         "
       >
-        Impressum und Datenschutz
+        {{ t("Imprint.imd") }}
       </div>
       <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
-        Ihre Daten in besten Händen
+        {{ t("Imprint.data") }}
       </div>
       <div class="tw-h-0.5 tw-bg-gray-300 tw-rounded-full tw-w-full"></div>
     </div>
@@ -35,22 +35,31 @@
               <p class="tw-text-3xl tw-font-bold tx-weiss">{{ t("Imprint.editor") }}</p>
               <p class="tw-text-lg tx-weiss">
                 <!--{{ t("Imprint.editortext") }}-->
-                dieser Website und verantwortlich für den Inhalt gemäß §5 TMG
-                und § 55 RStV ist:<br />
+                {{ t("Imprint.web") }}
+                <br />
                 Cupboard Inc.<br />
-                Musterstraße 69<br />
-                42069 Musterstadt<br />
-                Deutschland<br />
+                {{ t("Imprint.street") }}
                 <br />
-                Vertreten durch Michael Canadi (Geschäftsführer)<br />
-                E-Mail: Michael.Canadi@lehre.dhbw-stuttgart.de<br />
-                Telefon: 0711 / 6159115<br />
+                42069 Berlin<br />
+                {{ t("Imprint.con") }}
                 <br />
-                Eingetragen am Amtsgericht Stuttgart, HRB 722469<br />
-                Umsatzsteuer-ID: DE 302263985<br />
                 <br />
-                Konzept + Design: Closing Tag GmbH<br />
-                Programmierung: Closing Tag GmbH<br />
+                {{ t("Imprint.gf") }}
+                <br />
+                {{ t("Imprint.mail") }}
+                : Michael.Canadi@lehre.dhbw-stuttgart.de<br />
+                {{ t("Imprint.tel") }}
+                : 0711 / 6159115<br />
+                <br />
+                {{ t("Imprint.stut") }}
+                , HRB 722469<br />
+                {{ t("Imprint.id") }}
+                : DE 302263985<br />
+                <br />
+                {{ t("Imprint.concept") }}
+                : Closing Tag GmbH<br />
+                {{ t("Imprint.prog") }}
+                : Closing Tag GmbH<br />
                 <br /><br />
               </p>
             </div>

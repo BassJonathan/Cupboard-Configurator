@@ -14,10 +14,10 @@
           tw-bg-clip-text
         "
       >
-        Unser Ziel - Eine Grüne Mission
+        {{ t("Goal.goal") }}
       </div>
       <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
-        Alles über unsere Philosophie, unser Ziel und Pläne für die Zukunft.
+        {{ t("Goal.fut") }}
       </div>
       <div class="tw-h-0.5 tw-bg-gray-300 tw-rounded-full tw-w-full"></div>
     </div>
