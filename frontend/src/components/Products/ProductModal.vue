@@ -120,7 +120,7 @@
         >
           {{ t("ProductModal.shop") }}
         </button>
-        <router-link class="btn btn-primary tw-ml-4" to="/cart"
+        <router-link class="btn btn-primary tw-ml-4" to="/cart" @click="$emit('close-product-drawer')"
           >{{ t("ProductModal.goto") }}</router-link
         >
       </div>

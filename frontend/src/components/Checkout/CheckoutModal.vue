@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout-modal drawer_background tw-fixed tw-w-full tw-h-full tw-left-0 tw-top-0">
+  <div class="checkout-modal drawer_background2 tw-fixed tw-w-full tw-h-full tw-left-0 tw-top-0">
     <div class="modal">
       <div class="modal-dialog tw-max-w-xl" >
         <div class="modal-content">
@@ -50,13 +50,13 @@
       inheritLocale: true,
       useScope: "global",
     });
-    return { t, };
+    return { t };
   },
   }
 </script>
 
 <style lang="scss">
-  .drawer_background {
+  .drawer_background2 {
     background-color: rgba(124, 124, 124, 0.55);
     z-index: 1000;
     display: none;

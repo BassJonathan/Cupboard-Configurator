@@ -70,6 +70,7 @@ export default {
   async mounted() {
     const { data } = await this.axios.get("catalogue/categories");
     this.categories = data;
+    this.closeProductDrawer();
     console.log(this.categories);
     for (const categorie of this.categories) {
       const { data } = await this.axios.get(
@@ -86,6 +87,7 @@ export default {
       console.log(this.product);
     },
     closeProductDrawer() {
+      console.log("Close Product drawer")
       this.active.product_drawer = false;
     },
   },
