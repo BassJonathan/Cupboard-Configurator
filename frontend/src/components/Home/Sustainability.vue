@@ -30,15 +30,15 @@
         />
       </div>
     </div>
-    <div class="tw-flex tw-flex-col">
+    <div class=" tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center tw-pr-5">
       <div class="tw-flex tw-flex-col tw-gap-4">
-        <p class="tw-text-3xl tw-font-extrabold heading_font">
+        <div class="tw-text-5xl tw-font-bold  tw-text-transparent tw-bg-gradient-to-br tw-from-green-gradient3 tw-to-white tw-bg-clip-text tw-pb-1">
           {{ t("Sustainability.sustainable") }}
-        </p>
-        <p class="tw-text-xl text_font">
+        </div>
+        <div class="tw-font-semibold tw-text-2xl">
           {{ t("Sustainability.sustainabletxt") }}
-        </p>
-        <p class="tw-text-lg">
+        </div>
+        <p class="tw-text-xl">
           {{ t("Sustainability.sustainabletxt2") }}
         </p>
         <div class="tw-mt-8"></div>

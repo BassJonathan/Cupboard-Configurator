@@ -125,7 +125,7 @@ const mutations = {
       if (item) {
         item.quantity++;
       } else {
-        state.cart.push({ ...payload.product, configurationID: "none", quantity: 1 });
+        state.cart.push({ ...payload.product, configurationID: "none", quantity: 1, height: 0, width: 0, depth: 0 });
       }
     }
 
@@ -135,6 +135,8 @@ const mutations = {
   //Bump index for custom products
   bumpCustomIndex(state) {
     state.customIndex = state.customIndex + 1;
+
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Add configuration to product
@@ -195,6 +197,14 @@ const mutations = {
       }
     }
       updateLocalStorage(state.cart, state.customIndex);
+  },
+
+  //Delete Shopping Cart after checkout
+  cleanCart(state) {
+    state.cart = []
+    state.customIndex = 0
+
+    updateLocalStorage(state.cart, state.customIndex);
   },
 
   //Update height of product

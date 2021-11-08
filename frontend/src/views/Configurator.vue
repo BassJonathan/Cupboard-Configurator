@@ -98,7 +98,7 @@ export default {
   methods: {
     addToCart() {
       this.$store.commit("addToCart", {product: this.product, configId: this.configId});
-      this.$store.commit("bumpCustomIndex")
+      this.$store.commit("bumpCustomIndex");
     },
     deleteConfiguration(configId) {
       this.$store.commit("removeFromCart", {product: this.product, configId: configId});

@@ -10,7 +10,7 @@
           tw-text-transparent
           tw-bg-gradient-to-br
           tw-from-green-gradient1
-          tw-to-primary-green-gradient4
+          tw-to-green-gradient3
           tw-bg-clip-text
         "
       >
