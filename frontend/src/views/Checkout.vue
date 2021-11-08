@@ -1,5 +1,17 @@
 <template>
-  <div class="tw-w-full tw-px-16 tw-mt-20">
+  <div v-if="cart_number_items == 0" class="tw-w-full tw-px-16 tw-mt-20">
+    <div class="tw-pt-8 tw-w-full tw-flex tw-justify-center">
+      <div>
+        <p class="tw-text-center tw-text-2xl tw-font-bold">Du hast keine Produkte im Warenkorb</p>
+        <p class="tw-text-center tw-pt-10">Unsere nachhaltigen Produkte findest du hier:</p>
+        <div class="tw-w-full tw-flex tw-justify-center tw-pt-4">
+          <router-link class="btn btn-primary tw-text-xl tw-transition tw-duration-700 tw-ease-in-out tw-bg-gradient-to-tr tw-from-primary-gradient3 tw-to-primary-gradient5 hover:tw-from-primary-gradient4 hover:tw-to-primary-gradient6" to="/products">Unsere Produkte</router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div v-else class="tw-w-full tw-px-16 tw-mt-20">
     <div class="tw-w-full tw-py-8 tw-px-10">
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
@@ -261,6 +273,9 @@ export default {
     },
     cart_total() {
       return this.$store.getters.cartTotal;
+    },
+    cart_number_items(){
+      return this.$store.getters.cartNumberItems;
     },
     tax() {
       return this.$store.getters.getTaxRate;
