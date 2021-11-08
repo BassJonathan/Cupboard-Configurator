@@ -12,7 +12,7 @@
     "city_req": "Ville est obligatoire.",
     "post": "Code postal*",
     "post_req": "Code postal est obligatoire.",
-    "country": "Pays",
+    "country": "Pays*",
     "ger": "Allemagne",
     "fra": "France",
     "aus": "Autriche",
