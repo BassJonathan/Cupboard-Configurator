@@ -219,6 +219,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [issues-shield]: https://img.shields.io/github/issues/BassJonathan/cupboard-configurator.svg?style=for-the-badge
 [issues-url]: https://github.com/BassJonathan/cupboard-configurator/issues
 [license-shield]: https://img.shields.io/github/license/BassJonathan/cupboard-configurator.svg?style=for-the-badge
-[license-url]: https://github.com/BassJonathan/cupboard-configurator/blob/master/LICENSE.txt
+[license-url]: https://github.com/BassJonathan/cupboard-configurator/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/github_username
