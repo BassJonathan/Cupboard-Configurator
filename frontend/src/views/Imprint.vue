@@ -1,30 +1,28 @@
 <template>
-  <div>
-    <!--<p class="test tw-text-4xl tw-text-center tw-w-100 tw-m-40">This is the Imprint Page! <br> WIP</p>-->
+  <div class="tw-mt-20 tw-px-28">
+    <div class="tw-w-full tw-py-6 ">
+      <div
+        class="
+          tw-w-full
+          tw-text-6xl
+          tw-py-1
+          tw-font-bold
+          tw-text-transparent
+          tw-bg-gradient-to-br
+          tw-from-primary-gradient2
+          tw-to-primary-gradient4
+          tw-bg-clip-text
+        "
+      >
+        {{ t("Imprint.imd") }}
+      </div>
+      <div class="tw-w-full tw-text-3xl tw-text-gray-500 tw-px-8 tw-py-2">
+        {{ t("Imprint.data") }}
+      </div>
+      <div class="tw-h-0.5 tw-bg-gray-300 tw-rounded-full tw-w-full"></div>
+    </div>
     <div>
       <div class="tw-bg-primary tw-text-white">
-        <div
-          class="
-            w-screen
-            tw-text-4xl tw-text-center tw-font-extrabold
-            heading_font
-            bg-hauptfarbe
-            tx-weiss
-          "
-        >
-          <br /><br />
-        </div>
-        <div
-          class="
-            w-screen
-            tw-text-4xl tw-text-center tw-font-extrabold
-            heading_font
-            bg-hauptfarbe
-            tx-weiss
-          "
-        >
-          <br /><br />Impressum
-        </div>
         <div
           class="
             tw-border-t tw-border-b tw-py-8 tw-grid tw-grid-cols-2 tw-gap-8
@@ -34,84 +32,64 @@
         >
           <div class="ml-8 tw-flex tw-flex-col tw-justify-start">
             <div class="ml-8 tw-flex tw-flex-col tw-gap-4">
-              <p class="tw-text-3xl tw-font-bold tx-weiss">Herausgeber</p>
+              <p class="tw-text-3xl tw-font-bold tx-weiss">{{ t("Imprint.editor") }}</p>
               <p class="tw-text-lg tx-weiss">
-                dieser Website und verantwortlich für den Inhalt gemäß §5 TMG
-                und § 55 RStV ist:<br />
+                <!--{{ t("Imprint.editortext") }}-->
+                {{ t("Imprint.web") }}
+                <br />
                 Cupboard Inc.<br />
-                Musterstraße 69<br />
-                42069 Musterstadt<br />
-                Deutschland<br />
+                {{ t("Imprint.street") }}
                 <br />
-                Vertreten durch Michael Canadi (Geschäftsführer)<br />
-                E-Mail: Michael.Canadi@lehre.dhbw-stuttgart.de<br />
-                Telefon: 0711 / 6159115<br />
+                42069 Berlin<br />
+                {{ t("Imprint.con") }}
                 <br />
-                Eingetragen am Amtsgericht Stuttgart, HRB 722469<br />
-                Umsatzsteuer-ID: DE 302263985<br />
                 <br />
-                Konzept + Design: Closing Tag GmbH<br />
-                Programmierung: Closing Tag GmbH<br />
+                {{ t("Imprint.gf") }}
+                <br />
+                {{ t("Imprint.mail") }}
+                : Michael.Canadi@lehre.dhbw-stuttgart.de<br />
+                {{ t("Imprint.tel") }}
+                : 0711 / 6159115<br />
+                <br />
+                {{ t("Imprint.stut") }}
+                , HRB 722469<br />
+                {{ t("Imprint.id") }}
+                : DE 302263985<br />
+                <br />
+                {{ t("Imprint.concept") }}
+                : Closing Tag GmbH<br />
+                {{ t("Imprint.prog") }}
+                : Closing Tag GmbH<br />
                 <br /><br />
               </p>
             </div>
             <div class="ml-8 tw-flex tw-flex-col tw-gap-4">
               <p class="tw-text-3xl tw-font-bold tx-weiss">
-                Haftungsausschluss (Disclaimer)
+                {{ t("Imprint.disclaimer") }}
               </p>
               <p class="tw-text-lg tx-weiss">
-                Als Dienstanbieter und Verkäufer sind wir gemäß § 7 Abs.1 TMG
-                für eigene Inhalte auf diesen Seiten nach den allgemeinen
-                Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-                Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
-                gespeicherte fremde Informationen zu überwachen oder nach
-                Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
-                hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
-                Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
-                hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst
-                ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
-                möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen
-                werden wir diese Inhalte umgehend entfernen.<br />
+                {{ t("Imprint.disclaimertext") }}
+                <br />
               </p>
             </div>
           </div>
           <div class="mr-8 tw-flex tw-flex-col">
             <div class="tw-flex tw-flex-col tw-gap-4">
               <p class="tw-text-3xl tw-font-extrabold heading_font tx-weiss">
-                Haftung für Links
+                {{ t("Imprint.liability") }}
               </p>
               <p class="tw-text-lg tx-weiss">
-                Unser Angebot enthält Links zu externen Webseiten Dritter, auf
-                deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
-                diese fremden Inhalte auch keine Gewähr übernehmen. Für die
-                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
-                oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten
-                wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
-                überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
-                Verlinkung nicht erkennbar. Eine permanente inhaltliche
-                Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
-                Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
-                Bekanntwerden von Rechtsverletzungen werden.<br /><br />
+                {{ t("Imprint.liabilitytext") }}
+                <br /><br />
               </p>
             </div>
             <div class="mr-8 tw-flex tw-flex-col tw-gap-4">
               <p class="tw-text-3xl tw-font-extrabold heading_font tx-weiss">
-                Urheberrechte
+                {{ t("Imprint.copyright") }}
               </p>
               <p class="tw-text-lg tx-weiss">
-                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
-                diesen Seiten unterliegen dem deutschen Urheberrecht. Die
-                Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
-                Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
-                schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-                Downloads und Kopien dieser Seite sind nur für den privaten,
-                nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf
-                dieser Seite nicht vom Betreiber erstellt wurden, werden die
-                Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
-                Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
-                Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
-                entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
-                werden wir derartige Inhalte umgehend entfernen.<br />
+                {{ t("Imprint.copyrighttext") }}
+                <br />
               </p>
             </div>
           </div>
@@ -122,7 +100,19 @@
 </template>
 
 <script>
-export default {};
+import { useI18n } from "vue-i18n";
+
+export default {
+  name: "Imprint",
+
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, locale };
+  },
+};
 </script>
 
 <style></style>

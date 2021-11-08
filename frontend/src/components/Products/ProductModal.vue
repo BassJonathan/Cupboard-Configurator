@@ -21,7 +21,7 @@
     >
       <div v-if="product" class="product-details">
         <p class="tw-text-2xl tw-font-bold tw-text-center tw-pt-5">
-          {{ product.name }} wurde zu Ihrem Einkaufswagen hinzugefügt!
+          {{ product.name }} {{ t("ProductModal.cart") }}
         </p>
         <div class="tw-w-full tw-p-7">
           <table
@@ -37,13 +37,13 @@
             <thead class="tw-bg-gray-200">
               <tr>
                 <th class="tw-w-1/2 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  Artikel
+                  {{ t("ProductModal.narticle") }}
                 </th>
                 <th class="tw-w-1/4 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  Preis
+                  {{ t("ProductModal.nprice") }}
                 </th>
                 <th class="tw-w-1/4 tw-border-2 tw-border-gray-400 tw-pl-3">
-                  Anzahl in Einkaufswagen
+                  {{ t("ProductModal.ncount") }}
                 </th>
               </tr>
             </thead>
@@ -93,9 +93,7 @@
           </table>
           <div v-else class="tw-w-full">
             <p class="tw-text-center tw-text-xl">
-              Dieses Produkt befindet sich momentan nicht mehr im Wahrenkorb!
-              Drücken Sie auf "Artikel hinzufügen" um den Artikel in den
-              Wahrenkorb zu legen.
+              {{ t("ProductModal.emptycart") }}
             </p>
             <div class="tw-w-full tw-flex tw-items-center tw-content-center">
               <button
@@ -107,7 +105,7 @@
                 "
                 @click="addToCart()"
               >
-                Artikel hinzufügen
+                {{ t("ProductModal.add") }}
               </button>
             </div>
           </div>
@@ -120,10 +118,10 @@
           class="btn btn-secondary"
           @click="$emit('close-product-drawer')"
         >
-          Weiter einkaufen
+          {{ t("ProductModal.shop") }}
         </button>
         <router-link class="btn btn-primary tw-ml-4" to="/cart"
-          >Zum Einkaufswagen</router-link
+          >{{ t("ProductModal.goto") }}</router-link
         >
       </div>
     </div>
@@ -153,10 +151,10 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", this.product);
+      this.$store.commit("addToCart", {product: this.product});
     },
     removeFromCart() {
-      this.$store.commit("removeFromCart", this.product);
+      this.$store.commit("removeFromCart", {product: this.product});
     },
   },
 };

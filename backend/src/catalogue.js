@@ -3,7 +3,7 @@ const cfenv = require('cfenv')
 const { get } = require('./axios')
 
 
-//Einzelne Kategorien unter: localhost:XXXX/categories
+//Einzelne Kategorien unter: localhost:4000/catalogue/categories
 router.get('/categories', (req, res) => {
   get('/catalogue/categories', (e, d) => {
     if (e) d = {}
@@ -12,7 +12,7 @@ router.get('/categories', (req, res) => {
   })
 })
 
-//Produkte der Kategorien unter: localhost:XXXX/categories/{z.B. 1}/products
+//Produkte der Kategorien unter: localhost:4000/catalogue/categories/{z.B. 1}/products
 router.get('/categories/:id/products', (req, res) => {
   get(`/catalogue/categories/${req.params.id}/products`, (e, d) => {
     if (e) d = {}
@@ -21,7 +21,7 @@ router.get('/categories/:id/products', (req, res) => {
   })
 })
 
-//Produktinfo unter: localhost:XXXX/products/{z.B. 2} --> Wenn konfigurierbar, dann automatisch mit Elementen. Wenn nicht dann ohne :)
+//Produktinfo unter: localhost:4000/catalogue/products/{z.B. 2} --> Wenn konfigurierbar, dann automatisch mit Elementen. Wenn nicht dann ohne :)
 router.get('/products/:id', (req, res) => {
   get(`/catalogue/products/${req.params.id}`, (e, product) => {
     if (e) product = {}

@@ -4,21 +4,19 @@
       <p class="tw-text-5xl tw-text-black">Check out</p>
     </div>
     <div class="tw-w-full tw-flex tw-justify-center">
-      <form action="" id="orderForm" class="tw-w-2/3">
+      <checkout-modal :orderId="orderId" v-if="displayModal"/>
+      <form @submit.prevent="postOrder" id="orderForm" class="tw-w-2/3">
         <div class="t tw-grid tw-grid-cols-6 tw-gap-3">
           <!-- GRID COL 1 -->
           <div class="form-floating mb-3 tw-col-span-3">
             <input
               class="form-control"
               id="firstName"
-              type="email"
+              type="text"
               placeholder="First Name"
-              data-sb-validations="required"
+              required
             />
-            <label for="firstName">First Name*</label>
-            <div class="invalid-feedback" data-sb-feedback="firstName:required">
-              First Name is required.
-            </div>
+            <label for="firstName"> {{ t("Checkout.firstname") }}</label>
           </div>
           <div class="form-floating mb-3 tw-col-span-3">
             <input
@@ -26,9 +24,8 @@
               id="middleName"
               type="text"
               placeholder="Middle Name"
-              data-sb-validations=""
             />
-            <label for="middleName">Middle Name</label>
+            <label for="middleName"> {{ t("Checkout.middelname") }}</label>
           </div>
           <!-- GRID COL 2 -->
           <div class="form-floating mb-3 tw-col-span-6">
@@ -37,11 +34,11 @@
               id="lastName"
               type="text"
               placeholder="Last Name"
-              data-sb-validations="required"
+              required
             />
-            <label for="lastName">Last Name*</label>
+            <label for="lastName"> {{ t("Checkout.lastname") }} </label>
             <div class="invalid-feedback" data-sb-feedback="lastName:required">
-              Last Name is required.
+              {{ t("Checkout.lastname_req") }}
             </div>
           </div>
           <!-- GRID COL 3 -->
@@ -52,26 +49,27 @@
               type="text"
               placeholder="Street"
               data-sb-validations="required"
+              required
             />
-            <label for="street">Street*</label>
+            <label for="street">{{ t("Checkout.street") }}</label>
             <div class="invalid-feedback" data-sb-feedback="street:required">
-              Street is required.
+              {{ t("Checkout.street_req") }}
             </div>
           </div>
           <div class="form-floating mb-3 tw-col-span-2">
             <input
               class="form-control"
               id="houseNumber"
-              type="text"
+              type="number"
               placeholder="House number"
-              data-sb-validations="required"
+              required
             />
-            <label for="houseNumber">House number*</label>
+            <label for="houseNumber">{{ t("Checkout.numb") }}</label>
             <div
               class="invalid-feedback"
               data-sb-feedback="houseNumber:required"
             >
-              House number is required.
+              {{ t("Checkout.numb_req") }}
             </div>
           </div>
           <!-- GRID COL 4 -->
@@ -81,51 +79,52 @@
               id="city"
               type="text"
               placeholder="City"
-              data-sb-validations="required"
+              required
             />
-            <label for="city">City*</label>
+            <label for="city">{{ t("Checkout.city") }}</label>
             <div class="invalid-feedback" data-sb-feedback="city:required">
-              City is required.
+              {{ t("Checkout.city_req") }}
             </div>
           </div>
           <div class="form-floating mb-3 tw-col-span-2">
             <input
               class="form-control"
               id="postalCode"
-              type="text"
+              type="number"
               placeholder="Postal Code"
-              data-sb-validations="required"
+              required
             />
-            <label for="postalCode">Postal Code*</label>
+            <label for="postalCode">{{ t("Checkout.post") }}</label>
             <div
               class="invalid-feedback"
               data-sb-feedback="postalCode:required"
             >
-              Postal Code is required.
+              {{ t("Checkout.post_req") }}
             </div>
           </div>
           <!-- GRID COL 5 -->
           <div class="form-floating mb-3 tw-col-span-6">
-            <select class="form-select" id="country" aria-label="Country">
-              <option value="Germany">Germany</option>
-              <option value="France">France</option>
-              <option value="Austria">Austria</option>
-              <option value="UK">UK</option>
+            <select class="form-select" id="country" aria-label="Country" required>
+              <option value="Germany">{{ t("Checkout.ger") }}</option>
+              <option value="France">{{ t("Checkout.fra") }}</option>
+              <option value="Austria">{{ t("Checkout.aus") }}</option>
+              <option value="UK">{{ t("Checkout.uk") }}</option>
             </select>
-            <label for="country">Country</label>
+            <label for="country">{{ t("Checkout.country") }}</label>
+            
           </div>
           <!-- GRID COL 6 -->
           <div class="form-floating mb-3 tw-col-span-3">
             <input
               class="form-control"
               id="eMail"
-              type="text"
+              type="email"
               placeholder="E-Mail"
-              data-sb-validations="required"
+              required
             />
-            <label for="eMail">E-Mail</label>
+            <label for="eMail">{{ t("Checkout.email") }}</label>
             <div class="invalid-feedback" data-sb-feedback="eMail:required">
-              E-Mail is required.
+              {{ t("Checkout.email_req") }}
             </div>
           </div>
           <div class="form-floating mb-3 tw-col-span-3">
@@ -134,14 +133,14 @@
               id="phoneNumber"
               type="text"
               placeholder="Phone-number"
-              data-sb-validations="required"
+              required
             />
-            <label for="phoneNumber">Phone-number</label>
+            <label for="phoneNumber">{{ t("Checkout.phone") }}</label>
             <div
               class="invalid-feedback"
               data-sb-feedback="phoneNumber:required"
             >
-              Phone-number is required.
+              {{ t("Checkout.phone_req") }}
             </div>
           </div>
           <!-- GRID COL 6 -->
@@ -156,23 +155,23 @@
               <label
                 class="form-check-label"
                 for="yesIWantToGetTheFreeNewsletter"
-                >Yes, I want to get the free newsletter!</label
+                >{{ t("Checkout.newsletter") }}</label
               >
             </div>
           </div>
           <!-- GRID COL 7 -->
           <div class="tw-col-span-6">
             <div class="mb-3">
-              <label class="form-label d-block">Payment Method</label>
+              <label class="form-label d-block">{{ t("Checkout.payment") }}</label>
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
                   id="optionA"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
-                <label class="form-check-label" for="optionA">option A</label>
+                <label class="form-check-label" for="optionA"><img class="tw-h-8" src="/img/checkout/sofortüberweisung.svg" alt="PayPal Logo" /></label>
               </div>
               <div class="form-check form-check-inline">
                 <input
@@ -180,9 +179,9 @@
                   id="optionB"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
-                <label class="form-check-label" for="optionB">option B</label>
+                <label class="form-check-label" for="optionB"><img class="tw-h-8" src="/img/checkout/klarna.svg" alt="PayPal Logo" /></label>
               </div>
               <div class="form-check form-check-inline">
                 <input
@@ -190,15 +189,15 @@
                   id="optionC"
                   type="radio"
                   name="paymentMethod"
-                  data-sb-validations="required"
+                  required
                 />
-                <label class="form-check-label" for="optionC">option C</label>
+                <label class="form-check-label" for="optionC"><img class="tw-h-8" src="/img/checkout/paypal.svg" alt="PayPal Logo" /></label>
               </div>
               <div
                 class="invalid-feedback"
                 data-sb-feedback="paymentMethod:required"
               >
-                One option is required.
+                {{ t("Checkout.payment_req") }}
               </div>
             </div>
           </div>
@@ -206,21 +205,21 @@
           <div class="tw-col-span-6">
             <div class="d-none" id="submitSuccessMessage">
               <div class="text-center mb-3">
-                <div class="fw-bolder">Form submission successful!</div>
+                <div class="fw-bolder">{{ t("Checkout.success") }}</div>
               </div>
             </div>
             <div class="d-none" id="submitErrorMessage">
               <div class="text-center text-danger mb-3">
-                Error sending message!
+                {{ t("Checkout.error") }}
               </div>
             </div>
             <div class="d-grid">
               <button
-                class="btn btn-primary btn-lg disabled"
+                class="btn btn-primary btn-lg"
                 id="submitButton"
                 type="submit"
               >
-                Bestellen
+                {{ t("Checkout.order") }}
               </button>
             </div>
           </div>
@@ -231,7 +230,90 @@
 </template>
 
 <script>
-export default {};
+import { useI18n } from "vue-i18n";
+import CheckoutModal from "@/components/Checkout/CheckoutModal.vue";
+
+export default {
+  name: "Checkout",
+  setup() {
+    const { t } = useI18n({
+      globalInjection: true,
+      inheritLocale: true,
+      useScope: "global",
+    });
+    return { t, };
+  },
+  components: {
+    CheckoutModal
+  },
+  data() {
+    return {
+      displayModal: false,
+      orderId: "..."
+    }
+  },
+  computed:{
+    currency() {
+      return this.$store.state.currency;
+    },
+    cart_items() {
+      return this.$store.getters.cartItems;
+    },
+    cart_total() {
+      return this.$store.getters.cartTotal;
+    },
+    tax() {
+      return this.$store.getters.getTaxRate;
+    }
+  },
+  methods: {
+    postOrder(){
+      var d = new Date()
+      var orderData = {
+        "orderDate": d.toISOString(),
+        "country": document.getElementById('country').value,
+        "customer": {
+            "firstname": document.getElementById('firstName').value,
+            "middlename": document.getElementById('middleName').value,
+            "lastname": document.getElementById('lastName').value,
+            "address": document.getElementById('street').value + document.getElementById('houseNumber').value,
+            "postalCode": document.getElementById('postalCode').value,
+            "city": document.getElementById('city').value,
+            "country": document.getElementById('country').value,
+            "phone": document.getElementById('phoneNumber').value,
+            "email": document.getElementById('eMail').value
+        },
+        "price": {
+            "currency": this.currency,
+            "netPrice": this.cart_total,
+            "taxPercentage": this.tax,
+            "taxAmmount": this.cart_total * this.tax,
+            "grossPrice": this.cart_total + (this.cart_total * this.tax)
+        },
+      }
+
+      let products = JSON.parse(JSON.stringify(this.cart_items))
+      orderData['products'] = products
+
+      this.clear_store()
+      this.displayModal = true;
+
+      const vm = this;
+      this.axios.post('/order', orderData)
+      .then(function (response) {
+        console.log(response);
+        vm.orderId = response.data.orderId;
+        vm.displayModal = true;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+    clear_store(){
+      this.$store.commit("cleanCart");
+    }
+  }
+};
 </script>
 
 <style></style>

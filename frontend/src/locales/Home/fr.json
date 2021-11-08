@@ -1,4 +1,25 @@
 {
     "welcome": "Bienvenue dans notre boutique en ligne.",
-    "offer": "Nous vous proposons des armoires uniques de qualité supérieure que vous pouvez concevoir selon vos souhaits depuis chez vous."
+    "offer": "Nous vous proposons des armoires uniques de qualité supérieure que vous pouvez concevoir selon vos souhaits depuis chez vous.",
+    "text": "Configurez votre garde-robe en trois étapes faciles",
+    "configbutton": "Ici directement dans le configurateur :",
+    "max": "Hauteur maxi 3m",
+    "max1": "Largeur max 5m",
+    "laser": "Coupe au laser",
+    "qual": "La plus haute qualité",
+    "ind": "Individuellement",
+    "fair": "Équitable",
+    "umwelt": "Écologique",
+    "forst": "Boisement",
+    "klima": "Climatiquement neutre",
+    "con": "Vers le configurateur",
+    "step1u": "Étape 1 : déterminer les dimensions",
+    "step1u1": "Pour que votre garde-robe s'adapte exactement!",
+    "step1txt": "Dans un premier temps, vous pouvez déterminer les dimensions de votre garde-robe au centimètre près. Grâce à nos scies de précision performantes, nous pouvons fabriquer des pièces pour une armoire jusqu'à 3m de haut et une largeur maximale de 5m. Notre bois est issu à 100% de forêts certifiées FSC et un nouveau bois est planté pour chaque arbre abattu. Si vous souhaitez commander une armoire plus grande, vous pouvez également nous envoyer un message via notre formulaire de contact.",
+    "step2u": "Étape 2 : Choisissez votre équipement",
+    "step2u1": "Exactement pour vos besoins !",
+    "step2txt": "Deuxièmement, vous pouvez choisir votre équipement individuel. Nous offrons une variété d'options, afin que vous puissiez personnaliser votre armoire exactement pour votre objectif. Qu'il s'agisse d'une armoire ou d'une vitrine, tout est possible. Vous pouvez choisir entre des étagères simples, des tringles à vêtements, des paniers en fil, des tiroirs et des lampes. Tous les articles sont fabriqués à partir de notre bois certifié ou sont fabriqués de haute qualité en Europe à des salaires équitables et de bonnes conditions de travail.",
+    "step3u": "Étape 3 : choisissez le bois",
+    "step3u1": "S'harmonise avec n'importe quelle installation!",
+    "step3txt": "La dernière étape est la sélection du bois.En plus de la version blanche classique, nous proposons également d'autres types de bois pour votre étagère. L'érable donne au meuble une couleur chaude et élégante et est naturellement très dur. Le noyer s'intègre parfaitement au look industriel moderne grâce à sa couleur noire proche et se marie très bien avec les décorations dorées. En revanche, une étagère en bouleau brillant peut être le complément parfait aux grandes pièces inondées de lumière. Tout le bois est issu de forêts contrôlées et gérées durablement."
 }

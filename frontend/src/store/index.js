@@ -2,76 +2,42 @@ import { createStore } from "vuex";
 
 import cart from "./modules/cart";
 
-/*
-function updateLocalStorage(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart))
-}
-*/
-
 export default createStore({
   state: {
     currency: "de", //TO-DO: Change start-state to i18n global loacal
-    //Cart
-    //cart: []
+    taxRate: 0.19,
+
   },
   getters: {
     getCurrency(state) {
       return state.currency;
     },
-    //Cart
-    /*
-    productQuantity: state => product => {
-      const item = state.cart.find(i => i.id === product.id)
-
-      if (item) return item.quantity
-      else return null
-    },
-    cartItems: state => {
-      return state.cart
-    },
-    cartTotal: state => {
-      return state.cart.reduce((a, b) => a + (b.price * b.quantity), 0)
+    getTaxRate(state) {
+      return state.taxRate;
     }
-    */
   },
   mutations: {
     //synchronous
     setCurrency(state, value) {
       state.currency = value;
     },
-    //Cart
-    /*
-    addToCart (state, product) {
-      let item = state.cart.find( i => i.id === product.id)
-
-      if (item) {
-        item.quantity++
+    setTax(state, value) {
+      if (value == "de") {
+        state.taxRate = 0.19
+      } else if (value == "a") {
+        state.taxRate = 0.20
+      } else if (value == "ch") {
+        state.taxRate = 0.77
+      } else if (value == "en") {
+        state.taxRate = 0
+      } else if (value == "fr") {
+        state.taxRate = 0.20
+      } else if (value == "it") {
+        state.taxRate = 0.22
       } else {
-        state.cart.push({...product, quantity: 1})
-      }
-
-      updateLocalStorage(state.cart)
-    },
-    removeFromCart ( state, product) {
-      let item = state.cart.find( i => i.id === product.id)
-
-      if (item) {
-        if (item.quantity > 1) {
-          item.quantity--
-        } else {
-          state.cart = state.cart.filter( i => i.id !== product.id)
-        }
-      }
-
-      updateLocalStorage(state.cart)
-    },
-    updateCartFromLocalStorage(state) {
-      const cart = localStorage.getItem('cart')
-      if (cart) {
-        state.cart = JSON.parse(cart)
+        state.taxRate = 0
       }
     }
-    */
   },
   actions: {
     //async for api etc.

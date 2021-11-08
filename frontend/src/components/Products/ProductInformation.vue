@@ -26,13 +26,13 @@
         v-if="product.priceStarting"
         class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold"
       >
-        ab {{ n(product.price, "currency", currency) }}
+        {{ t("ProductInformation.ab") }} {{ n(getBrutto(product.price, taxes), "currency", currency) }}
       </h3>
       <h3
         v-else
         class="tw-text-3xl tw-text-center lg:tw-text-right tw-font-bold"
       >
-        {{ n(product.price, "currency", currency) }}
+        {{ n(getBrutto(product.price, taxes), "currency", currency) }}
       </h3>
       <div class="tw-h-full tw-w-full tw-relative">
         <router-link
@@ -53,7 +53,7 @@
             lg:tw-translate-x-0 lg:tw-right-0
           "
           to="/configurator"
-          >Konfigurieren</router-link
+          >{{ t("ProductInformation.config") }}</router-link
         >
         <button
           v-else
@@ -77,7 +77,7 @@
             addToCart();
           "
         >
-          Zum Warenkorb hinzufügen
+          {{ t("ProductInformation.cart") }}
         </button>
       </div>
     </div>
@@ -101,10 +101,16 @@ export default {
     currency() {
       return this.$store.state.currency;
     },
+    taxes() {
+      return this.$store.state.taxRate;
+    },
   },
   methods: {
     addToCart() {
-      this.$store.commit("addToCart", this.product);
+      this.$store.commit("addToCart", {product: this.product});
+    },
+    getBrutto(price, tax) {
+      return (price + (price * tax));
     },
   },
 };

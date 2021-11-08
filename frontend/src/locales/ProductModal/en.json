@@ -1,0 +1,10 @@
+{
+    "cart": "has been added to your shopping cart!",
+    "narticle": "Article",
+    "nprice": "Price",
+    "ncount": "Number in shopping cart",
+    "emptycart": "This product is currently no longer in the shopping cart! Click on 'Add Item' to add the item to the shopping cart.",
+    "add": "Add article",
+    "shop": "Continue shopping",
+    "goto": "To the shopping cart"
+}

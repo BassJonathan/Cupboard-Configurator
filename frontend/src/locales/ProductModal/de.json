@@ -1,0 +1,10 @@
+{
+    "cart": "wurde zu Ihrem Einkaufswagen hinzugefügt!",
+    "narticle": "Artikel",
+    "nprice": "Preis",
+    "ncount": "Anzahl in Einkaufswagen",
+    "emptycart": "Dieses Produkt befindet sich momentan nicht mehr im Wahrenkorb! Drücken Sie auf 'Artikel hinzufügen' um den Artikel in den Wahrenkorb zu legen.",
+    "add": "Artikel hinzufügen",
+    "shop": "Weiter einkaufen",
+    "goto": "Zum Einkaufswagen"
+}

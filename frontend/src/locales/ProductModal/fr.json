@@ -1,0 +1,10 @@
+{
+    "cart": "a été ajouté à votre panier !",
+    "narticle": "Éléments",
+    "nprice": "Prix",
+    "ncount": "Numéro dans le panier",
+    "emptycart": "Ce produit n'est actuellement plus dans le panier ! Cliquez sur « Ajouter un article » pour ajouter l'article au panier.",
+    "add": "Ajouter un article",
+    "shop": "Continuer vos achats",
+    "goto": "Vers le panier"
+}
