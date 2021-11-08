@@ -171,7 +171,7 @@
                   name="paymentMethod"
                   required
                 />
-                <label class="form-check-label" for="optionA">{{ t("Checkout.option-a") }}</label>
+                <label class="form-check-label" for="optionA"><img class="tw-h-8" src="/img/checkout/sofortüberweisung.svg" alt="PayPal Logo" /></label>
               </div>
               <div class="form-check form-check-inline">
                 <input
@@ -181,7 +181,7 @@
                   name="paymentMethod"
                   required
                 />
-                <label class="form-check-label" for="optionB">{{ t("Checkout.option-b") }}</label>
+                <label class="form-check-label" for="optionB"><img class="tw-h-8" src="/img/checkout/klarna.svg" alt="PayPal Logo" /></label>
               </div>
               <div class="form-check form-check-inline">
                 <input
@@ -191,7 +191,7 @@
                   name="paymentMethod"
                   required
                 />
-                <label class="form-check-label" for="optionC">{{ t("Checkout.option-c") }}</label>
+                <label class="form-check-label" for="optionC"><img class="tw-h-8" src="/img/checkout/paypal.svg" alt="PayPal Logo" /></label>
               </div>
               <div
                 class="invalid-feedback"
@@ -249,7 +249,7 @@ export default {
   data() {
     return {
       displayModal: false,
-      orderId: 0
+      orderId: "..."
     }
   },
   computed:{
@@ -295,7 +295,7 @@ export default {
       let products = JSON.parse(JSON.stringify(this.cart_items))
       orderData['products'] = products
 
-      console.log(orderData)
+      this.clear_store()
       this.displayModal = true;
 
       const vm = this;
@@ -309,9 +309,9 @@ export default {
         console.log(error);
       });
     },
-    showModal() {
-      
-    },
+    clear_store(){
+      this.$store.commit("cleanCart");
+    }
   }
 };
 </script>
