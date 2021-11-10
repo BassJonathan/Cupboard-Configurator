@@ -50,9 +50,9 @@
   <li>
     <a href="#fixes-for-common-issues">Fixes for common issues</a>
     <ul>
-      <li><a href="#error:-plugin(s)-are-missing">Error: Plugin(s) are missing</a></li>
-      <li><a href="#error:-'postCSS-plugin-tailwindcss-required-postcss-8.'">Error: "PostCSS Plugin tailwindcss required PostCSS 8."</a></li>
-      <li><a href="#error:-'npm-err!-error:-eacces:-permission-denied,-access-'/path''">Error: "npm ERR! Error: EACCES: permission denied, access '/path'"</a></li>
+      <li><a href="#error-plugins-are-missing">Error: Plugin(s) are missing</a></li>
+      <li><a href="#error-postcss-plugin-tailwindcss-required-postcss-8">Error: "PostCSS Plugin tailwindcss required PostCSS 8."</a></li>
+      <li><a href="#error-npm-err-error-eacces-permission-denied-access-path">Error: "npm ERR! Error: EACCES: permission denied, access '/path'"</a></li>
     </ul>
   </li>
   <li><a href="#license">License</a></li>
@@ -84,7 +84,7 @@ If this is not yet the case, you can find the instructions here:
 - Mac: https://bodo-schoenfeld.de/node-js-und-npm-unter-macos-installieren/
 - Windows: https://phoenixnap.com/kb/install-node-js-npm-on-windows (NOT TESTED!)
 
-# Runing the project
+# Running the project
 The project consists of a frontend and a backend, which communicate with each other via the localhost. The backend consumes the API and formats the data. The frontend provides functionalities such as the shopping cart and uses the data from the backend for this. It is therefore essential that both components are started.
 ## Compiles and hot-reloads for development
 To be able to use the full application you have to start the frontend and the backend separately. Use the following two commands to do this:
@@ -133,7 +133,7 @@ sudo npm install ...
 
 # License
 
-Distributed under the GPL License. See `LICENSE` for more information.
+Distributed under the GNU License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/BassJonathan/cupboard-configurator.svg?style=for-the-badge
