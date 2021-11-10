@@ -55,6 +55,7 @@
       <li><a href="#error:-'npm-err!-error:-eacces:-permission-denied,-access-'/path''">Error: "npm ERR! Error: EACCES: permission denied, access '/path'"</a></li>
     </ul>
   </li>
+  <li><a href="#license">License</a></li>
 
 </ol>
 
