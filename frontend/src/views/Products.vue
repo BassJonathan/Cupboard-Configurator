@@ -59,14 +59,16 @@ export default {
   },
   data() {
     return {
-      categories: [],
-      products: [],
+      /*--API-connection removed--*/
+      //categories: [],
+      //products: [],
       product: null,
       active: {
         product_drawer: false,
       },
     };
   },
+  /* //API-connection removed
   async mounted() {
     const { data } = await this.axios.get("catalogue/categories");
     this.categories = data;
@@ -78,16 +80,21 @@ export default {
       );
       this.products.push(data[0]);
       console.log(this.products);
+      console.log(this.products1)
     }
+  },
+  */
+  computed: {
+    products() {
+      return this.$store.getters.getProducts;
+    },
   },
   methods: {
     viewProduct(product) {
       this.product = product;
       this.active.product_drawer = true;
-      console.log(this.product);
     },
     closeProductDrawer() {
-      console.log("Close Product drawer");
       this.active.product_drawer = false;
     },
   },

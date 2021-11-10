@@ -111,12 +111,14 @@ export default {
   },
   data() {
     return {
-      categories: [],
-      products: [],
+      /*--API-connection removed--*/
+      //categories: [],
+      //products: [],
       product: null,
       configId: null,
     };
   },
+  /* //API-connection removed
   async mounted() {
     const { data } = await this.axios.get("catalogue/categories");
     this.categories = data;
@@ -128,12 +130,16 @@ export default {
     }
     this.products = this.products.filter((i) => i.customizable);
   },
+  */
   computed: {
     customs() {
       return this.$store.getters.getCustomProducts;
     },
     customId() {
       return this.$store.getters.getCustomIndex;
+    },
+    products() {
+      return this.$store.getters.getProducts.filter((i) => i.customizable);
     },
   },
   methods: {

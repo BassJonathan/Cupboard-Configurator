@@ -72,14 +72,10 @@ export default {
       });
     },
     activeMaterial(material, input) {
-      console.log(material);
-      console.log(input);
       if (input) {
         if (material.name === input.name) {
-          console.log(true);
           return true;
         } else {
-          console.log(false);
           return false;
         }
       } else {

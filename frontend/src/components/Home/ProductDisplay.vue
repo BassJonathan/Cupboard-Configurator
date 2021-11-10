@@ -128,6 +128,7 @@ export default {
     });
     return { t, locale };
   },
+  /*
   data() {
     return {
       categories: [],
@@ -146,9 +147,14 @@ export default {
     }
     console.log(this.products);
   },
+  */
+  computed: {
+    products() {
+      return this.$store.getters.getProducts;
+    },
+  },
   methods: {
     isFirst(product) {
-      console.log(product);
       if (product === this.products[0]) {
         return true;
       } else {

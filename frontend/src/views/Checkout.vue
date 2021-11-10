@@ -308,7 +308,7 @@ export default {
   data() {
     return {
       displayModal: false,
-      orderId: "...",
+      orderId: "2021-1636557095-IoxmY",
     };
   },
   computed: {
@@ -360,7 +360,7 @@ export default {
       orderData["products"] = products;
 
       this.displayModal = true;
-
+      /*
       const vm = this;
       this.axios
         .post("/order", orderData)
@@ -372,6 +372,7 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+        */
     },
   },
 };

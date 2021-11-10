@@ -92,7 +92,6 @@ export default {
   },
   methods: {
     clear_store() {
-      console.log("DELETE");
       this.$store.commit("cleanCart");
     },
   },

@@ -67,7 +67,6 @@ export default {
   },
   computed: {
     items() {
-      console.log(this.$store.getters.cartItems);
       return this.$store.getters.cartItems;
     },
   },

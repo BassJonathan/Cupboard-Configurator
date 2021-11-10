@@ -71,18 +71,26 @@ export default {
     SustainabilityBox,
   },
   props: ["product", "configId"],
+  /*--API-connection removed--*/
+  /*
   data() {
     return {
       selectables: [],
     };
   },
+  //API-connection removed
   async mounted() {
     const { data } = await this.axios.get("catalogue/products/2"); //Add here automaitc id
     this.selectables = data;
+    console.log(JSON.stringify(this.selectables))
   },
+  */
   computed: {
     parts() {
       return this.$store.getters.itemConfiguration(this.configId);
+    },
+    selectables() {
+      return this.$store.getters.getSelectables2;
     },
   },
 };

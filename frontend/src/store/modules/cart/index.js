@@ -49,7 +49,6 @@ const getters = {
     const configs = state.cart.filter((i) => i.customizable);
     let total = 0;
     for (const product of products) {
-      console.log(product);
       total = total + product.price * product.quantity;
     }
     for (const config of configs) {
@@ -184,7 +183,7 @@ const mutations = {
         item.configuration.push({ ...payload.interior, quantity: 1 });
       }
     } else {
-      console.log("ERROR Adding item");
+      console.error("ERROR Adding item");
     }
 
     updateLocalStorage(state.cart, state.customIndex);

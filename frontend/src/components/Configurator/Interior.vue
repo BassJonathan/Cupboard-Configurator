@@ -81,7 +81,6 @@ export default {
   },
   methods: {
     addToConfiguration() {
-      console.log(this.interior);
       this.$store.commit("addToConfiguration", {
         interior: this.interior,
         configId: this.configId,
@@ -96,7 +95,6 @@ export default {
       });
     },
     getBrutto(price, tax) {
-      console.log(tax);
       return price + price * tax;
     },
   },
