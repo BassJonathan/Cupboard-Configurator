@@ -1,16 +1,16 @@
 const router = require("express").Router();
 const { axios, parseURL } = require("./axios");
 
-router.post("/", (req, res) => {
+router.post("/", (request, response) => {
   axios
-    .post(parseURL("/order"), req.body)
+    .post(parseURL("/order"), request.body)
     .then(({ data }) => {
-      res.json(data);
-      res.end();
+      response.json(data);
+      response.end();
     })
     .catch((e) => {
-      console.log("--DEBUG : e", e);
-      res.end();
+      console.log("ERROR: ", e);
+      response.end();
     });
 });
 

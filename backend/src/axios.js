@@ -1,6 +1,7 @@
+const cfenv = require("cfenv");
 const path = require("path");
 const axios = require("axios");
-const cfenv = require("cfenv");
+
 const { config } = require("process");
 
 //Setup appEnv
@@ -10,32 +11,30 @@ try {
     vcapFile: path.join(__dirname, "../vcap-local.json"),
   });
 } catch (e) {
-  console.log("Could not set App-Environment: ", e);
+  console.log("ERROR -> Could not set App-Environment! -> e: ", e);
   process.exit();
 }
 
 //Variables
-const baseURL =
-  process.env.GATEWAY_API_URL || appEnv.services.clApiGateway.apiUrl;
-const apikey =
-  process.env.GATEWAY_API_KEY || appEnv.services.clApiGateway.apiKey;
+const URLbase = appEnv.services.clApiGateway.apiUrl;
 
 //Setup axios
-axios.defaults.headers.common["x-api-key"] = apikey;
+axios.defaults.headers.common["x-api-key"] =
+  appEnv.services.clApiGateway.apiKey;
 
 //Exportss
 module.exports = {
   axios,
-  parseURL: (relativeURL) => `http:${baseURL}${relativeURL}`,
-  get: (relativeURL, cb) => {
+  parseURL: (URL_relative) => `http:${URLbase}${URL_relative}`,
+  get: (URL_relative, cb) => {
     axios
-      .get(`http:${baseURL}${relativeURL}`)
+      .get(`http:${URLbase}${URL_relative}`)
       .then(({ data }) => {
         cb(false, data);
       })
       .catch((e) => {
         console.log(
-          "Failed request (`/catalogue/categories/${req.params.id}/products`): ",
+          "ERROR -> `/catalogue/categories/${req.params.id}/products` failed to request! -> e: ",
           e
         );
         cb(e);

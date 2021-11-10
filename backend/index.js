@@ -1,24 +1,22 @@
-const express = require("express");
 const cors = require("cors");
+const express = require("express");
 const bodyParser = require("body-parser");
-//const morgan = require('morgan');
 
 const app = express();
-const port = process.env.NODE_ENV === "production" ? process.env.PORT : 4000;
+const port = 4000;
 
-//app.use(morgan('tiny'));
 app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/catalogue", require("./src/catalogue"));
 app.use("/order", require("./src/order"));
 
-//app.get('/', (req, res) => {
-app.get("*", (req, res) => {
-  res.end("The backend for the Cupboard Ltd. Webapplication was started.");
+app.get("*", (request, response) => {
+  response.end(
+    "The backend for the Cupboard Ltd. Webapplication is running. To get data request via the declared get-requests."
+  );
 });
 
-//const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });

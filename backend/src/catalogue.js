@@ -1,63 +1,65 @@
 const router = require("express").Router();
-const cfenv = require("cfenv");
 const { get } = require("./axios");
 
-//Einzelne Kategorien unter: localhost:4000/catalogue/categories
-router.get("/categories", (req, res) => {
+//Get all categories
+router.get("/categories", (request, response) => {
   get("/catalogue/categories", (e, d) => {
     if (e) d = {};
-    res.json(d);
-    res.end();
+    response.json(d);
+    response.end();
   });
 });
 
-//Produkte der Kategorien unter: localhost:4000/catalogue/categories/{z.B. 1}/products
-router.get("/categories/:id/products", (req, res) => {
-  get(`/catalogue/categories/${req.params.id}/products`, (e, d) => {
+//Get all products of a categorie
+router.get("/categories/:id/products", (request, response) => {
+  get(`/catalogue/categories/${request.params.id}/products`, (e, d) => {
     if (e) d = {};
-    res.json(d);
-    res.end();
+    response.json(d);
+    response.end();
   });
 });
 
-//Produktinfo unter: localhost:4000/catalogue/products/{z.B. 2} --> Wenn konfigurierbar, dann automatisch mit Elementen. Wenn nicht dann ohne :)
-router.get("/products/:id", (req, res) => {
-  get(`/catalogue/products/${req.params.id}`, (e, product) => {
+//Get product after id
+router.get("/products/:id", (request, response) => {
+  get(`/catalogue/products/${request.params.id}`, (e, product) => {
     if (e) product = {};
     const isCustom = product.customizable;
     if (e || !isCustom) {
-      res.json(product);
-      return res.end();
+      //If item is not customizable return just the product
+      response.json(product);
+      response.end();
+    } else {
+      //If item is customizable get selectables and sort the after their categories
+      get(
+        `/catalogue/products/${request.params.id}/selectables`,
+        (e, selectables) => {
+          product.exteriors = [];
+          product.interiors = [];
+          product.materials = [];
+          product.accessories = [];
+          selectables.forEach((selectable) => {
+            switch (selectable.selectableCategory) {
+              case "exterior":
+                product.exteriors.push(selectable);
+                break;
+              case "interior":
+                product.interiors.push(selectable);
+                break;
+              case "material":
+                product.materials.push(selectable);
+                break;
+              case "accessories":
+                product.accessories.push(selectable);
+                break;
+              default:
+                break;
+            }
+          });
+          response.json(product);
+          response.end();
+        }
+      );
     }
-    get(
-      `/catalogue/products/${req.params.id}/selectables`,
-      (e, selectables) => {
-        product.exteriors = [];
-        product.interiors = [];
-        product.materials = [];
-        product.accessories = [];
-        selectables.forEach((selectable) => {
-          switch (selectable.selectableCategory) {
-            case "exterior":
-              product.exteriors.push(selectable);
-              break;
-            case "interior":
-              product.interiors.push(selectable);
-              break;
-            case "material":
-              product.materials.push(selectable);
-              break;
-            case "accessories":
-              product.accessories.push(selectable);
-              break;
-            default:
-              break;
-          }
-        });
-        res.json(product);
-        res.end();
-      }
-    );
   });
 });
 
