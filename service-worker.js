@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cupboard-configurator/precache-manifest.63877e7ab9a8a1ae19c7ab3f502bcc64.js"
+  "/Cupboard-Configurator/precache-manifest.2ca9ebfb611eac8046c7d22d44163c4a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "cupboard-configurator"});
