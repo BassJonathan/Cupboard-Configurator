@@ -29,45 +29,53 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-<!--
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
--->
+
+# Table of Contents
+<ol>
+  <li>
+    <a href="#about-the-project">About The Project</a>
+    <ul>
+      <li><a href="#built-with">Built with</a></li>
+    </ul>
+  </li>
+  <li><a href="#project-setup">Project setup</a></li>
+  <li>
+    <a href="#running-the-project">Running the project</a>
+    <ul>
+      <li><a href="#compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</a></li>
+      <li><a href="#compiles-and-minifies-for-production">Compiles and minifies for production</a></li>
+      <li><a href="#lints-and-fixes-files">Lints and fixes files</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#fixes-for-common-issues">Fixes for common issues</a>
+    <ul>
+      <li><a href="#error:-plugin(s)-are-missing">Error: Plugin(s) are missing</a></li>
+      <li><a href="#error:-'postCSS-plugin-tailwindcss-required-postcss-8.'">Error: "PostCSS Plugin tailwindcss required PostCSS 8."</a></li>
+      <li><a href="#error:-'npm-err!-error:-eacces:-permission-denied,-access-'/path''">Error: "npm ERR! Error: EACCES: permission denied, access '/path'"</a></li>
+    </ul>
+  </li>
+
+</ol>
+
+
 
 <!-- ABOUT THE PROJECT -->
-<!--
-## About The Project
-Project for the lecture "Fallstudie" in the third semester at DHBW Stuttgart.
+# About The Project
+Project for the lecture "Case Study" in the third semester at DHBW Stuttgart. This project was created by 5 students within three weeks. The project includes self-organized agile planning and execution. The website was created for a fictitious company called "Cupboard Limited", which sells sustainable and customizable furniture. An API was provided was provided by the lecturers to retrieve the products and place the orders. . The rest of the design, including all the text, was created freely by the students.
 
 
-### Built With
+## Built with:
 
-* [Vue]()
-* [Love]()
-* []()
--->
+* [Vue](https://www.vuejs.com)
+* [VueX Persist](https://github.com/championswimmer/vuex-persist)
+* [i18n](https://kazupon.github.io/vue-i18n/)
+* [Axios](https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html)
+* [Lottie Interactivity](https://lottiefiles.com/interactivity)
+* [TailwindCSS](https://tailwindcss.com/)
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* [NextJS](https://nextjs.org/)
+* [NodeJS](https://nodejs.org/en/)
 
 # Project setup
 In order to set up the project properly, you must have npm installed.
@@ -119,95 +127,12 @@ E.g.:
 ```
 sudo npm install ...
 ```
-<!-- GETTING STARTED -->
-<!--
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-Ich empfehle die Visual Studio Code zusammen mit folgenden Extensions zu verwenden:
-<br>
-<img src="https://github.com/BassJonathan/cupboard-configurator/blob/729021709249def751d4f633f558988906239d50/Images/Extensions.png" alt="CSS Peak, HTML CSS Support, HTML Preview, HTML Snippets, IntelliSense for CSS, JavaScript code snippets, Live Server" width="500">
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
--->
-
-<!-- USAGE EXAMPLES -->
-<!--
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
--->
-
-
-
-<!-- ROADMAP -->
-<!--
-## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
--->
-
-
-<!-- CONTRIBUTING -->
-<!--
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
--->
-
 
 <!-- LICENSE -->
-<!--
-## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
--->
+# License
 
-
-<!-- CONTACT -->
-<!--
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
--->
-
-
-<!-- ACKNOWLEDGEMENTS -->
-<!--
-## Acknowledgements
-
-* []()
-* []()
-* []()
--->
-
+Distributed under the GPL License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/BassJonathan/cupboard-configurator.svg?style=for-the-badge
