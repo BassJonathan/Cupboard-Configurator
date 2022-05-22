@@ -1,5 +1,6 @@
 module.exports = {
   prefix: "tw-",
+  content: ["./src/**/*.{html,js}"],
   screens: {
     sm: "576px",
     md: "768px",

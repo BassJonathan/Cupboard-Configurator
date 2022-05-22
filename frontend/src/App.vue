@@ -1,14 +1,18 @@
 <template>
-  <NavBar />
-  <div id="content_wrapper">
-    <router-view />
+  <div>
+    <NavBar />
+    <div id="content_wrapper">
+      <router-view />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
+import './assets/css/main.css';
+import './assets/css/tailwind.css';
 
 export default {
   components: {
